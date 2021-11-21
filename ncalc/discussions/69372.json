@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "236007",
+    "ThreadId": "69372",
+    "Html": "<p>Is it possible to initialize parameters within the expression string itself, something like:</p>\r\n<pre>&quot;set(a, 10), cos(a)&quot;</pre>\r\n<p>or something like that.</p>\r\n<p>Many thanks</p>\r\n<p>Lee</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-18T05:38:36.617-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "236033",
+    "ThreadId": "69372",
+    "Html": "<p>Going into this sort of script functionnality is opening some complexity. Actually this could be another project, like lighweight scripting engine. I don't say it is not useful, because it is really useful for some domains, but the goal on NCalc is not this one. It would make NCalc more complex to use, even for simple expression evaluation.</p>\r\n<p>You should ask for a NScript project, I would do it ;)</p>",
+    "PostedDate": "2009-09-18T06:50:32.373-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "236044",
+    "ThreadId": "69372",
+    "Html": "<p>Hi Sebastien</p>\r\n<p>My main reason is for evaluating an expression and then being able to re-use the result multiple times without the system re-evaluating it. Is there another solution to this?</p>\r\n<p>Many thanks</p>\r\n<p>Lee<br><br>-----Original Message----- <br>From: sebastienros <br>Sent: 9/18/2009 1:50:39 PM <br>To: [email removed] <br>Subject: Re: Support for parameter initialization in code [ncalc:69372]</p>\r\n<p>From: sebastienros</p>\r\n<div id=ThreadNotificationPostBody>\r\n<p>Going into this sort of script functionnality is opening some complexity. Actually this could be another project, like lighweight scripting engine. I don't say it is not useful, because it is really useful for some domains, but the goal on NCalc is not this one. It would make NCalc more complex to use, even for simple expression evaluation.</p>\r\n<p>You should ask for a NScript project, I would do it ;)</p>\r\n</div>",
+    "PostedDate": "2009-09-18T07:24:19.61-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "236092",
+    "ThreadId": "69372",
+    "Html": "<p>You can evaluate it once and set the result as a parameter:</p>\r\n<pre>Expression e1 = new Expression(&quot;3.14 * x&quot;);\r\ne1.SetParameter(&quot;x&quot;, 0.5);\r\n// a is evaluated once\r\ndouble a = e1.Evaluate();\r\n\r\nExpression e = new Expression(&quot;cos(a) * b&quot;);\r\ne.SetParameter(&quot;a&quot;, a);\r\ne.SetParameter(&quot;b&quot;, 1);\r\ne.Evaluate();\r\n// define a new value for b\r\ne.SetParameter(&quot;b&quot;, 2);\r\ne.Evaluate();\r\n</pre>\r\n<p>And if you pass an Expression instance to a parameter, it will get evaluted each time it is needed, as the parameter might be dependent of another variable.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-18T08:45:52.77-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "236833",
+    "ThreadId": "69372",
+    "Html": "<p>Thanks</p>\r\n<p>The trouble is, I want the user to be able to set the expression, and that the expression is only evaluated when needed. It's really just to save multiple evaluation of the same expression during multiple tests against it.</p>\r\n<p>Lee</p>",
+    "PostedDate": "2009-09-21T04:01:30.27-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

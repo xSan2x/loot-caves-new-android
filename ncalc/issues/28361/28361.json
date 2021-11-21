@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello guys,\r\n\r\nI'm trying to compare a array of elements to one value, is there any way to do that using ncalc?\r\n\r\nExample:\r\n\r\nnew Expression(ruleExpression.Replace(\" [1,2,3] > 1 and 2 < 3 and 2 == 2\").Evaluate();\r\n\r\nThe result that I want is FALSE to ([1,2,3] > 1 ), because not all elements respect the rule.\r\n\r\n\r\n\r\n",
+    "LastUpdatedDate": "2017-10-06T04:41:27.49-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2017-10-06T04:41:27.49-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Array compare [HELP]",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 28361
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

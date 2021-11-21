@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "825737",
+    "ThreadId": "352767",
+    "Html": "\r\n<p>Greetings!</p>\r\n<p>We need some enlightening help, our application must perform some DateTime operations like subtract one from another, subtract a day (integer) from a DateTime, add one date to another and so on.</p>\r\n<p>How could we achieve such goals through NCalc? Which is the best way to evaluate some DateTime operations?</p>\r\n<p>Thanks!</p>\r\n",
+    "PostedDate": "2012-04-18T18:29:42.543-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "829546",
+    "ThreadId": "352767",
+    "Html": "<p>Nevermind... just switch the application engine to the Fast Lightweight Expression Evaluator.</p>",
+    "PostedDate": "2012-04-27T14:25:46.82-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "830215",
+    "ThreadId": "352767",
+    "Html": "<p>from what i see of the source, you cant subtract dates at the moment. you can write your own functions that work on dates with ease. alternatively you can edit EvaluationVisitor.cs to cope with date subtraction.</p>",
+    "PostedDate": "2012-04-30T08:02:54.073-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

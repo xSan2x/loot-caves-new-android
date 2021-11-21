@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 4,
+    "Custom": null,
+    "Description": "NCalc fails to compile when a newer version of Antlr is used.  This expects 3.3.0.7239.\r\n\r\nWhat is the best way to go about updating NCalc to use Antlr3 version 3.4.1.9004 or newer?\r\n\r\nHas anyone re-created the grammar file and got it working with Antlr 3.4+ ?",
+    "LastUpdatedDate": "2015-04-23T01:28:18.28-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2015-01-22T14:12:29.197-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "NCalc fails with Antlr versions 3.4.1 and newer",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 28341
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I rebuilt the NCalcParser.cs and NCalcLexer.cs from the NCalc.g (grammar file) using the 3.5.0.2 version of Antlr3.Runtime.dll\n\nA couple of modifications and it works fine.  If anyone wants a version of NCalc that works with this particular version of Antlr, just comment here. ",
+      "PostedDate": "2015-01-24T19:57:41.31-08:00",
+      "Id": 170758
+    },
+    {
+      "Message": "I tried to rebuild the parser and lexer with antlr4, but had no luck.  I would appreciate a copy of your NCalc that works with the 3.5 version of antlr.  Source would be best, since I have already modified our version of NCalc.",
+      "PostedDate": "2015-03-03T10:20:12.547-08:00",
+      "Id": 176903
+    },
+    {
+      "Message": "Hi, I'm having a similar issue trying to rebuild with version 3.5.0.2. If you have a working version, I'd love to see what changes you had to make (I'm not familiar with Antlr myself).",
+      "PostedDate": "2015-04-22T11:01:45.287-07:00",
+      "Id": 183248
+    },
+    {
+      "Message": "check my 2 github repos.\nhttps://github.com/pitermarx/NCalc-Edge -> im using this one\nand\nhttps://github.com/pitermarx/NCalc2\n",
+      "PostedDate": "2015-04-23T01:28:18.28-07:00",
+      "Id": 183284
+    }
+  ]
+}

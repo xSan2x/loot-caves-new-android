@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": null,
+    "Description": "I have been successfully using ncalc in my project but am stumped on a new calculation that is throwing \"missing EOF at '('\" on Evaluate(). The code that is failing is \"double finalResult = (double)expression.Evaluate();\". The formula string is \"(RetailUnits*RetailUnitCost)–((RetailUnits/UnitsPerCase)*WholesaleCaseCost)\" all of the references are available as expression parameters. I've tried reformatting my expression to no avail. Is my syntax incorrect?",
+    "LastUpdatedDate": "2014-05-14T05:44:06.583-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2014-05-13T10:26:20.103-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "missing EOF at '('",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 28338
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I found the problem and it is not an ncalc issue. I used a string provided to me and the minus sign was NOT actually a minus sign so it errored out...",
+      "PostedDate": "2014-05-14T05:44:06.583-07:00",
+      "Id": 146553
+    }
+  ]
+}

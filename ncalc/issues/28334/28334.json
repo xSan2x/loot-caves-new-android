@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Would it be possible to handle the \"+/- Infinity\" value in the min/max functions?\r\nCurrently, it raises an exception...\r\n\r\nIt would be great if: \r\nMin(Infinity, 0) returns 0\r\nMax(Infinity,0) returns Infinity\r\n\r\nIf you think it is relevant, could you please add this? \r\nIf you don't, I will try to create a custom function.\r\n\r\nThanks a lot for this great tool.",
+    "LastUpdatedDate": "2013-09-29T05:54:09.23-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2013-09-29T05:54:09.23-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Infinity in min/max functions?",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 28334
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

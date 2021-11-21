@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1059056",
+    "ThreadId": "447656",
+    "Html": "Many thanks for this wonderful NCalc in which I am currently doing some RND. I'm new to c# so I need your help.\r<br />\n<br />\nI have tried to modify the source code to use Math.Power when ^ is used in the expression. It is working if you have the proper grouping. ex.\r<br />\n2 * (10 ^ 5)\r<br />\n<br />\nBut below expression will evaluate first the Multiplication because ^ is not a mathematical operator and not the highest priority as per as parser is concerned.\r<br />\n<br />\n2 * 10 ^ 5\r<br />\n<br />\nSomehow the parser is grouping it to this format (2 * 10) ^ 5.\r<br />\nAny idea how to fix this scenario? I don't know yet whats the purpose of the Grammar file but maybe a little modification will do the job.\r<br />\n<br />\nThanks for your help,\r<br />\nJB<br />\n",
+    "PostedDate": "2013-06-20T02:27:14.737-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

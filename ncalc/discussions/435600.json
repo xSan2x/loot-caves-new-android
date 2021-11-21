@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "1011238",
+    "ThreadId": "435600",
+    "Html": "Hi.\r<br />\n<br />\nJust trying this lib out, but I ran into some problems when trying to &quot;save&quot; the Evaluation to a double variable. I get the error &quot;Specified cast is not valid&quot;.\r<br />\n<br />\nMy code is something like this (a bit edited):<br />\n<pre><code>string formel = &quot;x+2&quot;;\nExpression e = new Expression(formel);\ne.Parameters[&quot;x&quot;] = 2.5;\n\ndouble result = (double) e.Evaluate();  //gives error &quot;Specified cast is not valid&quot;</code></pre>\n\nAny pointers on how to solve this?<br />\n",
+    "PostedDate": "2013-03-06T07:47:27.467-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1011355",
+    "ThreadId": "435600",
+    "Html": "Try to cast it as a decimal.<br />\n",
+    "PostedDate": "2013-03-06T11:19:17.73-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1011356",
+    "ThreadId": "435600",
+    "Html": "Or use Convert.ToDouble(...) if you really want a double.<br />\n",
+    "PostedDate": "2013-03-06T11:19:36.293-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1011608",
+    "ThreadId": "435600",
+    "Html": "Hi.\r<br />\n<br />\nThx for quick response, I went with the decimal, and that worked.\r<br />\n<br />\nHow ever, I have some questions regarding performance of this library. \r<br />\nMy code from the posting above has been used in a foreach-loop (testing with about 300000 items) evaluating formulas and x-values retrieved from linq to sql.\r<br />\n<br />\nMy first &quot;problem&quot; was that it was really slow when in debug-mode (VS 2010). The loop took over 3 minutes to complete, and took a lot of memory. If I run the same from a released .exe-file, it took 13 seconds to complete. That seems like a really big difference between debug and release? Any pointers to that?\r<br />\n<br />\nMy second issue is also regarding performance. I am also checking out the Dynamic Formula library (<a href=\"http://www.codeproject.com/Articles/25578/Dynamic-Formula-Processing-Library?msg=4509783#xx4509783xx\" rel=\"nofollow\">http://www.codeproject.com/Articles/25578/Dynamic-Formula-Processing-Library?msg=4509783#xx4509783xx</a>) . Comparing these two solutions over the same data as above, NCalc takes 13 seconds and DynamicFormula takes only 7 seconds to complete.\r<br />\nCould it be that I use your solution in a less efficient way than I could have? \r<br />\n(I would like to use NCalc since it has more possibilities, but performance is very important for me).\r<br />\n<br />\nThanks for any insights you may have on these topics.<br />\n",
+    "PostedDate": "2013-03-07T00:47:23.743-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1011617",
+    "ThreadId": "435600",
+    "Html": "Hi again.\r<br />\n<br />\nI played around a little, checking first if the formula had changed and only used new Expression() if it had. Got it down to 1 second now.<br />\n",
+    "PostedDate": "2013-03-07T01:15:49.53-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1459901",
+    "ThreadId": "435600",
+    "Html": "The code sample in the first post of this thread will also fail, even after your suggested 'fix', if instead of &quot;2&quot; you use &quot;3.5&quot; (for example).\r<br />\n<br />\ni.e.\r<br />\nstring formel = &quot;x+3.5&quot;;\r<br />\nExpression e = new Expression(formel);\r<br />\ne.Parameters[&quot;x&quot;] = 2.5;\r<br />\n<br />\nvar result = (decimal) e.Evaluate(); \r<br />\n<br />\nwill fail with &quot;Operator '+' can't be applied to operands of types 'decimal' and 'double'&quot; \r<br />\n<br />\n<a href=\"https://ncalc.codeplex.com/discussions/528933\" rel=\"nofollow\">https://ncalc.codeplex.com/discussions/528933</a><br />\n",
+    "PostedDate": "2016-01-20T04:30:58.37-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

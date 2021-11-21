@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "920157",
+    "ThreadId": "397580",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I have a list of expressions that I parse out of a document and attempt to evaluate. Most work fine but some produce errors.</p>\r\n<p>360/(Pow(2,16) &ndash; 1)</p>\r\n<p>EvaluationException: extraneous input '1' expecting ')' at line 1:17</p>\r\n<p>The really weird thing is that many of these expressions are repeated in my document and sometimes Expression.Evaluate works fine on them, sometimes not. I suspected a strange whitespace issue but removing whitespace from the string before creating the Expression\r\n didn't help.</p>\r\n<p>Any ideas on why this happens or what I can do to work around it?</p>\r\n",
+    "PostedDate": "2012-10-01T12:08:50.137-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "920232",
+    "ThreadId": "397580",
+    "Html": "<p>Nevermind. That \" - \" in the problem cases was a unicode dash. Converted it prior to evaluating and NCalc works great.</p>",
+    "PostedDate": "2012-10-01T14:40:45.71-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

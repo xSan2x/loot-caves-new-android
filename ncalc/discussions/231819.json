@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "510532",
+    "ThreadId": "231819",
+    "Html": "<p>Hi</p>\r\n<p>If you try for example the following formula 'SUM([A] + ([D] - [E]) - [F])' with the SerializationVisitor you will notice that the Result will have a right paranthesis missing.</p>\r\n<p>Output: SUM(([A] + ([D] - [E]) - [F])</p>\r\n<p>In the 'Function' and 'LogicalExpression' visit, one character on the right is stripped, but in the 'EncapsulateNoValue' method, no extra space is added for the right paranthesis.</p>\r\n<p>I fixed it by changing the 'EncapsulateNoValue' by this</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">protected</span> <span style=\"color:blue\">void</span> EncapsulateNoValue(LogicalExpression expression)\r\n{\r\n    <span style=\"color:blue\">if</span> (expression <span style=\"color:blue\">is</span> ValueExpression)\r\n    {\r\n        expression.Accept(<span style=\"color:blue\">this</span>);\r\n    }\r\n    <span style=\"color:blue\">else</span>\r\n    {\r\n        Result.Append(<span style=\"color:#a31515\">&quot;(&quot;</span>);\r\n        expression.Accept(<span style=\"color:blue\">this</span>);\r\n        Result.Remove(Result.Length - 1, 1);\r\n        Result.Append(<span style=\"color:#a31515\">&quot;) &quot;</span>); <span style=\"color:green\">// extra space</span>\r\n    }\r\n }\r\n</pre>\r\n</div>\r\n&nbsp;</p>",
+    "PostedDate": "2010-10-21T07:44:20.217-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "510574",
+    "ThreadId": "231819",
+    "Html": "<p>Thanks, I pushed a fix in the source code.</p>",
+    "PostedDate": "2010-10-21T08:43:10.183-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

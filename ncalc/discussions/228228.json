@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "497233",
+    "ThreadId": "228228",
+    "Html": "<p>&nbsp;</p>\r\n<pre>The following code throws a &quot;Operator '/' can't be applied to operands of types 'double' and 'decimal'&quot; exception and I cannot work out for the life of me why.</pre>\r\n<pre>The native c# throws no exception.</pre>\r\n<pre>Also if I change the definition of a  &amp; b to double it works.... Any Ideas???</pre>\r\n<pre>void Test()\r\n{\r\n   decimal a = 20;\r\n   decimal b = 50;\r\n   Expression ex = new Expression(&quot;a / b * 100&quot;, EvaluateOptions.IgnoreCase | EvaluateOptions.NoCache);\r\n   ex.EvaluateParameter += delegate(string name, ParameterArgs arg)\r\n   {\r\n      if (name == &quot;a&quot;)\r\n        arg.Result = a;\r\n      else if (name == &quot;b&quot;)\r\n        arg.Result = b;\r\n   };\r\n   MessageBox.Show((a / b * 100).ToString());\r\n   MessageBox.Show(ex.Evaluate().ToString());</pre>\r\n<pre>}</pre>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-09-22T14:27:42.957-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "497244",
+    "ThreadId": "228228",
+    "Html": "<p>Are you using the latest available source code ? I can't reproduce this and I have done some changes recently on the topic.</p>\r\n<p>Thanks<br>Sebastien</p>",
+    "PostedDate": "2010-09-22T14:48:40.997-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "497266",
+    "ThreadId": "228228",
+    "Html": "<p>I just downloaded them.</p>\r\n<p>I see I now need to include Antlr3.runtime.dll in my project?&nbsp;</p>\r\n<p>I get the error message: &quot;Error<span> </span>1<span> </span>Assembly generation failed -- Referenced assembly 'NCalc' does not have a strong name&quot;</p>",
+    "PostedDate": "2010-09-22T15:50:56.803-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "497268",
+    "ThreadId": "228228",
+    "Html": "<p>I need to create a release then. It includes assembly merging, and also strong signing. Give me some time for it.</p>",
+    "PostedDate": "2010-09-22T16:11:19.35-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "497290",
+    "ThreadId": "228228",
+    "Html": "<p>No problem. Thanks for your great work!</p>",
+    "PostedDate": "2010-09-22T17:26:09.257-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "497304",
+    "ThreadId": "228228",
+    "Html": "<p>Done</p>",
+    "PostedDate": "2010-09-22T18:03:10.567-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "497668",
+    "ThreadId": "228228",
+    "Html": "<p>Excellent. That seems to solve the problem!</p>\r\n<p>But......&nbsp;If I change the expression to:&nbsp;<span style=\"font-family:Consolas, 'Courier New', Courier, monospace;white-space:pre\">&quot;a / b * 100.00&quot;</span></p>\r\n<p><span style=\"font-family:Consolas, 'Courier New', Courier, monospace;white-space:pre\">I get the same error?</span></p>",
+    "PostedDate": "2010-09-23T10:01:00.247-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

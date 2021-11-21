@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1432721",
+    "ThreadId": "640817",
+    "Html": "The version of the dll I currently have (downloaded yesterday) still does not process the '^' character and recognise it as being to the power of.\r<br />\n<br />\nFor example (5*2)^2 = 8 currently but should = 100.\r<br />\n<br />\nIs this working in a later version or do i need to process and use the pow() function?<br />\n",
+    "PostedDate": "2015-07-01T03:32:43.36-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

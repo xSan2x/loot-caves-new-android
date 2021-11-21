@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "231904",
+    "ThreadId": "68186",
+    "Html": "<p>Hi</p>\r\n<p>I have a problem working with sub functions. while Expression(&quot;Sma([x],20)&quot;) works, Expression(&quot;Sma(Sma([x],20)-[y]),20)&quot;) does not.</p>\r\n<p>It seems that the parse does not parse from inside out for each single function.</p>\r\n<p>Eval Expression(Sma(Sma([1],[2],1),20,1) *2) : Function not found<br>Parameter name: Sma :&nbsp;&nbsp;&nbsp; at Evaluant.Calculator.Domain.EvaluationVisitor.Visit(Function function)<br>&nbsp;&nbsp; at Evaluant.Calculator.Domain.Function.Accept(LogicalExpressionVisitor visitor)<br>&nbsp;&nbsp; at Evaluant.Calculator.Domain.EvaluationVisitor.Visit(BinaryExpression expression)<br>&nbsp;&nbsp; at Evaluant.Calculator.Domain.BinaryExpression.Accept(LogicalExpressionVisitor visitor)<br>&nbsp;&nbsp; at Evaluant.Calculator.Expression.Evaluate()</p>\r\n<p>But its also possible, that I made some mistakes. In this case I would ask you for a small peace of working code. Of course I could send you mine, but its reaaallly big and not easy to workout what I am doing :-)</p>\r\n<p>Thanks<br>Chris</p>",
+    "PostedDate": "2009-09-07T11:24:32.113-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "231963",
+    "ThreadId": "68186",
+    "Html": "<p>It's ok, I found the issue and published a new release to correct it. Another user sent me teh same issue the same day, couldn't make you wait more.</p>",
+    "PostedDate": "2009-09-07T14:59:04.94-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "232045",
+    "ThreadId": "68186",
+    "Html": "<p>sorry, just wrote you after seekeing and probing for hours ;-)</p>\r\n<p>but thank you very much, for doing this quite fast fixes!</p>\r\n<p>chris</p>",
+    "PostedDate": "2009-09-07T22:36:57.603-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

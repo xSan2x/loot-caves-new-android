@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "It is silly to have ^ to be the XOR operation given that, outside the programming realm, _virtually nobody_ really needs XOR for anything. It is equally silly to type Pow(x,2) when you need x^2. So how about changing the default behavior in order to support ^ as the power operator rather than XOR?",
+    "LastUpdatedDate": "2015-06-29T23:23:03.547-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2015-06-29T23:23:03.547-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Change ^ to mean Pow",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 28345
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

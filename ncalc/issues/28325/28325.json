@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": null,
+    "Description": "My suggestion is to change the EvaluateOptions parameter of the Expression method to List<EvaluateOptions>.  This will allow the user to use multiple options on the same object.\r\n\r\nIe: EvaluateOptions.NoCache and EvaluateOptions.IgnoreCase\r\n\r\nAs it is, you can only have one or the other.",
+    "LastUpdatedDate": "2012-09-05T02:28:39.71-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2012-08-09T15:16:10.327-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Allow for multiple EvaluateOptions when calling Expression",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 28325
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "EvaluateOptions is defined with [Flags] attribute. So to do what you want you just do EvaluateOptions.NoCache | EvaluateOptions.IgnoreCase",
+      "PostedDate": "2012-09-05T02:28:39.71-07:00",
+      "Id": 76309
+    }
+  ]
+}

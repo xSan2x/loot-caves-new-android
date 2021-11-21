@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 3,
+    "Custom": null,
+    "Description": "I have an expression\r\n15617031.48= 15226149.00+166208.36+0.00+224674.12\r\n\r\nThis expression should give result as \"true\" but it will give \"false\" result. Please suggest something.\r\n\r\nThanks",
+    "LastUpdatedDate": "2015-06-23T02:53:53.753-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2015-06-19T00:14:09.85-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Expression.Evaluate() gives wrong output",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 28344
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Floating point numbers might not be represented the same way in both sides. You should try to put a breakpoint on the '=' operator evaluation in the source code, and see what is happening.",
+      "PostedDate": "2015-06-19T09:24:57.613-07:00",
+      "Id": 185665
+    },
+    {
+      "Message": "\nWe have code like \n\n ncalcFormula = \"[OD1000]=[OD1100]+[OD1200]+[OD1350]+[OD1450]\"\n\n var expression = new Expression(ncalcFormula);\n\n     foreach (FormulaParameter fp in parsedParameters)\n            {\n                expression.Parameters[fp.QuestionKey] = fp.Value;\n            }\n     object res = expression.Evaluate();\n\n\nOriginal expression :-  [OD1000]=[OD1100]+[OD1200]+[OD1350]+[OD1450]\n\nAfter Evaluate called Parsed expression :-  {([OD1000])= (((([OD1100])+ ([OD1200])+ ([OD1350])+ ([OD1450])}\n\n\nTested with adding parameter values as follows  \n\n1) 9.33 = 2.25 + 3.25 + 1.5 + 2.33\n\n2) 15617031.48 = 15226149.36 + 166208.00 + 0.00 + 224674.12\n\nAfter evaluate 1) will return true and 2) will return false though both expression are correct.\n\nPlease suggest.",
+      "PostedDate": "2015-06-21T23:20:15.117-07:00",
+      "Id": 185757
+    },
+    {
+      "Message": "if you want exact calculations you should use decimal instead of float.\nTry casting fp.Value to decimal",
+      "PostedDate": "2015-06-23T02:53:53.753-07:00",
+      "Id": 185810
+    }
+  ]
+}

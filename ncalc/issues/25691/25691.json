@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Added EvaluateOption.RoundAwayFromZero in Expression constructor",
+    "ClosedDate": "2009-12-31T03:07:11.077-08:00",
+    "CommentCount": 2,
+    "Custom": "",
+    "Description": "In our environment we need 22.5 to round to 23 (when rounding to 0 decimal places). This is not the default mode for .NET. There are overloaded methods of the round method that take a third parameter (an enum called) that indicates the method of rounding that should be used for midpoint rounds. If ncalc would support sending in the name or integer of that enum's member in order to modify the round behaviour it would be good. I added/changed the following code to the EvaluationVisitor.cs file at line 417. This allows me to pass in a 1 for the third parameter and have the system perform RoundAwayFrom0 rounding.. .\n\nif (function.Expressions.Length ==2)\n                        result = Math.Round(Convert.ToDouble(Evaluate(function.Expressions[0])), Convert.ToInt16(Evaluate(function.Expressions[1])));\n                    else if(function.Expressions.Length==3)\n                    {\n                        result = Math.Round(Convert.ToDouble(Evaluate(function.Expressions[0])), Convert.ToInt16(Evaluate(function.Expressions[1])),(MidpointRounding)Enum.Parse(typeof(MidpointRounding),Convert.ToInt16(Evaluate(function.Expressions[2])).ToString()));\n                    }\n                    else\n                    {\n                        throw new ArgumentException(\"Round() takes exactly 2 or 3 arguments\");\n                    }",
+    "LastUpdatedDate": "2014-11-11T12:20:37.503-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2009-12-15T12:31:19.693-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Rounding Problems",
+    "Type": {
+      "Name": "Feature",
+      "Id": 1
+    },
+    "VoteCount": 1,
+    "Id": 25691
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I don't like the idea of adding a so specific parameter in a general math evaluation tool. I would suggest instead to override the Round() function by defining you own one, using a delegate. Though, I will add a parameter to define the common behavior on the Expression class.",
+      "PostedDate": "2009-12-31T02:16:09.39-08:00",
+      "Id": 16151
+    },
+    {
+      "Message": "Note: I've seen there is a solution to this.\n\nMidpointRounding is also part of a general purpose library I don't see why would be a problem to have similar functionality in NCalc.\nToEven is also a well known rounding method supported by many rounding methods. It is also known as banker's rounding.\nhttp://en.wikipedia.org/wiki/Rounding#Round_half_to_even\nSee also IEEE 754.\nhttp://en.wikipedia.org/wiki/IEEE_floating_point#Roundings_to_nearest",
+      "PostedDate": "2014-11-11T12:20:37.503-08:00",
+      "Id": 164526
+    }
+  ]
+}

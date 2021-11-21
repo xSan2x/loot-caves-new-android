@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "898244",
+    "ThreadId": "391081",
+    "Html": "\r\n<p>I've got the following piece of code:</p>\r\n<p>Expression e = new Expression(&quot;(a = 100 OR b &gt; 0) AND c &lt;&gt; 2 AND NOT d&quot;);</p>\r\n<p>Dictionary&lt;string, object&gt; variables = e.Parameters;</p>\r\n<p>variables.Add(&quot;a&quot;, 100);<br>\r\nvariables.Add(&quot;b&quot;, 1);<br>\r\nvariables.Add(&quot;c&quot;, 24);<br>\r\nvariables.Add(&quot;d&quot;, false);</p>\r\n<p>object x = e.Evaluate();</p>\r\n<p>It throws &quot;Operation could destabilize the runtime&quot; exception. I read somewhere (http://www.mattwrock.com/post/2012/02/03/VerificationException-%E2%80%9COperation-could-destabilize-the-runtime%E2%80%9D-An-exception-with-a-bark-much-worse-than-its-bite.aspx)\r\n that by using the PEVerify tool (part of SDK v2.0) the assembly can be validated. I launched PEVerify and I got this message:</p>\r\n<p>Microsoft (R) .NET Framework PE Verifier.&nbsp; Version&nbsp; 2.0.50727.42<br>\r\nCopyright (c) Microsoft Corporation.&nbsp; All rights reserved.<br>\r\n<br>\r\n[IL]: Error: [C:\\Program Files\\Microsoft Visual Studio 8\\SDK\\v2.0\\Bin\\ncalc.dll : Antlr.Runtime.BaseRecognizer::PushFollow][mdToken=0x6000253][offset 0x00000082][found ref 'System.Object'][expected ref 'Antlr.Runtime.BitSet'] Unexpected type on the stack.<br>\r\n1 Error Verifying ncalc.dll</p>\r\n<p>It looks like the type returned is not valid on .NET 2.0 (C#). Is there any way to fix it ?</p>\r\n<p>Thanks.</p>\r\n<p>Michael</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2012-08-10T14:00:14.727-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1028049",
+    "ThreadId": "391081",
+    "Html": "Did you get anywhere with this:\r<br />\n<br />\nI get the flowing error when I try to use NCalc in a SQLCLR function:\r<br />\n<br />\nALTER ASSEMBLY for assembly 'Parser' failed because assembly 'NCalc' failed verification. Check if the referenced assemblies are up-to-date and trusted (for external_access or unsafe) to execute in the database. CLR Verifier error messages if any will follow this message\r<br />\n[ : Antlr.Runtime.BaseRecognizer::PushFollow][mdToken=0x6000253][offset 0x00000082][found ref 'System.Object'][expected ref 'Antlr.Runtime.BitSet'] Unexpected type on the stack.<br />\n",
+    "PostedDate": "2013-04-09T12:29:57.407-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

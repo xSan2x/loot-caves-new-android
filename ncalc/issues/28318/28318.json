@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Example: \r\nNCalc.Expression exp = new NCalc.Expression(\"3735928559\"); // 0xDEADBEEF \r\nobject resultvar = exp.Evaluate();\r\nconsole.writeline(resultvar.ToString()); // 3.73592858E+9 \r\n\r\nResult is 3.73592858E+9 which is != 0xDEADBEEF. The resultvar is also of type System.Single.\r\n\r\nAny idea how we can suppress this conversion and get 0xDEADBEEF as the result?\r\n",
+    "LastUpdatedDate": "2012-04-24T02:38:07.393-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2012-01-16T22:47:07.01-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Converting an integer to float/double unnecessarily",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 28318
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

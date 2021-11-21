@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "555655",
+    "ThreadId": "243388",
+    "Html": "\r\n<p>Thanks for this great project and sharing with all of us.</p>\r\n<p>I need to handle multi-valued parameters in my own functions, like this:</p>\r\n<pre> Expression e = <span>new</span> Expression(<span>&quot;Average([a]) &#43; [b]&quot;</span>);\r\n e.Parameters[<span>&quot;a&quot;</span>] = <span>new</span> <span>int</span>[] { 1, 2, 3, 4, 5 };<br> e.Parameters[&quot;b&quot;] = 5;&nbsp;</pre>\r\n<p>Is this possible with NCalc natively or with a workaround? If not, is it a feature that would be beneficial to others if I code it?</p>\r\n<p>&nbsp;</p>\r\n<p>Regards,<br>\r\nLuc&nbsp;</p>\r\n",
+    "PostedDate": "2011-01-26T08:54:18.703-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "556351",
+    "ThreadId": "243388",
+    "Html": "\r\n<p>It works natively.</p>\r\n<p>You may want to update the documentation to reflect this.</p>\r\n",
+    "PostedDate": "2011-01-27T09:07:29.23-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "556375",
+    "ThreadId": "243388",
+    "Html": "\r\n<p>It is/was already in the documentation, under Parameters:</p>\r\n<p><a href=\"http://ncalc.codeplex.com/wikipage?title=parameters\">http://ncalc.codeplex.com/wikipage?title=parameters</a></p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2011-01-27T09:37:31.853-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "695118",
+    "ThreadId": "243388",
+    "Html": "<p>Sorry, I don't quite understand - are you saying that ncalc supports an Average fn?</p>\r\n<p>Does it also support things like stddev, Min, Max - all accepting a list of parameters?</p>\r\n<p>thanks!</p>",
+    "PostedDate": "2011-11-07T21:46:20.15-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

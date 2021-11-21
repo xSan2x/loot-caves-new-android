@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1074479",
+    "ThreadId": "451797",
+    "Html": "Hello,<br />\n<br />\nFirstly a big thanks to the author of this great library !<br />\nI have just transformed your examples code into VB.NET (framwork 4, VS 2010), here is my code :<br />\n<div style=\"color:Black;background-color:White;\"><pre>\r\n <span style=\"color:Blue;\">Public</span> <span style=\"color:Blue;\">Sub</span> calcul()\n        <span style=\"color:Blue;\">Dim</span> exp <span style=\"color:Blue;\">As</span> <span style=\"color:Blue;\">New</span> Expression(<span style=\"color:#A31515;\">&quot;Lines(3,7)&quot;</span>)\n\n        <span style=\"color:Blue;\">AddHandler</span> exp.EvaluateFunction, <span style=\"color:Blue;\">Sub</span>(name <span style=\"color:Blue;\">As</span> <span style=\"color:Blue;\">String</span>, args <span style=\"color:Blue;\">As</span> FunctionArgs)\n              <span style=\"color:Blue;\">Dim</span> nbArgs <span style=\"color:Blue;\">As</span> <span style=\"color:Blue;\">Integer</span> = args.Parameters.<span style=\"color:Blue;\">Count</span>\n              <span style=\"color:Blue;\">If</span> name = <span style=\"color:#A31515;\">&quot;Lines&quot;</span> <span style=\"color:Blue;\">Then</span>\n                    <span style=\"color:Blue;\">If</span> nbArgs = 1 <span style=\"color:Blue;\">Then</span>\n                          MsgBox(<span style=\"color:#A31515;\">&quot;One line : &quot;</span> &amp; args.Parameters.First.ToString)\n                    <span style=\"color:Blue;\">ElseIf</span> nbArgs = 2 <span style=\"color:Blue;\">Then</span>\n                          MsgBox(<span style=\"color:#A31515;\">&quot;One range : from line &quot;</span> &amp; args.Parameters.First.Evaluate.ToString &amp; <span style=\"color:#A31515;\">&quot; to line &quot;</span> &amp; args.Parameters.Last.Evaluate.ToString)\n                    <span style=\"color:Blue;\">Else</span>\n                          MsgBox(<span style=\"color:#A31515;\">&quot;Several lines : &quot;</span>)\n                    <span style=\"color:Blue;\">End</span> <span style=\"color:Blue;\">If</span>\n              <span style=\"color:Blue;\">End</span> <span style=\"color:Blue;\">If</span>\n       <span style=\"color:Blue;\">End</span> <span style=\"color:Blue;\">Sub</span>\n       Debug.Print(exp.Evaluate())\n<span style=\"color:Blue;\">End</span> <span style=\"color:Blue;\">Sub</span>\r\n</pre></div>The code compiles and seams to works because at the launching of my app, a dialog appears with the message &quot;One range : from line 3 to line 7&quot;. But immediatly after clicking OK, the program stops itself and raises an error just near the line :<br />\n<div style=\"color:Black;background-color:White;\"><pre>\r\nexp.Evaluate()\r\n</pre></div>The error message that appears is :<br />\n<blockquote>\nFunction not found<br />\nParameter name: Lines<br />\n</blockquote>\nI don't understand very well what it happened and I count on you to help me to resolve this issue.<br />\n<br />\nThank you very much!!<br />\n<br />\nChris.<br />\n",
+    "PostedDate": "2013-07-29T14:33:38.103-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1074673",
+    "ThreadId": "451797",
+    "Html": "Hello,\r<br />\n<br />\nWell, I have resolved the problem. In fact the args.Result variable was not valued by the delegate... So if you have the same issue, you have to value the args result object before the procedure end.\r<br />\n<br />\nThanks.<br />\n",
+    "PostedDate": "2013-07-30T05:59:14.097-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

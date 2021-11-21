@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "208367",
+    "ThreadId": "61430",
+    "Html": "<p>Hi,</p>\r\n<p>I was trying to do someting like this; 10%+5%</p>\r\n<p>But NCalc accepts % as modulo operation, rather than percentage sign.</p>\r\n<p>Is there a way I could do what I want?</p>\r\n<p>Anyway, percentage sign should be by default understood as persentage. As for of modulo operation, everybody expects to use mod function for this.</p>\r\n<p>Looking forward for next Official version.</p>\r\n<p>Thanks for great work</p>",
+    "PostedDate": "2009-07-03T09:14:41.117-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "219111",
+    "ThreadId": "61430",
+    "Html": "<p>Actually this is handled by the grammar, so there is no way to handle it dynamically. I don't think I would change it as it might be used by a lot of users already. I will take a decision after the survey to get feature requests.</p>",
+    "PostedDate": "2009-08-04T00:09:12.243-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

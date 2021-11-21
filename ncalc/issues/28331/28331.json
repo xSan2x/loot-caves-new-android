@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": null,
+    "Description": "NCalc makes use of System.Data. This subset of .NET 4.5 isn't allowed for use by Windows RT Modern UI (aka Metro) apps. I haven't dug into the source code yet to see just how widespread this issue is, but I don't envision System.Data being an integral part of NCalc and I would think it would be a relatively easy fix to remove this dependancy. ",
+    "LastUpdatedDate": "2013-11-27T10:11:53.69-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2012-12-20T22:17:40.49-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "NCalc Doesn't work on Windows RT because of System.Data",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 28331
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I have quite easily managed to make some simple modifications to NCalc in order to get it working on Windows RT. It is a simple matter of doing the two following steps:\n1) Removing the System.Data reference from the NCalc project in Visual Studio\n2) Search and replace all cases of \"ApplicationException\" with \"Exception\". It may be better to redefine the exception as something more creative, but this is a crude workaround. (you can manually go through the places where ApplicationException occurs, and you'll see that in no instance does the exception get caught alongside other exception handlers. Thus, this quick search and replace seemingly doesn't break any functionality in NCalc). \n\nNOTE: all the changes I listed above were done on the latest version of the source from the repository, forked as of today (2012-12-20), and not from the packaged sources from September 20th, 2011.",
+      "PostedDate": "2012-12-21T00:09:27.29-08:00",
+      "Id": 84762
+    }
+  ]
+}

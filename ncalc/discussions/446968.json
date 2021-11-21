@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1056429",
+    "ThreadId": "446968",
+    "Html": "I have a problem with the bitwiseXor function when I use it in a custom function with custom parameters.<br />\n<pre><code>public static void  Main(string[] args)\n        {\n\n\n            var expressions = new[]\n            {\n                &quot;DATA(data ^ 1)&quot;\n            };            \n\n            foreach (string expression in expressions)\n            {\n                Expression ex = new Expression(expression);\n                ex.EvaluateFunction += delegate(string name, FunctionArgs fct)    //On ajoute la fonction delegate\n                   {\n                       if (name == &quot;DATA&quot;) //Si la fonction est &quot;DATA&quot; pour l'assignation de la data à des valeur\n                       {\n                           if ((fct.Parameters[0].ParsedExpression.ToString()).Contains(&quot;data&quot;))   //Si l'argument contient &quot;data&quot; = valeur de la trame\n                           {\n                               fct.Result = NCalcModificationData(fct.Parameters[0].ParsedExpression.ToString()); //On assigne la custom fonction à la fonction de modification des données                               \n                            }\n                       }\n                   };\n                Console.WriteLine(&quot;{0} = {1}&quot;,\n                    expression,\n                    ex.Evaluate());\n            }\n        }\n\n        public static bool NCalcModificationData(string st)\n        {\n            bool Result = false;\n            Expression exp_temp = new Expression(st, EvaluateOptions.NoCache);\n            exp_temp.Parameters[&quot;data&quot;] = 5027;\n            try\n            {\n                Int64 result = Convert.ToInt64(exp_temp.Evaluate());     //Calcul de NCalc\n                Console.WriteLine(&quot;{0}&quot;,result);\n            }\n            catch\n            {}\n            return Result;\n        }\n    }</code></pre>\n\nError message is line1:9 missing EOF at '~'.\r<br />\nThe ParsedExpressions have ~instead of ^.\r<br />\nI want to use the ParsedExpression to make a new expression.\r<br />\nIs it possible?\r<br />\nI replacement the ~ by ^ in the ParsedExpression and i works. Is it a bug?\r<br />\nThanks for your reply.<br />\n",
+    "PostedDate": "2013-06-13T08:27:35.027-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1059059",
+    "ThreadId": "446968",
+    "Html": "I have encountered this also during debugging. I did not change anything and is still working, calling the right BitwiseXOr ^ operator.<br />\n",
+    "PostedDate": "2013-06-20T02:30:34.043-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1059501",
+    "ThreadId": "446968",
+    "Html": "Have you got the correct result for my code?\r<br />\nIn my expression &quot;DATA(data ^ 1)&quot;, I think I use the right BitwiseXor operator.\r<br />\nIn debugging, if I stop on <br />\n<pre><code>if ((fct.Parameters[0].ParsedExpression.ToString()).Contains(&quot;data&quot;))</code></pre>\n\nThe Parsed Expression doesn't contains operator ^. It contains operator ~. So in the NCalcModificationData function, the expression made by the parsedexpression isn't correct and I have an error.\r<br />\nThanks for your reply.<br />\n",
+    "PostedDate": "2013-06-21T00:18:18.977-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

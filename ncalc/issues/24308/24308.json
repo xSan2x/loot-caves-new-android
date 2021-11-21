@@ -1,0 +1,51 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Resolved",
+    "ClosedDate": "2009-08-20T21:32:22.38-07:00",
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "Hello\n\nAs you can see in the followin Expression there is only a parameter Pi expected, but this won't work:\n            Expression e = new Expression(\"Round(Pow([Pi], 2) + Pow([Pi], 2) + 10, 2)\");\n            //e.Parameters[\"X\"] = 10;\n            e.EvaluateParameter += delegate(string name, ParameterArgs arg)\n            {\n                if (name == \"Pi\")\n                    arg.Result = 3.14;\n            };\n\nWhen I uncomment the e.PArameters[X] line then everything works fine, but there is no parameter X expecet in the expression. Of course the workaroud fixes my problem but its not really candy.",
+    "LastUpdatedDate": "2009-08-20T21:32:22.38-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2009-08-13T06:35:24.2-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Only Dynamic Parameters",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 24308
+  },
+  "FileAttachments": [
+    {
+      "FileId": 151185,
+      "FileName": "Release.zip",
+      "DownloadUrl": ".\\151185"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Please try with the file attached to this comment. I will publish it if it corrects the bug. There was an issue with the initalization of the Parameters dictionary. Also corrected a bug on Tan() function.",
+      "PostedDate": "2009-08-13T13:11:59.433-07:00",
+      "Id": 16149
+    }
+  ]
+}

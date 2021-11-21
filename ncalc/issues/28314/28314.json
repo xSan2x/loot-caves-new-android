@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Evaluating the formula\r\n\r\n735388600.0000+714168700.0000+625672900.0000+552304300.0000\r\n\r\nproduces the result -166743279600.\r\n\r\nAlternatively, evaluating\r\n\r\n735388600.0000+714168700.0000+625672900.0000+552304300.0001 (notice the \".0001\" on one of the terms)\r\n\r\nproduces the correct value of 2627534500.0001.  My intuition is that the code is testing each term to see if it can be treated as an integer (perhaps to use faster CPU instructions?) without testing to see whether the RESULT can also be treated as an int.  I came across a few bit-testing techniques that might be worth considering - http://stackoverflow.com/questions/199333/best-way-to-detect-integer-overflow-in-c-c (a few posts down)",
+    "LastUpdatedDate": "2012-04-24T03:26:15.307-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2011-09-08T08:45:20.803-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Overflow encountered when terms can be cast as integers",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 28314
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

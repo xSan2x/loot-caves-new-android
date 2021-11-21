@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1263273",
+    "ThreadId": "550814",
+    "Html": "Hi there,<br />\nwe evaluate parametrized expressions using this amazing framework and it works fine. We calculate each parameter separately because it would be plain values or custom functions (which are solved by our framework).<br />\n<br />\nNow, we want to remove some of these parameters from the evaluation process, because this parameters would regard to disable field values. There is a property called &quot;HasResult&quot; which we are using like this, hoping that this parameter will be ignored during the evaluation;<br />\n<pre><code>public bool EvaluateBool()\n{\n    FExpression.EvaluateParameter += FExpression_EvaluateParameter;\n... }\nprivate void FExpression_EvaluateParameter(string name, ParameterArgs args) {\n    var field = FSession.CurrentFields[name];\n    if(field.Enabled)\n        args.Result = field.ValueString;\n    else\n        args.HasResult = false;\n...}</code></pre>\n\nUnfortunately this code snippet crashes if we set &quot;HasResult&quot; to &quot;false&quot;. Is there anyway to remove single parameter from expression automatically (meaning, without extra expression treatment)?<br />\n<br />\nThanks in advanced,<br />\nRobert.<br />\n",
+    "PostedDate": "2014-07-07T07:28:56.68-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

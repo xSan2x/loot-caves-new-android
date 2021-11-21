@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace NCalc
+{
+	public interface ICalculable : IComparable
+	{
+		ICalculable Add(ICalculable parameter);
+		ICalculable Soustract(ICalculable parameter);
+		ICalculable Multiply(ICalculable parameter);
+		ICalculable Divide(ICalculable parameter);
+		ICalculable Modulo(ICalculable parameter);
+		ICalculable Max(ICalculable parameter);
+		ICalculable Min(ICalculable parameter);
+	}
+}

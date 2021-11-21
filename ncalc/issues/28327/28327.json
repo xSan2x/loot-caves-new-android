@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": null,
+    "Description": "Hi guys,\r\n\r\nDo you have any version of NCalc compatible with the latest Antlr3.Runtime version?\r\n\r\nI am having dependencies issues because other NuGet packages I am using require newer versions of it. I couldn't find the Antlr3.Runtime version NCalc is using to embed that version of the source code into my app, so, if you have a link to get the code, that would solve my issue too \r\n\r\nThanks!\r\n\r\n",
+    "LastUpdatedDate": "2013-11-25T03:17:13.353-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2012-09-18T13:07:28.043-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Antlr3.Runtime version",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 28327
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi,\n\nwhy didn't compile you ncalc for the new Antlr3.Runtime version for yoursef?\n\nBest regards\n\nAlpecin",
+      "PostedDate": "2012-09-20T01:43:46.997-07:00",
+      "Id": 77343
+    }
+  ]
+}

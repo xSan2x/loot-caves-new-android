@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "nCalcExpression.EvaluateFunction += removes support of the pre-existing if() function\r\n\r\nFor example:\r\n\r\n\t\t\tvar nCalcExpression = GetNCalcExpression(\"if(1<2,'true','false')\");\r\n\t\t\tnCalcExpression.EvaluateFunction += NCalcExtensions.NCalcExtensionFunctions;\r\n\t\t\tvar resultObject = nCalcExpression.Evaluate();\r\n\t\t\tvar resultString = resultObject.ToString();\r\n\r\nThis will result in an exception, commenting out the second line would not.\r\n\r\nThe workaround is to add the following to your static NCalcExtensions.NCalcExtensionFunctions method:\r\n\r\n\t\tpublic static void NCalcExtensionFunctions(string functionName, FunctionArgs functionArgs)\r\n\t\t{\r\n\t\t\tstring param1;\r\n\t\t\tstring param2;\r\n\t\t\tswitch (functionName)\r\n\t\t\t{\r\n\t\t\t\tcase \"if\":\r\n\t\t\t\t\tbool boolParam1;\r\n\t\t\t\t\tobject objectParam1;\r\n\t\t\t\t\tobject objectParam2;\r\n\t\t\t\t\ttry\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\tboolParam1 = (bool)functionArgs.Parameters[0].Evaluate();\r\n\t\t\t\t\t\tobjectParam1 = functionArgs.Parameters[1].Evaluate();\r\n\t\t\t\t\t\tobjectParam2 = functionArgs.Parameters[2].Evaluate();\r\n\t\t\t\t\t}\r\n\t\t\t\t\tcatch (Exception)\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\tthrow new MacroParameterException(FunctionConst, \"if() requires three parameters.\");\r\n\t\t\t\t\t}\r\n\t\t\t\t\tfunctionArgs.Result = boolParam1 ? objectParam1 : objectParam2;\r\n\t\t\t\t\treturn;\r\n\r\n\t\t\t\t... other cases\r\n\r\n\t\t\t}\r\n\t\t}\r\n\r\n",
+    "LastUpdatedDate": "2016-07-15T12:33:17.15-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2016-07-15T12:33:17.15-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "nCalcExpression.EvaluateFunction += removes support of the pre-existing if() function",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 28356
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

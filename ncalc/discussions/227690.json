@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "495278",
+    "ThreadId": "227690",
+    "Html": "<div id=\"ctl00_ctl00_MasterContent_Content_PostRepeater_ctl00_BodyDiv\">\r\n<p>As the popularity of NCalc is growing, and I'd like to get more contribution from it,&nbsp;I have moved the source code management to CodePlex directly, using Mercurial. If you are willing to contribute, like adding new features, correcting bugs or adding unit tests, feel free to create a Fork on the source code, and push you changes on it. It will make it easy for&nbsp;myself to review the changes and include it in the main branch, while allowing you to save your modifications somewhere.</p>\r\n<p>Sebastien</p>\r\n</div>",
+    "PostedDate": "2010-09-17T17:58:28.53-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "496073",
+    "ThreadId": "227690",
+    "Html": "<p>Thanks Sebastien, i've created a fork &amp; documented it here: <a href=\"http://ncalc.codeplex.com/Thread/View.aspx?ThreadId=227873\">http://ncalc.codeplex.com/Thread/View.aspx?ThreadId=227873</a></p>\r\n<p>I&nbsp;am wary of adding too much to NCalc as it may lose its simplicity.</p>\r\n<p>Things i have added in the fork - main features were:</p>\r\n<ul>\r\n<li>Incorporated MEF (<a href=\"http://mef.codeplex.com/\">http://mef.codeplex.com</a>) to dynamically load the functions in the library as well as to add extensibility [This required a move to .Net 4.0]</li>\r\n<li>Documented each function and its parameters via a help system -TODO - this could be used for an intellisense like system - would love to see one if anyone has time/ know-how</li>\r\n<li>Added functionality to print out language documentation. </li>\r\n<li>Added Random function which works when used by multiple threads</li>\r\n</ul>\r\n<p>Things i'd like to see (minor):</p>\r\n<ul>\r\n<li>Removal of the trace statements in the library - i measured a 16% speedup with tracing turned off [by default its on even in release mode]</li>\r\n<li>A means of extracting all variable names&nbsp;from an expression - i have created code to do this via evaluation in the fork but i am sure there is a better method.</li>\r\n<li>More documentation on iterating variables - examples plus how and where it can fail</li>\r\n<li>More array functions - eg Zip with or similar</li>\r\n<li>A good way of dealing with empty strings as variables - for example casting them to zero </li>\r\n</ul>\r\n<p>Things i'd like to see (major):</p>\r\n<ul>\r\n<li>A version of NCalc which supports multiple lines, variables &amp; functions&nbsp;variables? - ie a very simple scripting language</li>\r\n</ul>",
+    "PostedDate": "2010-09-20T09:01:50.593-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

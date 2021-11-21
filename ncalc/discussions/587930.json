@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1366704",
+    "ThreadId": "587930",
+    "Html": "I assume something like this is possible but I haven't figured out how.\r<br />\n<br />\nSay I create a textbox where users can type in logical expressions, like, &quot;A and B or (C and D) or E&quot;.\r<br />\n<br />\nIs there a way I can give that logic to NCalc as well as an array of values, say [A, C, F] and have it return true or false if my values are valid according to the given logic? In this case it would be false.<br />\n",
+    "PostedDate": "2015-03-18T11:07:31.667-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

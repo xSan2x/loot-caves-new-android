@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "912397",
+    "ThreadId": "395461",
+    "Html": "\r\n<p>This is a similar issue to the one reported in <a href=\"http://ncalc.codeplex.com/discussions/391081\">\r\nhttp://ncalc.codeplex.com/discussions/391081 </a></p>\r\n<p>I'm using NCalc in Unity, which is uses MONO as it's .NET interpreter. NCalc works very well in most situations, except in web-pages where it is forced to use .NET 2.0.</p>\r\n<p>When trying to create an expression to evaluate, I get a EvaluationException:</p>\r\n<p><strong>Error verifying Antlr.Runtime.BaseRecognizer:PushFollow (Antlr.Runtime.BitSet): Invalid array type on stack for stdelem.X at 0x0082</strong></p>\r\n<p><br>\r\nIt seems as if the expression parser isn't 100% compatible with .NET 2.0 anymore<strong>.\r\n</strong>Is there anyone who can confirm this?</p>\r\n<p>&nbsp;</p>\r\n<p>I've tried to debug it, but there are issues getting it to compile on MONO against .NET 2.0 - there are breaking changes between the NCalc and the current version of ANTLR (although this may be fixable by running the antlr tool over the grammar again) and\r\n code/style shortcuts (placing 'get' and 'set' properties with no content) aren't accepted by the MONO compiler.</p>\r\n<p>I'll let you know if I have any success.</p>\r\n",
+    "PostedDate": "2012-09-13T13:50:57.927-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

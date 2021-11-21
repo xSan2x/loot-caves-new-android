@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "An informative message is displayed with the thrown exception",
+    "ClosedDate": "2010-02-27T00:24:53.65-08:00",
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "I am getting an exception while trying to validate an expression.\nException is \"Object reference not set to an instance of object\".\n\nMy expression is: \n(A>B) + 10 with A=1, B=2\n\nHow this error can be removed or is there any better error we can display in this case?\n\nRegards,\nAbhishek Shukla",
+    "LastUpdatedDate": "2010-02-27T00:24:53.65-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2010-02-23T01:23:21.893-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "NullReference Exception Caught",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 26301
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "466761",
+    "ThreadId": "219286",
+    "Html": "Hey,\r\nAt the beggining I want to say &quot;Great job, dude!&quot;\r\nI have searched for some solutions since couple of days and none of them was so good as yours.\r\n\r\nStill,I would have couple of suggestions.\r\nThrough my tests, I found quite strange run time error, your Evaluator can not calculate expression like &quot;Abs(-0.12)+ Cos(23)&quot;.\r\nEach time an error is thrown with message: \r\n&quot;Operator '+' can't be applied to operands of types 'decimal' and 'double&quot;.\r\nBut as long as I try to evaluate &quot;Abs(-0.12)+ 23&quot; works perfectly.\r\nI looked a bit on your source code, what I notice each of the function when is calculated, you change the result to double type, except Abs() function.\r\n\r\nAnd could be great if Fix() and Int() functions were implemented.\r\nAnd again, your evaluator is a good piece of work.!",
+    "PostedDate": "2010-07-13T05:34:39.38-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

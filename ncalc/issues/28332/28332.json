@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 3,
+    "Custom": null,
+    "Description": "I have no comment; one i tried to calculate 10000000*10000000 NCalc got this answer:  -1530494976, and i see this bug in all of big numbers",
+    "LastUpdatedDate": "2014-11-18T07:55:19.937-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2012-12-31T08:44:56.697-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "10000000*10000000 = -1530494976 ???",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 28332
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "10M x 10M is too large for an integer.  Force them to doubles and it works fine.",
+      "PostedDate": "2013-06-07T12:29:58.697-07:00",
+      "Id": 102462
+    },
+    {
+      "Message": "I have the same issue. I input them as strings, how do you mean to force them to doubles?",
+      "PostedDate": "2014-11-18T07:19:35.307-08:00",
+      "Id": 166013
+    },
+    {
+      "Message": "Ok Force the string as well.... +\".0\"",
+      "PostedDate": "2014-11-18T07:55:19.937-08:00",
+      "Id": 166019
+    }
+  ]
+}

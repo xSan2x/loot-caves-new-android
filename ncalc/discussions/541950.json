@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1233135",
+    "ThreadId": "541950",
+    "Html": "Hi!<br />\nIn my Project Ncalc always returns for cos(35) = -0,819 but it should be 0,819 and i dont know why it returns a negative value.<br />\n<br />\nthe next problem is that the calculation of 114 / cos(35) returns -126,149146...<br />\nit should be 139,168<br />\n<br />\ndo i use wrong settings or is it a bug?<br />\n<br />\nEDIT: Haha my fault you have to define the cos(x) value in radiants....<br />\n",
+    "PostedDate": "2014-04-11T02:41:55.24-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1233276",
+    "ThreadId": "541950",
+    "Html": "<a href=\"https://www.google.com/search?q=cos(35\" rel=\"nofollow\">https://www.google.com/search?q=cos(35</a>)\r<br />\n<br />\n-0.903\r<br />\n<br />\nBut cosinus takes radians and not degrees ... that might explain<br />\n",
+    "PostedDate": "2014-04-11T09:59:24.653-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

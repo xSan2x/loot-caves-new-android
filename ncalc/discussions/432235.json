@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "997479",
+    "ThreadId": "432235",
+    "Html": "Hi,\r<br />\n<br />\nI want to perform math operations like Sqrt, Abs, Min, Max etc. on custom functions which take IEnumerable or array as input parameters.\r<br />\n<br />\nExample : Sqrt(Mean(a))  - a is of type double[].\r<br />\n<br />\nI was able to compute Mean(a) separately with EvaluateFunction, but applying math functions in the same expression  as above doesn't work.\r<br />\n<br />\n<br />\nPlease provide some insight to perform this kind of evaluation.<br />\n",
+    "PostedDate": "2013-02-06T11:43:19.297-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

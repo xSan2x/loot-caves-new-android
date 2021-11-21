@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello,\r\n\r\nI want to know witch parameters are needed for a function. Is it possible to make an extra list of strings with used parameter names?\r\n\r\nSample:\r\nExpression e = new Expression(\"[x] * [y]\");\r\n\r\n// Here is e.Parameters.Count = 0. Is it possible to get a dictionary that contains the keys already?\r\ne.Parameters[\"x\"] = 5;   // not useful always\r\ne.Parameters[\"y\"] = 5;   // not useful always\r\n\r\nforeach (string parameterName in e.ParameterNames)\r\n{\r\n        // Here we can evaluate each value of the parameter.\r\n\te.Parameters[parameterName] = GetValueForThisParam(parameterName);\r\n}\r\n\r\nConsole.WriteLine(e.Evaluate());\r\n\r\nThanks for your help !",
+    "LastUpdatedDate": "2013-04-16T03:49:05.383-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2011-01-26T08:27:08.97-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Get Parameters",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 5,
+    "Id": 28310
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

@@ -1,0 +1,266 @@
+[
+  {
+    "Id": 18938,
+    "Title": "System.ArgumentException error with custom function"
+  },
+  {
+    "Id": 20843,
+    "Title": "Issue with parameters containing \".\""
+  },
+  {
+    "Id": 24308,
+    "Title": "Only Dynamic Parameters"
+  },
+  {
+    "Id": 24515,
+    "Title": "Does 'nt support scientific notation  for numbers (9E-3 for example)"
+  },
+  {
+    "Id": 25202,
+    "Title": "Multiplication behavior"
+  },
+  {
+    "Id": 25392,
+    "Title": "Comparison of dates throws exception"
+  },
+  {
+    "Id": 25691,
+    "Title": "Rounding Problems"
+  },
+  {
+    "Id": 25799,
+    "Title": "Issue with Expression Parameters"
+  },
+  {
+    "Id": 26058,
+    "Title": "EvaluateOptions enumerations incorrect"
+  },
+  {
+    "Id": 26084,
+    "Title": "Integer overflow not resolved during parsing"
+  },
+  {
+    "Id": 26301,
+    "Title": "NullReference Exception Caught"
+  },
+  {
+    "Id": 26352,
+    "Title": "Own object as Parameter"
+  },
+  {
+    "Id": 27019,
+    "Title": "Need to support hex numbers"
+  },
+  {
+    "Id": 28309,
+    "Title": "Expecting Decimal, Getting Double"
+  },
+  {
+    "Id": 28310,
+    "Title": "Get Parameters"
+  },
+  {
+    "Id": 28311,
+    "Title": "Using Parameter named 'e'"
+  },
+  {
+    "Id": 28312,
+    "Title": "Rounding ??"
+  },
+  {
+    "Id": 28313,
+    "Title": "The value was too large or too small for an Int32."
+  },
+  {
+    "Id": 28314,
+    "Title": "Overflow encountered when terms can be cast as integers"
+  },
+  {
+    "Id": 28315,
+    "Title": "Recoverable precision loss when manipulating very large ints"
+  },
+  {
+    "Id": 28316,
+    "Title": "Short circuit logical operators"
+  },
+  {
+    "Id": 28317,
+    "Title": "EarlyExitException when evaluating an expression containing a dot (.)"
+  },
+  {
+    "Id": 28318,
+    "Title": "Converting an integer to float/double unnecessarily"
+  },
+  {
+    "Id": 28319,
+    "Title": "function max uses only first parameter to determine precision"
+  },
+  {
+    "Id": 28320,
+    "Title": "^ is not implemented as pow"
+  },
+  {
+    "Id": 28321,
+    "Title": "Operator '+' cannot be applied to operands of type 'double' and 'decimal'"
+  },
+  {
+    "Id": 28322,
+    "Title": "Division by zero"
+  },
+  {
+    "Id": 28323,
+    "Title": "Wrong result"
+  },
+  {
+    "Id": 28324,
+    "Title": "Change Console.WriteLine to Debug.Print"
+  },
+  {
+    "Id": 28325,
+    "Title": "Allow for multiple EvaluateOptions when calling Expression"
+  },
+  {
+    "Id": 28326,
+    "Title": "The EvaluateParameter event raised multiple."
+  },
+  {
+    "Id": 28327,
+    "Title": "Antlr3.Runtime version"
+  },
+  {
+    "Id": 28328,
+    "Title": "Operator '/' can't be applied to operands of types 'double' and 'decimal'"
+  },
+  {
+    "Id": 28329,
+    "Title": "Wrong Result"
+  },
+  {
+    "Id": 28330,
+    "Title": "HasErrors crash"
+  },
+  {
+    "Id": 28331,
+    "Title": "NCalc Doesn't work on Windows RT because of System.Data"
+  },
+  {
+    "Id": 28332,
+    "Title": "10000000*10000000 = -1530494976 ???"
+  },
+  {
+    "Id": 28333,
+    "Title": "Comma as decimal symbol"
+  },
+  {
+    "Id": 28334,
+    "Title": "Infinity in min/max functions?"
+  },
+  {
+    "Id": 28335,
+    "Title": "Addition and Subtractions"
+  },
+  {
+    "Id": 28336,
+    "Title": "if expression issue (if(1.1 = 'N/A',0,1.1)"
+  },
+  {
+    "Id": 28337,
+    "Title": "Input validation question"
+  },
+  {
+    "Id": 28338,
+    "Title": "missing EOF at '('"
+  },
+  {
+    "Id": 28339,
+    "Title": "Unicode parameters not supported"
+  },
+  {
+    "Id": 28340,
+    "Title": "System.Threading.ReaderWriterLock not supported in PCL runtime"
+  },
+  {
+    "Id": 28341,
+    "Title": "NCalc fails with Antlr versions 3.4.1 and newer"
+  },
+  {
+    "Id": 28342,
+    "Title": "Expression evaluation"
+  },
+  {
+    "Id": 28343,
+    "Title": "Evaluate is rounding automatically"
+  },
+  {
+    "Id": 28344,
+    "Title": "Expression.Evaluate() gives wrong output"
+  },
+  {
+    "Id": 28345,
+    "Title": "Change ^ to mean Pow"
+  },
+  {
+    "Id": 28346,
+    "Title": "wrong calculation"
+  },
+  {
+    "Id": 28347,
+    "Title": "commas are not accepted as decimal separator"
+  },
+  {
+    "Id": 28348,
+    "Title": "Wrong Calculation"
+  },
+  {
+    "Id": 28349,
+    "Title": "get result of formula when values are dynamic/Not Present using Ncalc?"
+  },
+  {
+    "Id": 28350,
+    "Title": "Constant string (escaped) to Function."
+  },
+  {
+    "Id": 28351,
+    "Title": "Max undefined?"
+  },
+  {
+    "Id": 28352,
+    "Title": "Remove debugging call to improve performance"
+  },
+  {
+    "Id": 28353,
+    "Title": "Allow to configure CultureInfo"
+  },
+  {
+    "Id": 28354,
+    "Title": "Adding a Parameter in the EvaluateParameter delegate"
+  },
+  {
+    "Id": 28355,
+    "Title": "IsParameterDefined Operator"
+  },
+  {
+    "Id": 28356,
+    "Title": "nCalcExpression.EvaluateFunction += removes support of the pre-existing if() function"
+  },
+  {
+    "Id": 28357,
+    "Title": "System.OverflowException"
+  },
+  {
+    "Id": 28358,
+    "Title": "Expression incorrectly evaluated for NaN operands"
+  },
+  {
+    "Id": 28359,
+    "Title": "BigInteger issue"
+  },
+  {
+    "Id": 28360,
+    "Title": "simulate Looping using NCalc"
+  },
+  {
+    "Id": 28361,
+    "Title": "Array compare [HELP]"
+  }
+]

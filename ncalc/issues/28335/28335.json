@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 3,
+    "Custom": null,
+    "Description": "I have a simple expression defined as\r\n\r\n10+10/2\r\n\r\nand would expect the result equalling 10, however I am getting 15 because. I can resolve the issue by bracketing the (10 + 10) / 2 but ideally I don't want to use bracketing. \r\n\r\nIs there any way around this please",
+    "LastUpdatedDate": "2013-11-21T14:54:49.777-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2013-10-02T07:33:16.517-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Addition and Subtractions",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 28335
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I am unsure what you are hoping for. The order of precedence is well documented and doesn't just apply to programming - it is the same across all mathematics.\n\nhttp://en.wikipedia.org/wiki/Order_of_operations\n\nThe only way to change this behavior is to use parenthesis to indicate that the order should be different.",
+      "PostedDate": "2013-10-02T08:08:22.02-07:00",
+      "Id": 117200
+    },
+    {
+      "Message": "My mistake, I was comparing the results you get when using a calculator but then I realised that there is a difference between evaluating an expression as a whole compared to how a calculator would work it out based on 10 + 10 being worked out first.",
+      "PostedDate": "2013-10-02T08:45:33.477-07:00",
+      "Id": 117208
+    },
+    {
+      "Message": "10 + 10 / 2 ..... and you expect 10?\n...\n\n* facepalm *\n\n",
+      "PostedDate": "2013-11-21T14:54:49.777-08:00",
+      "Id": 123811
+    }
+  ]
+}

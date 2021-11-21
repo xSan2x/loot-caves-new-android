@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1202698",
+    "ThreadId": "528933",
+    "Html": "I know there is a similar discussion on this topic that indicates this issue is fixed, but with the current version of NCalc (1.3.8) I am still having trouble when using a Decimal parameter. For example. this code\r<br />\n<br />\nNCalc.Expression testExpression = new NCalc.Expression(&quot;Input * 1.1&quot;);\r<br />\ntestExpression.Parameters.Add(&quot;Input&quot;, (decimal)1.5);\r<br />\nobject results = testExpression.Evaluate();\r<br />\n<br />\nFails with exception, &quot;Operator '*' can't be applied to operands of types 'decimal' and 'double'&quot;\r<br />\n<br />\nIs there any way to use a Decimal parameter in combination with a constant in expression that happens to also be a floating-point value?<br />\n",
+    "PostedDate": "2014-02-04T15:25:51.183-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1459900",
+    "ThreadId": "528933",
+    "Html": "I have the exact same issue!<br />\n<br />\n(X + Y) * 2.23<br />\n<br />\nwill fail, if you pass X and Y as decimal parameters!<br />\n<br />\nWHY?!<br />\n<br />\nMy fix is:<br />\nBecause NCalc assumes the constants to be Double, we have no choice but pass the parameters as Double too. Otherwise you have a mix of decimal &amp; double, which fails. So basically, pass the parameters as double and then Convert.ToDecimal(...) your result.<br />\n",
+    "PostedDate": "2016-01-20T04:26:28.21-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

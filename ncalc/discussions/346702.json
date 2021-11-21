@@ -1,0 +1,114 @@
+[
+  {
+    "Id": "803113",
+    "ThreadId": "346702",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I was getting error while evaluating this expression</p>\r\n<p>var eif = new Expression(&quot;1.8 &#43; Abs([var1])&quot;);<br>\r\neif.Parameters[&quot;var1&quot;] = 9.2;</p>\r\n<p><span style=\"color:#0000ff\">Operator '&#43;' can't be applied to operands of types 'decimal' and 'double'</span></p>\r\n<p><span style=\"color:#0000ff\"><span style=\"color:#000000\">I made some change in Numbers.cs file, like this;</span></span></p>\r\n<p>// case TypeCode.Decimal: throw new InvalidOperationException(&quot;Operator '&#43;' can't be applied to operands of types 'double' and 'decimal'&quot;);<br>\r\ncase TypeCode.Decimal: return (Double)a &#43; Convert.ToDouble(b);</p>\r\n<p>and</p>\r\n<p>// case TypeCode.Double: throw new InvalidOperationException(&quot;Operator '&#43;' can't be applied to operands of types 'decimal' and 'double'&quot;);<br>\r\ncase TypeCode.Double: return (Decimal)a &#43; new Decimal((double)b);</p>\r\n<p>It worked for me..</p>\r\n<p>Serkan</p>\r\n",
+    "PostedDate": "2012-02-29T04:46:38.893-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "810569",
+    "ThreadId": "346702",
+    "Html": "<p>Thanks! You saved my life :) without this my current project just wouldn't have worked.</p>\r\n<p>Do this for all the operators and NCalc rocks again!</p>",
+    "PostedDate": "2012-03-14T17:18:11.78-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "810587",
+    "ThreadId": "346702",
+    "Html": "<p>I just pushed the fix on the source code. Not as an official release yet, but you can compile the assembly for your needs. I also upgraded the solution to VS 2010.</p>",
+    "PostedDate": "2012-03-14T17:56:55.613-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "814513",
+    "ThreadId": "346702",
+    "Html": "<p>The code I downloaded yesterday only had the fix applied to the addition operator. The following code should fix the subtraction, muliplication and division operators:</p>\r\n<p>&nbsp;</p>\r\n<p>// case TypeCode.Decimal: throw new InvalidOperationException(\"Operator '-' can't be applied to operands of types 'double' and 'decimal'\");<br />case TypeCode.Decimal: return (Double)a - Convert.ToDouble(b);</p>\r\n<p>...</p>\r\n<p>// case TypeCode.Double: throw new InvalidOperationException(\"Operator '-' can't be applied to operands of types 'decimal' and 'double'\");<br />case TypeCode.Double: return (Decimal)a - new Decimal((double)b);</p>\r\n<p>&nbsp;</p>\r\n<p>// case TypeCode.Decimal: throw new InvalidOperationException(\"Operator '*' can't be applied to operands of types 'double' and 'decimal'\");<br />case TypeCode.Decimal: return (Double)a * Convert.ToDouble(b);</p>\r\n<p>...</p>\r\n<p>// case TypeCode.Double: throw new InvalidOperationException(\"Operator '*' can't be applied to operands of types 'decimal' and 'double'\");<br />case TypeCode.Double: return (Decimal)a * new Decimal((double)b);</p>\r\n<p>&nbsp;</p>\r\n<p>// case TypeCode.Decimal: throw new InvalidOperationException(\"Operator '/' can't be applied to operands of types 'double' and 'decimal'\");<br />case TypeCode.Decimal: return (Double)a / Convert.ToDouble(b);</p>\r\n<p>...</p>\r\n<p>// case TypeCode.Double: throw new InvalidOperationException(\"Operator '/' can't be applied to operands of types 'decimal' and 'double'\");<br />case TypeCode.Double: return (Decimal)a / new Decimal((double)b);</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2012-03-23T02:05:55.897-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "829017",
+    "ThreadId": "346702",
+    "Html": "<p>hello,&nbsp;</p>\r\n<p>I maked all this changes and i <span>upgraded&nbsp;</span>to vs2010; i want now compile. when i do this:<br />- i select Release and then&nbsp;F6</p>\r\n<p>i take the NCalc.dll that is in the folder: &nbsp;..\\NCalc - Sources\\Evaluant.Calculator\\bin\\Release</p>\r\n<p>i take this dll but is not working for me;&nbsp;</p>\r\n<p>the message error is:&nbsp;</p>\r\n<p>Could not load file or assembly 'Antlr3.Runtime, Version=3.1.3.22795, Culture=neutral, PublicKeyToken=null' or one of its dependencies. The system cannot find the file specified.</p>\r\n<p>&nbsp;</p>\r\n<p>how compile this project?</p>\r\n<p>sorry, my english is not good...</p>",
+    "PostedDate": "2012-04-26T10:52:36.377-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "829081",
+    "ThreadId": "346702",
+    "Html": "<p>ok, everything is fine. I added the&nbsp;Antlr3.Runtime.dll in my project and that&acute;s all.&nbsp;</p>",
+    "PostedDate": "2012-04-26T13:30:50.497-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "911265",
+    "ThreadId": "346702",
+    "Html": "<p>I downloaded the code a few weeks ago, and the fixes described in this thread were not included.&nbsp; I modified Numbers.cs as skokturk and Kildrummy_Tim suggested, and it worked for me.</p>\r\n<p>Then I realized that the code would have worked as it was, if numbers were being parsed from string as decimal, instead of double.&nbsp; It turns out that I was converting strings to double in my EvaluateParameterHandler.</p>\r\n<p>So, in my case all that was necessary was to stop converting in EvaluateParameterHandler, and let nCalc do it for me.&nbsp; Then, Numbers.cs worked just fine.</p>",
+    "PostedDate": "2012-09-11T19:46:55.807-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1128590",
+    "ThreadId": "346702",
+    "Html": "Hi.\r<br />\n<br />\nIs this realy fixed in the source code? I just downloaded the code, but it seems to still be a problem?<br />\n",
+    "PostedDate": "2013-11-25T01:30:56.2-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1128799",
+    "ThreadId": "346702",
+    "Html": "\r\n<div>NCalc wasn't the problem at the time. It was the way my app was converting value before the NCalc evaluation took place.<br>\r\n<br>\r\nHowever, I eventually decided that I didn't like the way NCalc was deciding the type of my values, sometimes. I did end up modifying the source to allow certain operations (like adding decimal to double) in the Numbers class, and adding types to the list of\r\n common types in the EvaluationVisitor class.<br>\r\n<br>\r\nI will update my comment on code plex with the change I made.<br>\r\n<br>\r\nghauan &lt;[email removed]&gt; wrote:<br>\r\n<br>\r\n</div>\r\n<p>From: ghauan</p>\r\n<div id=\"ThreadNotificationPostBody\">Hi. <br>\r\n<br>\r\nIs this realy fixed in the source code? I just downloaded the code, but it seems to still be a problem?<br>\r\n</div>\r\n<div></div>\r\n",
+    "PostedDate": "2013-11-25T09:35:48.273-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1128842",
+    "ThreadId": "346702",
+    "Html": "Here is the change I made in EvaluationVisitor.cs to help NCalc identify the correct type of my parameters.  The order in the list is important.  NCalc will choose the first type in the list that your value can be converted to.<br />\n<pre><code>private static Type[] CommonTypes = new[] { typeof(Int64), typeof(Double), typeof(Boolean),typeof(Decimal), typeof(Int32), typeof(DateTime), typeof(String)  };</code></pre>\n\nIn addition, I made multiple changes (like skokturk and Kildrummy_Tim suggested) to Numbers.cs to add various operations that are currently not supported in source.<br />\n",
+    "PostedDate": "2013-11-25T10:38:30.137-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1132106",
+    "ThreadId": "346702",
+    "Html": "Hi! Thank all for fix and sugest some improvements, was very usefull for me.<br />\n<br />\nI added a new property for NumberFormat on Expression.<br />\nWith this feature i can set the decimal separator like :<br />\n<pre><code>var strExpression = 1 + [StrNumber];\n\nvar x = new Expression(strExpression);\nx.NumberFormat.NumberDecimalSeparator = &quot;,&quot;;\n\nx.Parameters[&quot;StrNumber&quot;] = &quot;1,1&quot;; //can be edit.text\n\nvar result = x.Evaluate();  //result.ToString() = 2,1\n\n\n\n</code></pre>\n\nIf someone interest, this is the changes :<br />\n<br />\n<strong>Numbers.cs</strong><br />\n<pre><code>        //add new property\n        public static NumberFormatInfo NumberFormat;\n        //add constructor\n        static Numbers()\n        {\n            NumberFormat = ( (CultureInfo) CultureInfo.InvariantCulture.Clone() ).NumberFormat;\n        }\n\n      //change:\n        private static object ConvertIfString(object s)\n        {\n            if (s is String|| s is char)\n            {               \n                //return Decimal.Parse(s.ToString());\n                return Decimal.Parse(s.ToString(),NumberFormat);\n            }\n            return s;\n        }\n</code></pre>\n\n<strong>SerializationVisitor.cs</strong><br />\n<pre><code>//change constructor      \n  public SerializationVisitor()\n        {\n            Result = new StringBuilder();\n            //new NumberFormatInfo {NumberDecimalSeparator = &quot;.&quot;};\n            _numberFormatInfo = Numbers.NumberFormat; \n        }\n</code></pre>\n\n<strong>Expression.cs</strong><br />\n<pre><code>    //add property   \n     public NumberFormatInfo NumberFormat\n        {\n            get { return Numbers.NumberFormat; }\n            set { Numbers.NumberFormat = value; } \n        }\n</code></pre>\n\nTks!<br />\n",
+    "PostedDate": "2013-12-05T04:38:18.047-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1219178",
+    "ThreadId": "346702",
+    "Html": "@sebastienros, when is the next release scheduled? \r<br />\n<br />\nIs this project dead?\r<br />\n<br />\nNo release since 2011. :(<br />\n",
+    "PostedDate": "2014-03-04T12:30:10.377-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1219226",
+    "ThreadId": "346702",
+    "Html": "I was busy rewriting Jint (<a href=\"https://github.com/sebastienros/jint\" rel=\"nofollow\">https://github.com/sebastienros/jint</a>)\r<br />\nMaybe you should consider it actually as it provides all the features ncalc can do with greater support.<br />\n",
+    "PostedDate": "2014-03-04T14:01:07.387-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1219238",
+    "ThreadId": "346702",
+    "Html": "Thanks for the input. Can we please get official release on Nuget with minor fixes (such as the one mentioned in this thread). It looks like there are quite some improvements since 2011.<br />\n<br />\nSeparately, please consider <a href=\"https://ncalc.codeplex.com/discussions/537956\" rel=\"nofollow\">this request</a>. I am working on parsing color expressions from <a href=\"https://github.com/madskristensen/WebEssentials2013/pull/713\" rel=\"nofollow\">LESS and SCSS for Intellisense with WebEssentials</a> extension. Since <code>System.Drawing.Color</code> &amp; <code>System.Windows.Media.Color</code> have arithmetic operators defined (for color math), I was hoping to carry out expression evaluation using ncalc. For now, I am muscling up an ugly hack, that is; to convert all three hexadecimal channel values separately, evaluate them using ncalc and concatenate. If we get OOTB support for hexa color evaluation, that would trim out major chunk of code (as one of the major challenges of real-time Intellisense is to make it performant).<br />\n<br />\nOnce again thanks for this nice wonderful project. 8-)<br />\n",
+    "PostedDate": "2014-03-04T14:52:42.74-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

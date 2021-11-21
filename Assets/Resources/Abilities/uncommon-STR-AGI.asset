@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 018cfcb6307a4204ea05c730b03a6826, type: 3}
+  m_Name: uncommon-STR-AGI
+  m_EditorClassIdentifier: 
+  active: 0
+  attributes:
+  - STR
+  - AGI
+  attributesCount:
+  - 0
+  - 0
+  triggerCondition: KillMob
+  triggerFormula: STR/AGI*(lvlCount/40);AGI/STR*(lvlCount/40)
+  exitCondition: 
+  exitFormula: 
+  autoCast: 0
+  cooldown: 0
+  description: Gives <n1>  STR and <n2> AGI after each killed monster. (+<v1> STR)
+    (+<v2> AGI)

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 024ec2f19a12b8a40acd75282aaac33c, type: 3}
+  m_Name: uncommon-STR-STR
+  m_EditorClassIdentifier: 
+  active: 0
+  isStackable: 0
+  attributes:
+  - STR
+  attributesCount:
+  - 0
+  triggerCondition: killMob
+  triggerFormula: lvlCount/100
+  exitCondition: 
+  exitFormula: 
+  autoCast: 0
+  cooldown: 0
+  description: Increase Strength by <n1> after each killed monster. (+<v1> Strength)
+  buffDescription: Strength increased by <v1>.

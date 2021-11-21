@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I'd like to propose a new operator that I'm calling IsParameterDefined. I'd like to use it with an if() in the following way:\r\n\r\nif (IsParameterDefined([SomeParameterName]), [SomeParameterName] * 5, 0)\r\n\r\nif (IsParameterDefined([Param1]) and IsParameterDefined([Param2]), [Param1] * 5 + [Param2] * 3, 0)\r\n\r\n\r\n\r\n\r\n",
+    "LastUpdatedDate": "2016-03-03T06:07:07.85-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2016-03-03T06:07:07.85-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "IsParameterDefined Operator",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 28355
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

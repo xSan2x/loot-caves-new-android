@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "838797",
+    "ThreadId": "356511",
+    "Html": "\r\n<p>Hi all,</p>\r\n<p>What is wrong with this formula &quot;(30 * (27&#43;5))*sin(30)^2&quot; ?</p>\r\n<p>When I try to evaluate this formula I get error : &quot;Value was either too large or too small for a UInt16.&quot;</p>\r\n",
+    "PostedDate": "2012-05-21T02:04:56.703-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1037808",
+    "ThreadId": "356511",
+    "Html": "This happens because ^ is translated to a BitwiseXOr operation. And the BitwiseXOr only works on Integers.\r<br />\n<br />\nIf you must make a power use the Pow(x,y) funcion.\r<br />\n<br />\nYour formula will be like:\r<br />\n<br />\n&quot;(30 * (27+5))*Pow(sin(30),2)&quot;\r<br />\n<br />\nI got the same problem today :)<br />\n",
+    "PostedDate": "2013-04-30T13:43:40.217-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

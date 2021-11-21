@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1459697",
+    "ThreadId": "650178",
+    "Html": "I know you can define a DateTime object like this #2008/01/31#. I want to know if there's the equivalent to define a TimeSpan value?\r<br />\n<br />\nFor example, I would like to know the amount of time something was offline in a day and get the result as a TimeSpan .NET object :\r<br />\n<br />\nResult = #24h# - [TimeOnline]\r<br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2016-01-18T11:30:14.477-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "695737",
+    "ThreadId": "278820",
+    "Html": "<p>Hello,</p>\n<p>I'm reading a arrays of data from a data source, and I'd like to run the same NCalc operation on the data sets.</p>\n<p>It's not so hard to just loop and do the calculation sequentially, but this seems like a perfect case for me to use something like PLINQ (or just normal threading) to try to do as many of the NCalc function calls in parallel as possible.</p>\n<p>I can't see any information on the thread safety of NCalc though - will this work?</p>\n<p>Thanks!</p>",
+    "PostedDate": "2011-11-09T02:08:43.893-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "695997",
+    "ThreadId": "278820",
+    "Html": "<p>There is a static cache that is thread safe, and every instance of Expression is too. So in theory if each of your tasks are&nbsp;instantiating&nbsp;their own Expression, there should be no issue at all. I think there is also a Unit Test for that in the source code if I remind correctly.</p>",
+    "PostedDate": "2011-11-09T09:52:10.92-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "696175",
+    "ThreadId": "278820",
+    "Html": "<p>Each of my tasks will run the same expression in parallel.</p>\r\n<p>And it sounds like that will work, which is great, thanks.</p>\r\n<p>I suppose my only concern was that if I start up multiple theads, they will each try to do the \"once off\" compilation of the expression, and get confused. I think that's what you mean by static cache, is that right?</p>\r\n<p>&nbsp;</p>\r\n<p>thanks!</p>",
+    "PostedDate": "2011-11-09T15:02:19.49-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Corrected",
+    "ClosedDate": "2009-02-26T23:52:59.87-08:00",
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "This unit test throw System.ArgumentException: Parameter was not defined Parameter name: e1.  \n\n[Test]\n        public void ExpressionShouldEvaluateCustomFunctions2()\n        {\n            Expression e = new Expression(\"SecretOperation([e1], 6)\");\n            e.Parameters[\"e1\"] = 3;\n\n            e.EvaluateFunction += delegate(string name, FunctionArgs args)\n            {\n                if (name == \"SecretOperation\")\n                    args.Result = (int)args.Parameters[0].Evaluate() + (int)args.Parameters[1].Evaluate();\n            };\n\n            Assert.AreEqual(9, e.Evaluate());\n        }",
+    "LastUpdatedDate": "2009-02-26T23:52:59.87-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2008-10-14T10:51:01.35-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "System.ArgumentException error with custom function",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 18938
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "\r\nI am using NCalc (Codeplex library) to evaluate expressions from a text file. I want to simulate a loop like this :\r\n\r\nint i = 0;\r\ndo {\r\nConsole.WriteLine(\"Value of I is :: {0}\", i);\r\ni++;\r\n} while (i<5);\r\nThe issue is I am not sure how we can increment and continue looping. Can anyone let me know how we can achieve looping using NCalc ?",
+    "LastUpdatedDate": "2017-05-24T08:55:51.96-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2017-05-24T08:55:51.96-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "simulate Looping using NCalc",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 28360
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

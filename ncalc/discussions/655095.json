@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1474729",
+    "ThreadId": "655095",
+    "Html": "Hi,\r<br />\n<br />\nI got the following warning when running my application through the Windows Certification program:\r<br />\n<br />\nWARNING 3\r<br />\nBinary analyzer\r<br />\nWarning: The binary analyzer test detected the following errors:\r<br />\nFile C:\\Program Files (x86)\\Streets Heaver\\Compucare8\\NCalc.dll has failed the NXCheck check.\r<br />\nImpact if not fixed: If the app doesn’t use the available Windows protections, it can increase the vulnerability of the customer's computer to malware.\r<br />\nHow to fix: Apply the SAFESEH, DYNAMICBASE, and NXCOMPAT options when you link the app. See link below for more information:\r<br />\nFixing Binary Analyzer Errors\r<br />\n<br />\nAny ideas how to resolve this issue? \r<br />\n<br />\nThanks,\r<br />\nJames<br />\n",
+    "PostedDate": "2016-05-31T07:27:36.98-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "937747",
+    "ThreadId": "402209",
+    "Html": "\r\n<p><br>\r\nHi,</p>\r\n<p>it seems like NCalc is returning a wrong result.</p>\r\n<p>My Code:</p>\r\n<p>string expression = &quot;100-100.01&quot;;</p>\r\n<p>Expression e = new Expression(expression); &nbsp;<br>\r\nstring resultString = e.Evaluate().ToString();</p>\r\n<p>&nbsp;</p>\r\n<p>It returns &quot;0,0100000000000051&quot; and not &quot;-0,01&quot;</p>\r\n<p>For &quot;100-110.01&quot; &nbsp;the result is -10,01, which is correct.</p>\r\n<p>Am I missing something?</p>\r\n<p>Thanks in advance</p>\r\n<p>&nbsp;</p>\r\n<p><br>\r\n<br>\r\n</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2012-11-07T01:01:25.07-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

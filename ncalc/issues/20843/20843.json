@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Corrected in version 1.0.3",
+    "ClosedDate": "2009-02-26T23:53:38.51-08:00",
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "if you try this:\n\n[Test]\npublic void EVDottedParametersOk()\n{\nExpression e = new Expression(\"Abs([B.MName]-[B.LName])\");\n\ne.Parameters[\"B.MName\"] = 5.98;\ne.Parameters[\"B.LName\"] = 6.0;\ne.Evaluate();\n}\n\nyou'll have this: Evaluant.Calculator.EvaluationException: mismatched input 'Name' expecting ']' \n\nand if you try something like this:\n\nExpression e = new Expression(\"Abs([B.M]-[B.L])\");\n\ne.Parameters[\"B.M\"] = 5.98;\ne.Parameters[\"B.L\"] = 6.0;\ne.Evaluate();\n\nyou'll have this: System.ArgumentException: Parameter was not defined\n\nshould the grammar be change in order to allow dotted parameter's names?",
+    "LastUpdatedDate": "2009-02-26T23:53:38.51-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2009-01-27T11:25:20.163-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Issue with parameters containing \".\"",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 20843
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

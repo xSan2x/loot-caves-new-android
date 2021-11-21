@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Whit this expressión:\r\n\r\n\"0 | 956301312\"\r\n\r\nThe exception raised is:\r\n\r\nSystem.OverflowException - > Value too large or too small for UInt16.\r\n\r\n\r\nSome solution to avoid this exception???",
+    "LastUpdatedDate": "2016-12-05T01:23:25.483-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2016-12-05T01:23:25.483-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "System.OverflowException",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 28357
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

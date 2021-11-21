@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1462905",
+    "ThreadId": "651188",
+    "Html": "Hi, is there any way I can do something like this:<br />\n<pre><code>expression.EvaluateParameter += delegate(string name, ParameterArgs args)\n{\n    // get hold of the parameter\n    string myParam = &quot;[Sub] * [Expression]&quot;;\n\n    args.Result = new Expression(myParam);\n}</code></pre>\n\nI've also tried<br />\n<pre><code>expression.EvaluateParameter += delegate(string name, ParameterArgs args)\n{\n    // get hold of the parameter\n    string myParam = &quot;[Sub] * [Expression]&quot;;\n\n    expression.Parameters.Add(name, new Expression(myParam));\n}</code></pre>\n\nNeither of those work. Can this be made possible?<br />\n<br />\nAt the moment I'm using a LogicalExpressionVisitor to check the expression to find all parameters needed in the calculation, and I then look these up and add them as parameters. The parameters are currently public properties on a plain object.<br />\n",
+    "PostedDate": "2016-02-11T12:55:42.733-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

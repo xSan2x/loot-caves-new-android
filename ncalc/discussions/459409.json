@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1099934",
+    "ThreadId": "459409",
+    "Html": "I see why you would want to add bitwise operators, but I think at least the xor operator should be changed. You see, the '^' character is much more frequently used to refer to exponentiation. Sure, programmers would be more used to using it as a bitwise xor, but many people who would use programs developed using NCalc would be more used to 6^2 being 36, not 4. Not to mention that this could possibly break stuff that relies on '^' meaning &quot;to the power of&quot;. Maybe make the bitwise operators into functions like xor(), and(), etc.?<br />\n",
+    "PostedDate": "2013-09-26T21:39:10.413-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1303596",
+    "ThreadId": "459409",
+    "Html": "You totaly right. Maybe you help me to achive this? Coz my gamedisigners cant understand pow() functions<br />\n",
+    "PostedDate": "2014-09-11T05:43:31.18-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

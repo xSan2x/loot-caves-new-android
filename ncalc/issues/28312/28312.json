@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Please, can you tell me why this components, get diferent results to the following lines?\r\n\r\n            Console.WriteLine(new Expression(\"5200856696+325315699-817185385\").Evaluate());\r\n\r\n            Console.WriteLine(new Expression(\"5200856696.00+325315699.00-817185385.00\").Evaluate());\r\n",
+    "LastUpdatedDate": "2011-05-16T09:51:09.203-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2011-05-16T09:51:09.203-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Rounding ??",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 28312
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

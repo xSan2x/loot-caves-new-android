@@ -1,0 +1,91 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 8,
+    "Custom": "",
+    "Description": "Hello!\n\nI would like to know if it's possible to give custom object as parametersI means, I've an object type that override the common operators (+,- etc) and I want to know if it's possible to use it as parameters\n\nSample:\n\nExpression e = new Expression(\"[x] * [y]\");\ne.Parameters[\"x\"] = myObjectA;\ne.Parameters[\"y\"] = myObjectB;\n\nConsole.WriteLine(e.Evaluate());\n\n\nThanks for your help !",
+    "LastUpdatedDate": "2013-04-16T03:49:36.21-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2010-02-26T23:41:38.303-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Own object as Parameter",
+    "Type": {
+      "Name": "Feature",
+      "Id": 1
+    },
+    "VoteCount": 4,
+    "Id": 26352
+  },
+  "FileAttachments": [
+    {
+      "FileId": 151187,
+      "FileName": "ICalculable.cs",
+      "DownloadUrl": ".\\151187"
+    },
+    {
+      "FileId": 151188,
+      "FileName": "MyCustomObject.cs",
+      "DownloadUrl": ".\\151188"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "As I've try a bit here are my 2 cents, maybe it can help you\r\nI didn't find a way to use operators because these cannot be declared in an interface. My goal was to be able to give any object to NCalc if it implement operator overload. But the only way I've found is to use an interface with normal method (see attached ICalculable.cs)\r\nThen I've modified the class number for each operation, for example the Add:\r\n\r\n\t\t\t\tcase TypeCode.Object:\r\n\t\t\t\t\tICalculable aCalc = a as ICalculable;\r\n\t\t\t\t\tICalculable bCalc = b as ICalculable;\r\n\t\t\t\t\tif (aCalc != null && bCalc != null)\r\n\t\t\t\t\t\treturn aCalc.Add(bCalc);\r\n\t\t\t\t\tbreak;\r\n\r\nIt works but it's not as beautiful as I would like :-)\r\n\r\n",
+      "PostedDate": "2010-02-27T02:05:44.76-08:00",
+      "Id": 16153
+    },
+    {
+      "Message": "The ICalculable interface",
+      "PostedDate": "2010-02-27T02:06:13.973-08:00",
+      "Id": 16154
+    },
+    {
+      "Message": "The MyCustomObject.cs is a firt implementation of the ICalculable class. As you see, all these cast are very ugly. I wonder if there is a way to use Generics and avoid these, I didn't had the time to try.",
+      "PostedDate": "2010-02-27T02:08:54.087-08:00",
+      "Id": 16155
+    },
+    {
+      "Message": "I would maybe go using a different technique: in Number.cs, if the types are unknown, try to get the override for the specific operator through reflexion.",
+      "PostedDate": "2010-02-27T02:54:05.717-08:00",
+      "Id": 16156
+    },
+    {
+      "Message": "Indeed it's a different way :). And it'll be a lot easier is we don't need to implement an interface.\r\nI just wonder how it'll be about performance. Maybe a cache will be needed to not repeat the same search for types allready analysed.",
+      "PostedDate": "2010-02-27T03:15:38.24-08:00",
+      "Id": 16157
+    },
+    {
+      "Message": "Cache, and even better, LCG with dynamic method.",
+      "PostedDate": "2010-02-27T04:50:12.897-08:00",
+      "Id": 16158
+    },
+    {
+      "Message": "You can alos use expression trees. Some usefull links:\r\nhttp://solutionizing.net/2009/01/20/generic-method-invocation-with-expression-trees/\r\nhttp://www.codewrecks.com/blog/index.php/2008/10/04/expression-tree-vs-reflection/",
+      "PostedDate": "2010-02-28T09:15:10.397-08:00",
+      "Id": 16159
+    },
+    {
+      "Message": "Hello\nDid you implemented something about this ticket ? Because I'm still interested to have it natively in ncalc :-)\nTx",
+      "PostedDate": "2011-02-23T06:40:13.563-08:00",
+      "Id": 29271
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "165625",
+    "ThreadId": "49494",
+    "Html": "I have uploaded a new version for evaluation first. A few changes but I like some feedback before making it the default release.<br>\r\n<br>\r\nModifications:<br>\r\nAdded HasErrors() and Error { get; }to check syntax errors before evaluating<br>\r\nChanged ParsedExpression to public<br>\r\nAdded a test method for function overriding<br>\r\n<br>\r\nI think next release will focus on performance, and maybe a rewrite of the grammar to use the techniques I learnt by implementing NLinq [http://www.codeplex.com/nlinq].<br>\r\nI'm open for all your requests.<br>\r\n<br>\r\n<br>\r\nSébastien\r\n",
+    "PostedDate": "2009-03-07T01:38:04.497-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "167500",
+    "ThreadId": "49494",
+    "Html": "Hi Sébastien,<br>\r\n<br>\r\nThanks a lot for the new features.<br>\r\n<br>\r\nI still have one little problem. It's dealing with NaN scenarios. <br>\r\nCheck this:<br>\r\n<br>\r\n<p><strong>double p1 = Double.NaN;<br>\r\ndouble p2 = 1;<br>\r\nExpression ex = new Expression(&quot;p1 + p2&quot;);<br>\r\nex.Parameters[&quot;p1&quot;] = p1;<br>\r\nex.Parameters[&quot;p2&quot;] = p2;</strong></p>\r\n<p><strong>double x = (double) ex.Evaluate();  -&gt; System.OverflowException!!!</strong><br>\r\n<br>\r\nYou may think why on earth am I using Double.NaN in my equations. I'm dealing with interval data and I need it to represent missing values (it could be null, but double is a struct).<br>\r\nWhen I use custom functions, there is no problem at all, because I can replace NaN with 0 or 1 or even return NaN as result when it makes sense.<br>\r\nBut, when the NaN is parameter of an operator there is no place to go.<br>\r\n<br>\r\nIn my application, some equations would require <strong>1 + NaN = 1</strong>. On the other hand, 1 / NaN should be always NaN and the same thing with 1 * NaN.<br>\r\nEx:<br>\r\n1 + NaN = 1<br>\r\n(1 + NaN) / NaN = NaN<br>\r\nNaN + NaN = 0<br>\r\n<br>\r\nSo the feature request is a way to configure what would be the result of an operation with NaN as parameter (per expression).<br>\r\n<br>\r\nI thought about being able to override the operators so I would have total control, but maybe that's a bit weird.<br>\r\n<br>\r\nWell, that's it.<br>\r\n<br>\r\nThanks a lot so far,<br>\r\n<br>\r\nAndré<br>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n<br>\r\n</p>\r\n",
+    "PostedDate": "2009-03-12T12:49:15.177-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "167769",
+    "ThreadId": "49494",
+    "Html": "Hi Sébastien,<br>\r\n<br>\r\nI took a look in your source code and found the problem.<br>\r\nActually, it's not a problem, it's just that you are using decimals as base to calculations (which is the best option indeed).<br>\r\n<br>\r\nAnyway, I changed the code adding a EvaluateBinaryExpressionHandler in the same fashion as the EvaluateFunctionHandler and voilà! now I can override any binary operation.<br>\r\n<br>\r\nLet me know if this change suits you and if you would like to see the code changed.<br>\r\n<br>\r\nCheers,<br>\r\n<br>\r\nAndré\r\n",
+    "PostedDate": "2009-03-13T07:46:07.49-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "219424",
+    "ThreadId": "49494",
+    "Html": "<p>I have uploaded a new version but forgot to check this issue in it. I'll do it and upload a new one.</p>\r\n<p>What should be the correct behaviour while dealing with NaN values ? Throw an exception ? Try to recover based on the operator ?</p>",
+    "PostedDate": "2009-08-04T13:27:04.87-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

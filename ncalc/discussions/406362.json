@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "954400",
+    "ThreadId": "406362",
+    "Html": "\r\n<p>Hello and congratulations for this wonderful expressions engine!</p>\r\n<p>We are using it a lot in our projects and we made some small improvements to it to fit more complex scenarios.</p>\r\n<p>Some of them they are:</p>\r\n<p>1. In &quot;EvaluationVisitor.cs&quot;</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; case BinaryExpressionType.And:</p>\r\n<p>You are doing something like this:</p>\r\n<p>Result = Convert.ToBoolean(left()) && Convert.ToBoolean(right());</p>\r\n<p>You should check first if left() is false and if is false, skip right() evaluation and return directly false. (false && anything else) will return false.</p>\r\n<p>2. Same thing for case BinaryExpressionType.Or</p>\r\n<p>If left() returns true, you can return true without evaluating right()</p>\r\n<p>3. In &quot;EvaluationVisitor.cs&quot;</p>\r\n<p>&nbsp;&nbsp;&nbsp; case BinaryExpressionType.Plus</p>\r\n<p>You have</p>\r\n<p>if (left() is string)<br>\r\n{<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Result = String.Concat(left(), right());<br>\r\n}</p>\r\n<p>We changed it to</p>\r\n<p>if (left() is string || right() is string)</p>\r\n<p>because sometimes left() was returning null and it wasn't recognized as a string.</p>\r\n<p>4. We made some conventions about Add, Substract, Divide and Modulo.</p>\r\n<p>If any of the parameters is null, we set it to the default mathematical value. (For example for Add will be 0). We also checked for division by 0 and other things like this</p>\r\n<p>Enjoy programming!</p>\r\n",
+    "PostedDate": "2012-12-11T01:20:18.913-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

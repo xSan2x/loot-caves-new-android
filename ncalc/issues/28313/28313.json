@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2011-06-26T10:51:47.1-07:00",
+    "CommentCount": 3,
+    "Custom": null,
+    "Description": "Hello,\r\n\r\nI noticed that when I try to evaluate the expression \"(0=1500000)||(((0+2200000000)-1500000)<0)\", I get\r\nthe error: \"The value was too large or too small for an Int32.\".\r\n\r\nWhat can I do to solve this problem?\r\n\r\nThanks!",
+    "LastUpdatedDate": "2011-06-26T10:51:47.1-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2011-06-08T07:34:17.08-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "The value was too large or too small for an Int32.",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 28313
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "try putting decimal values, 0.0 = 1500000.0 ...",
+      "PostedDate": "2011-06-26T09:33:56.187-07:00",
+      "Id": 38340
+    },
+    {
+      "Message": "it's a hack. Maybe the solution would be to handle bigger types, like longs for instance. Let me take a look at it. But you have to understand that there ought ot be a limit in handled numbers ... ",
+      "PostedDate": "2011-06-26T10:20:56.303-07:00",
+      "Id": 38341
+    },
+    {
+      "Message": "Fixed in changeset 037112eaeac6",
+      "PostedDate": "2011-06-26T10:40:00.42-07:00",
+      "Id": 38342
+    }
+  ]
+}

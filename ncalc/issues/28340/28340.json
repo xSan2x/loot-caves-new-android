@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I found that ncalc can't be used in PCL projects since there is a reference to System.Threading.ReaderWriterLock wich is not supported in PCL Runtime since it has been updated with a new equivalent class (http://msdn.microsoft.com/it-it/library/system.threading.readerwriterlockslim(v=vs.110).aspx). It should be safe and easy to use in place of the old one.",
+    "LastUpdatedDate": "2015-04-10T01:41:59.913-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2014-10-01T15:16:58.727-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "System.Threading.ReaderWriterLock not supported in PCL runtime",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 3,
+    "Id": 28340
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I have defined alot of custom functions but I was hoping to also use some of the built in functions. Right now it seems that t'Max\" is an invalid function. Any ideas on how to get it recognized? My function resolver looks like:\r\nexpression.EvaluateFunction += delegate(string name, FunctionArgs args)\r\n{\r\n            switch (name)\r\n            {\r\n.\r\n.\r\n.\r\n                case \"IsNull\":\r\n                    args.Result = args.Parameters[0].Evaluate() == null;\r\n                    break;\r\n.\r\n.\r\n.\r\n.                default:\r\n                    throw new Exception(string.Format(\"Invalid function name [{0}].\", name));\r\n            }  \r\n} \r\n\r\n",
+    "LastUpdatedDate": "2015-11-12T11:19:43.34-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2015-11-12T11:19:43.34-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Max undefined?",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 28351
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

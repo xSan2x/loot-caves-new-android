@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "637002",
+    "ThreadId": "263816",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>Within customised functions, how can I show an error, such as Incorrect number of parameters. It it simply the case of throwing an exception?</p>\r\n<p>Cheers</p>\r\n<p>Glen.</p>\r\n",
+    "PostedDate": "2011-07-04T05:53:22.14-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\r\n\r\nI wanted to know why you wrote the following code in the EvaluationVisitor.Visit method\r\n                case BinaryExpressionType.Div:\r\n                    Result = IsReal(left()) || IsReal(right())\r\n                        ? Numbers.Divide(left(), right())\r\n                        : Numbers.Divide(Convert.ToDouble(left()), right());\r\n                    break;\r\n\r\ninstead of this:\r\n                case BinaryExpressionType.Div:\r\n                    Result = Numbers.Divide(left(), right());\r\n\r\nbecause the current implementation raises the following exception when 2 strings are specified as parameters of a division: Operator '/' can't be applied to operands of types 'double' and 'decimal'",
+    "LastUpdatedDate": "2014-10-30T04:19:23.103-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2012-09-19T04:22:17.583-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Operator '/' can't be applied to operands of types 'double' and 'decimal'",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 28328
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

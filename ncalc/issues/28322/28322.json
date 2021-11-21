@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": null,
+    "Description": "Division by zero returns +infinity. I think it should instead throw exception (DivisionByZeroException) or NaN. Correct me if I am wrong.",
+    "LastUpdatedDate": "2013-08-18T20:06:47.153-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2012-04-11T07:51:54.403-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Division by zero",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 28322
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Division by 0 returns infinity, unless you divide 0 by 0.",
+      "PostedDate": "2012-10-29T12:44:27.007-07:00",
+      "Id": 81203
+    }
+  ]
+}

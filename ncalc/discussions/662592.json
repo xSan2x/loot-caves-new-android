@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1495570",
+    "ThreadId": "662592",
+    "Html": "Hi,\r<br />\nI'm using NCalc in my application and  I have a &quot;casting&quot; problem.\r<br />\nThis is my <strong>input value</strong>: [P]=[FFFF;HEX]\r<br />\nThis is my <strong>expression</strong> : (([P]AND[01;HEX])LS_4)=[10;HEX]\r<br />\n<br />\nThis works fine. \r<br />\nIf I set input value: [P]=[1FFFF;HEX]\r<br />\n<br />\nI have following exception: Value was either too large or too small for a UInt16.\r<br />\n<br />\nThanks in advance.<br />\n",
+    "PostedDate": "2017-04-18T03:16:02.197-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

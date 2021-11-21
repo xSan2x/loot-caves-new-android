@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1316997",
+    "ThreadId": "570720",
+    "Html": "Hi!\r<br />\n<br />\n  I'm building NCalc from source and I noticed the sized of the assembly I generated (100 Kb) differs from the size of the assembly from NuGet (190 Kb). Why is that?\r<br />\n<br />\nPS.: Congratulation for your work! :)<br />\n",
+    "PostedDate": "2014-10-28T05:00:42.193-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

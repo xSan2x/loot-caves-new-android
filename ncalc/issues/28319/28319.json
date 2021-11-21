@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": null,
+    "Description": "When using max on an int and a double, the order of parameters influences the outcome. \r\n\r\nthe following equations produce a different outcome:\r\n\r\nmax(1, 2.01)\r\nmax(2.01, 1)",
+    "LastUpdatedDate": "2012-07-30T08:44:49-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2012-02-05T10:36:25.43-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "function max uses only first parameter to determine precision",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 28319
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "You can make your own max function on the EvaluateFunction event handler.\nBut you are right, it is a bug.",
+      "PostedDate": "2012-07-30T08:44:49-07:00",
+      "Id": 72650
+    }
+  ]
+}

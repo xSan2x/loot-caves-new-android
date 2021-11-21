@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "408588",
+    "ThreadId": "199848",
+    "Html": "<p>Hi,</p>\r\n<p>&nbsp;</p>\r\n<p>I was wondering if there is any easy way to find out if a given expression will result in a boolean value or a numeric value.</p>\r\n<p>For example, if I have an expression (A + B * C)/D, I know this will result in a numeric value, whereas an expression like ((A &amp; B) = B) would result in a boolean value. Is there a way I can check this using NCalc?</p>\r\n<p>In my specific requirement, user indicates that he wants to build a boolean/numeric expression, I need to ensure that the expression that he has supplied indeed results in a boolean/numeric value. Initially I though, just looking for boolean operators in the expression should tell me that, but expressions like (A &amp; B)&nbsp; (bitwise AND) actually results in a numeric value.</p>\r\n<p>Any ideas?</p>\r\n<p>Thanks,</p>\r\n<p>Regards,</p>\r\n<p>- Vikram</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-02-26T07:00:07.88-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "410488",
+    "ThreadId": "199848",
+    "Html": "<p>Well, everything with '&amp;&amp;' or 'and' results in boolean, whereas '&amp;' only results in numeric value. In a more scientific way, you can create a specific Visitor implementation for evaluating each node and returning the intended type. Just like the ExpressionVisitor class.</p>",
+    "PostedDate": "2010-02-26T23:49:20.537-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "413483",
+    "ThreadId": "199848",
+    "Html": "<p>Thanks Sebastien,</p>\r\n<p>I will try that out.</p>\r\n<p>Regards,</p>\r\n<p>- Vikram</p>",
+    "PostedDate": "2010-03-02T19:43:21.427-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "995044",
+    "ThreadId": "199848",
+    "Html": "Hi Sebastien,\r<br />\n<br />\nI'm new to NCal so I would appreciate it if you could give me an example or more info on the visitor implementation.\r<br />\n<br />\nMany thanks,\r<br />\n<br />\nNero<br />\n",
+    "PostedDate": "2013-02-01T00:19:12.95-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "995957",
+    "ThreadId": "199848",
+    "Html": "Hi Nero,\r<br />\n<br />\nWe did try to implement the visitor as suggested by Sebastien, but eventually we switched to using flee.codeplex.com, which was more suitable for our requirements. \r<br />\n<br />\nSorry - couldn't be much help.\r<br />\n<br />\nRegards,\r<br />\nVikram<br />\n",
+    "PostedDate": "2013-02-04T00:03:23.817-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

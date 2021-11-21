@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1345437",
+    "ThreadId": "578467",
+    "Html": "HI - \r<br />\n<br />\nI am looking to build a 64 bit version of Ncalc - \r<br />\nI downloaded the source, and there is a reference to Antlr.3.<br />\n\r<br />\nOne thing I find odd about this - when I run Ncalc and reference the pre-built dll, it doesn't seem to need Antlr  to run, but works fine.  The source clearly references this, and I definately dont see any Antlr dll loaded in the modules list - \r<br />\n<br />\nWhat exactly is happening here with Antlr?\r<br />\n<br />\nThanks <br />\n",
+    "PostedDate": "2015-01-23T15:39:42.507-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": null,
+    "Description": "Hex numbers are not supported: 0xAABB etc. I can pre-process input, but I'm sure it is trivial to add support :-). Thanks!",
+    "LastUpdatedDate": "2012-01-17T09:50:56.52-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2010-05-11T16:10:53.247-07:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Need to support hex numbers",
+    "Type": {
+      "Name": "Feature",
+      "Id": 1
+    },
+    "VoteCount": 2,
+    "Id": 27019
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "You can add your own method to convert a string to a number. Though I will see what I can do",
+      "PostedDate": "2010-08-01T13:27:05.617-07:00",
+      "Id": 16160
+    }
+  ]
+}

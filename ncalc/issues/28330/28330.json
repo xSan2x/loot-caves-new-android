@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": null,
+    "Description": "Calling HasErrors on expression 1 + 1. throws EarlyExitException. This error somehow is not catched by the \r\ntry catch code in HasErrors function.",
+    "LastUpdatedDate": "2012-11-14T07:18:53.793-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2012-11-14T06:29:25.117-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "HasErrors crash",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 28330
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Actually I noticed that it is not an error, only the debugger in Visual Studio is throwing this error. The release version is working. So this is not a bug.\nFound this here:\nhttp://stackoverflow.com/questions/36014/why-is-net-exception-not-caught-by-try-catch-block",
+      "PostedDate": "2012-11-14T07:18:53.793-08:00",
+      "Id": 82474
+    }
+  ]
+}

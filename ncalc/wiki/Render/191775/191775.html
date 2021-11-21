@@ -1,0 +1,35 @@
+<div class="wikidoc"><h2>Description</h2>
+NCalc is a set of assemblies allowing expressions evaluation. The main class to use is <b>Expression</b>.<br />This class has a method <b>Evaluate()</b> returning the actual value of its <b>String</b> representation.<br /><br />Example:<br /><br /><div style="color:Black;background-color:White;"><pre>
+  Expression e = <span style="color:Blue;">new</span> Expression(<span style="color:#A31515;">&quot;2 * 3&quot;</span>);
+  <span style="color:Blue;">object</span> result = e.Evaluate();
+  
+  Console.WriteLine(result);
+</pre></div>This example above first creates an instance of <b>Expression</b> using a valued constructor. This constructor takes a string as parameter.<br />Then the method <b>Evaluate()</b> is called to parse the string, and returns the actual value represented by the string.<br /><br />To create expressions you can combine several <a href="https://ncalc.codeplex.com/wikipage?title=operators&referringTitle=description">operators</a> and <a href="https://ncalc.codeplex.com/wikipage?title=values&referringTitle=description">values</a>.<br />
+<h2>Case sensitivity</h2>
+By default, the evaluation process is case sensitive. This means every parameter and function evaluation will match using case. This behavior can be overriden using a specific evaluation option.<br /><br /><div style="color:Black;background-color:White;"><pre>
+ Expression e = <span style="color:Blue;">new</span> Expression(<span style="color:#A31515;">&quot;aBs(-1)&quot;</span>, EvaluateOptions.IgnoreCase)
+ Debug.Assert(1M, e.Evaluate());
+</pre></div>
+<h2>Handling errors</h2>
+When the expression has a syntax error, the evaluation will throw an <b>EvaluationException</b>.<br /><br /><div style="color:Black;background-color:White;"><pre>
+ <span style="color:Blue;">try</span>
+ {
+     <span style="color:Blue;">new</span> Expression(<span style="color:#A31515;">&quot;(3 + 2&quot;</span>).Evaluate();
+ }
+ <span style="color:Blue;">catch</span>(EvaluationException e)
+ {
+     Console.WriteLine(<span style="color:#A31515;">&quot;Error catched: &quot;</span> + e.Message);
+ }
+</pre></div><br />Though, you can also detect syntax errors before the evaluation by using the <b>HasErrors()</b> method.<br /><br /><div style="color:Black;background-color:White;"><pre>
+ Expression e = <span style="color:Blue;">new</span> Expression(<span style="color:#A31515;">&quot;a + b * (&quot;</span>);
+ <span style="color:Blue;">if</span>(e.HasErrors())
+ {
+     Console.WriteLine(e.Error);
+ }
+</pre></div>
+<h2>Expression caching</h2>
+When <b>Evaluate()</b> is called on an expression, it is compiled once. If the same expression is reused the compilation is not executed again. Thus you can reuse <b>Expression</b> instances by changing the parameters, and you will gain in performance because only the trasversal of the expression tree will be done.<br /><br />Moreover, each compiled expression is cached internaly, which means you don&#39;t even have to care about reusing an <b>Expression</b> instance, the framework will do it for you. The cache is automatically cleaned like the GC does when an Expression is no more used, or memory is needed (i.e. using <b>WeakReference</b>). <br /><br />You can disable this behavior at the framework level by setting false to <b>CacheEnabled</b>.<br /><br /><div style="color:Black;background-color:White;"><pre>
+ Expression.CacheEnabled = <span style="color:Blue;">false</span>;
+</pre></div><br />You can also tell a specific <b>Expression</b> instance not to be taken from the cache.<br /><br /><div style="color:Black;background-color:White;"><pre>
+ Expression e = <span style="color:Blue;">new</span> Expression(<span style="color:#A31515;">&quot;1 + 1&quot;</span>, EvaluateOption.NoCache);
+</pre></div></div><div class="ClearBoth"></div>

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1202350",
+    "ThreadId": "528843",
+    "Html": "We are using NCalc to do some math. Expressions are dynamicly generated with values retrieved from our database (and i must say it works like a charm). \r<br />\n<br />\nOur expression could look like this:\r<br />\n<br />\n4.45+5.25*2\r<br />\n<br />\nThe result is obviously 19.4\r<br />\n<br />\nThe thing is, the number of decimals in our input values are important, and the result should confofm to this number. Since 4.45 and 5.25 have two decimals, the result should also have two decimals, and must be 19.40. \r<br />\n<br />\nI know i can maniupulate this with ToString(), but it is hard for me to determine all the input, since it is one big string, and it could also be a boolean or string.\r<br />\n<br />\nIs there any simple way to accomplish this using NCalc?<br />\n",
+    "PostedDate": "2014-02-03T23:51:21.6-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

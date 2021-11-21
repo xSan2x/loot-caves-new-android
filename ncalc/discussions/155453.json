@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "363073",
+    "ThreadId": "155453",
+    "Html": "<p>Hi Sebastien,</p>\r\n<p>I have two radiobuttons one is Mathematical and other is Boolean and a textbox to enter expression.</p>\r\n<p>I have to check if Boolean radio button is checked then the entered expression must be of type boolean i.e. the result of expression must be bool value.</p>\r\n<p>How can we check this?</p>\r\n<p>Thanks in advance.</p>\r\n<p>&nbsp;</p>\r\n<p>Regards,</p>\r\n<p>Abhishek Shukla</p>",
+    "PostedDate": "2010-02-23T01:37:56.737-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "410490",
+    "ThreadId": "155453",
+    "Html": "<p>I have answered in another post.</p>",
+    "PostedDate": "2010-02-26T23:50:08.483-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

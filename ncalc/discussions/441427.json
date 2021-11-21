@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1035125",
+    "ThreadId": "441427",
+    "Html": "Hello,\r<br />\nI want to know if it's possible to assign the variable in parameters to their value.\r<br />\nI explain me:\r<br />\nInput : &quot;ID = 100&quot;\r<br />\nAnd after exp.Evaluate();\r<br />\nID is set to 100.\r<br />\nHave you implement a operator to do this?\r<br />\nOr I must do a custom function?\r<br />\nWhat is the difference between &quot;=&quot; and &quot;==&quot;?\r<br />\nI wait your reply.\r<br />\nThanks a lot for your sotfware.\r<br />\nSorry for my approximative english.<br />\n",
+    "PostedDate": "2013-04-24T06:38:56.51-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

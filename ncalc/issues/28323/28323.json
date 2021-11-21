@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 2,
+    "Custom": null,
+    "Description": "I try a sample: \r\n\r\n5125870281 + 0.0 + 0.0 --> Result = 5125870000 --> Wrong\r\n\r\nBut: \r\n\r\n5125870281.0 + 0.0 + 0.0 --> Result = 5125870281 --> True\r\n\r\nI debug and see that my first value (5125870281 ) is greater than maximum value of int32. But Ncalc don't throw any exception. I had to Convert.ToString(\"n1\") my first value before using Ncalc. \r\n\r\nPlease help me.\r\n\r\nThanks you very much!",
+    "LastUpdatedDate": "2012-07-30T08:35:46.7-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2012-06-24T23:57:59.123-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Wrong result",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 28323
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I've downloaded the lastest version of Ncalc and try above sample again, the result show that: \n\n5125870281 + 0.0 + 0.0 = 5125870080 --> WRONG --> Tell my why ????\n\n5125870281.0 + 0.0 + 0.0 = 5125870281 --> OK\n\nRegards",
+      "PostedDate": "2012-06-25T00:05:12.317-07:00",
+      "Id": 68855
+    },
+    {
+      "Message": "In the first example, ncalc will recognize the number as an integer. In that case you have an overflow exception internally.\nIn the second example, ncalc will recognize it as a double and it will work.",
+      "PostedDate": "2012-07-30T08:35:46.7-07:00",
+      "Id": 72649
+    }
+  ]
+}

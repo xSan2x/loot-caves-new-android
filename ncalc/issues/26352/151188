@@ -1,0 +1,73 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace NCalc.Play
+{
+	public class MyCustomObject : ICalculable
+	{
+		public int Value { get; private set; }
+		public MyCustomObject(int val)
+		{
+			this.Value = val;
+		}
+
+
+		#region ICalculable Members
+
+		public ICalculable Add(ICalculable parameter)
+		{
+			return new MyCustomObject(this.Value + ((MyCustomObject)parameter).Value);
+		}
+
+		public ICalculable Soustract(ICalculable parameter)
+		{
+			return new MyCustomObject(this.Value - ((MyCustomObject)parameter).Value);
+		}
+
+		public ICalculable Multiply(ICalculable parameter)
+		{
+			return new MyCustomObject(this.Value * ((MyCustomObject)parameter).Value);
+		}
+
+		public ICalculable Divide(ICalculable parameter)
+		{
+			return new MyCustomObject(this.Value / ((MyCustomObject)parameter).Value);
+		}
+
+		public ICalculable Modulo(ICalculable parameter)
+		{
+			return new MyCustomObject(this.Value % ((MyCustomObject)parameter).Value);
+		}
+
+		public ICalculable Max(ICalculable parameter)
+		{
+			return new MyCustomObject(Math.Max(this.Value, ((MyCustomObject)parameter).Value));
+		}
+
+		public ICalculable Min(ICalculable parameter)
+		{
+			return new MyCustomObject(Math.Min(this.Value, ((MyCustomObject)parameter).Value));
+		}
+
+		#endregion
+
+		public override string ToString()
+		{
+			return string.Format("[MyCustomObject:{0}]", this.Value);
+		}
+
+		#region IComparable Members
+
+		public int CompareTo(object other)
+		{
+			MyCustomObject myOther = other as MyCustomObject;
+			if (myOther == null)
+				throw new InvalidOperationException("Cannot compare.");
+
+			return this.Value.CompareTo(myOther.Value);
+		}
+
+		#endregion
+	}
+}

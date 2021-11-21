@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1353964",
+    "ThreadId": "581367",
+    "Html": "I am trying to modify the grammar to use parameters without brackets '[', ']'. So far with:\r<br />\nNAME\t:\t ((options {greedy=false;} : ~('\\u0000'..'\\u001f' | '+' | '-'| '(' | ')' | '<em>' | '/' | '%' | '&gt;' | '&lt;' | '=') ) )</em>\r<br />\nit creates the correct syntax tree in ANTLRWorks but the problem is that the numbers are recognized as identifiers instead of values. How can I change that so that numbers are recognized as values?\r<br />\nThanks.<br />\n",
+    "PostedDate": "2015-02-19T05:00:25.713-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1354616",
+    "ThreadId": "581367",
+    "Html": "never mind just figured it out.<br />\n",
+    "PostedDate": "2015-02-21T09:10:44.72-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2015-02-21T09:10:51.383-08:00"
+  }
+]

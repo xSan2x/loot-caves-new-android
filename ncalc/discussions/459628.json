@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1100607",
+    "ThreadId": "459628",
+    "Html": "Hello,\r<br />\nI would like to be able to make that kind of calculation:\r<br />\n<br />\nExpression e = new Expression(&quot;sum(a)&quot;);\r<br />\n e.Parameters[&quot;a&quot;] = new int[] { 1, 2, 3 };\r<br />\nThe answer should be 1+2+3 = 6\r<br />\n<br />\nI think I need to build a new function, but I don't find how I could handle parameters that are arrays... I tried the following code below, but I did not manage to make it work.\r<br />\n<br />\nIf I find a way to handle arrays, I would like to build a custom function like SUMPRODUCT() in Excel...\r<br />\nCould you tell me if there is a way to do that?\r<br />\n<br />\nThanks and best regards.\r<br />\n<br />\n<br />\nexpression.EvaluateFunction += delegate(string name, FunctionArgs args)<br />\n<pre><code>        {\n            if (name == &quot;Sum&quot;)\n            {\n                double result = 0;\n                foreach (Expression arg in args.Parameters)\n                { \n                    //if parameter double\n                    if(arg.GetType()==typeof(double))\n                    { result += (double)arg.Evaluate();   }\n                    //if parameter is an array\n                    else if(arg.GetType()== typeof(Array))\n                    {\n                        foreach(var value in arg)\n                        { result += value; }\n                    }\n                args.Result = (double)result;\n            }\n        };</code></pre>\n\n",
+    "PostedDate": "2013-09-29T07:26:05.707-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

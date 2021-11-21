@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "282154",
+    "ThreadId": "82126",
+    "Html": "<p>Hi Sebastien,</p>\r\n<p>I have a winform through which i enter the variable name, variable value and expression containing these variables and on click of a button i show the expression result in a label.</p>\r\n<p>If i have two variables: a= 2, b=5 and expression is &quot;a + b&quot; then result is 7.</p>\r\n<p>My question is that&nbsp; Can i evaluate expression &quot;a = a + b&quot;? Result should be a = 7 in this case.</p>\r\n<p>In current case if i write expression &quot;a = a + b&quot; then it shows result 'false'.</p>\r\n<p>Please help me.</p>\r\n<p>&nbsp;</p>\r\n<p>Regards,</p>\r\n<p>Abhishek</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-26T22:35:02.627-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "410482",
+    "ThreadId": "82126",
+    "Html": "<p>Hi Abhishek,</p>\r\n<p>Actually this is not the intent of NCalc. Though, we have made another library which can do that. It's <a href=\"http://jint.codeplex.com\">http://jint.codeplex.com</a>. It's a Javascript interpreter. It works the same as Ncalc, bbut it is able to execute statements, and thus assign variables among many other things.</p>\r\n<p>S&eacute;bastien</p>",
+    "PostedDate": "2010-02-26T23:39:19.513-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

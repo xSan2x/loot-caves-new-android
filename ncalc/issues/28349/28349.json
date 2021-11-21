@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "User can input the formula like this:\r\n\r\n1)a+b+c\r\n\r\n2)a+b\r\n\r\n3)a/b+2+d-8/f\r\n\r\n4)a/b\r\n\r\n5)and many more\r\n\r\nScenario: Values of all the variables are calculated at run time. For first formula I can set the values 0 if there is no value for a,b or c, but for third formula I can not do the same because (\"a/b\") it will throw \"divide by zero\" exception. Formulas and their values are dynamic.\r\n\r\nThanks",
+    "LastUpdatedDate": "2015-09-23T22:36:17.097-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2015-09-23T22:36:17.097-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "get result of formula when values are dynamic/Not Present using Ncalc?",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 28349
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "362988",
+    "ThreadId": "155430",
+    "Html": "<p>Our application requires parsing and comparison of Version types.</p>\r\n<p>e.g. '1.0' &gt; '0.0.0.1' == true</p>\r\n<p>Any suggestions on how to add support for Version types much like the support for DateTime types? Would I need to make changes to both the ANTLR grammar and make modifications to NCalc? Or something simpler and less invasive?</p>",
+    "PostedDate": "2010-02-22T20:42:25.223-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "410485",
+    "ThreadId": "155430",
+    "Html": "<p>I suppose it's for managing sort of a rule engine, and thus people must have knowledge of what a version number is. So I would suggest you to create a custom function named CompareVersion(v1, v2), which would make this job. This would return -1, 0 or 1 depending on the result.</p>\r\n<p>It's the easiest way to handle it.</p>\r\n<p>S&eacute;bastien</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-02-26T23:46:03.793-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

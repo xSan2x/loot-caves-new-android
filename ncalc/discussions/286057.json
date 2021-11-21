@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "724738",
+    "ThreadId": "286057",
+    "Html": "<p>Greetings!</p>\n<p>Does NCalc already provide Globalization support?</p>\n<p>﻿We're facing some issues regarding the culture where NCalc evalutor is currently applied. Even after explicity set the CurrentCulture property it did not affect the way which variables are parsed.</p>\n<p>Is there any way to workaround? Or shall we move in order to implement Globalization and Localizing support?</p>\n<p>Cheers!</p>\n<p>----------------------------</p>\n<p>Just to enlight the question:</p>\n<p>Once we send a expression to be evaluated contening a \"Double\" value, but in portugues/Brazil (pt-br) where the decimal separator is a comma not a dot, it throws an exception.</p>\n<p>Thanks!</p>",
+    "PostedDate": "2012-01-13T05:51:22-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "724877",
+    "ThreadId": "286057",
+    "Html": "<p>Actually all evaluations are supposed to be culture invariant in ncalc, so that any culture would behave the same.</p>\r\n<p>What are your expectations regarding globalization ?</p>",
+    "PostedDate": "2012-01-13T09:45:20.233-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "724908",
+    "ThreadId": "286057",
+    "Html": "<p>Actually, we just pass an String like \"2,5 + 1\" to be evaluated by NCalc.</p>\n<p>The \"2,5\" is double input that comes from the UI. As mentioned above the coma separator is the decimal value separator in Brazil. So, we expected the \"2,5\" to be interpreted as Double/Float.</p>\n<p>After diving a bit on NCalc source, we realize that the grammar/lexer couldn't parse the value as a Float and throws the following exception:</p>\n<p>NCalc.EvaluationException was unhandled<br /> &nbsp; Message=missing EOF at ',' at line 1:1<br /> &nbsp; Source=NCalc<br /> &nbsp; StackTrace:<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at NCalc.Expression.Evaluate() in C:\\Documents and Settings\\kpaixa\\My Documents\\experimentos\\NCalc - Sources\\NCalc - Sources\\Evaluant.Calculator\\Expression.cs:line 197<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; at NCalc.Play.Program.Main(String[] args) in C:\\Documents and Settings\\kpaixa\\My Documents\\experimentos\\NCalc - Sources\\NCalc - Sources\\Evaluant.Calculator.Play\\Program.cs:line 21</p>\n<p>In our case, we just replace the comma by a dot before evaluate the expression, but how could we parse that string and identify that numeric value?</p>\n<p>Thanks for the attention!</p>\n<p>Edit---</p>\n<p>By the way, NCalc is culture invariant indeed! We sent a date value under different cultures on the string expression to be evalutare and it behaved as expected. But the comma separator is breaking it.</p>",
+    "PostedDate": "2012-01-13T10:53:04.113-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

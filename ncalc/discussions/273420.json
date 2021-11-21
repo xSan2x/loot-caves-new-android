@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "675080",
+    "ThreadId": "273420",
+    "Html": "<p>How can null be handled?&nbsp;in expression 5+[myCustomValue] if parameter [myCustomValue] returns null. Expression ends up in exception. Can null be evaluated to 0 in calculation and false in logical expression</p>",
+    "PostedDate": "2011-09-21T23:00:43.777-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1274568",
+    "ThreadId": "273420",
+    "Html": "I'm late to the party but just in case someone else is having the same issue then I solved it by adding a null check for both values being compared so it only does a direct comparison instead of using .GetType() which obviously causes an error. Here's how the function CompareUsingMostPreciseType should look like after that:<br />\n<pre><code>        public int CompareUsingMostPreciseType(object a, object b)\n        {\n            if (a == null || b == null)\n                return a == b ? 0 : 1;\n        \n            Type mpt = GetMostPreciseType(a.GetType(), b.GetType());\n            return Comparer.Default.Compare(Convert.ChangeType(a, mpt), Convert.ChangeType(b, mpt));\n        }</code></pre>\n\nAlso make sure you add a parameter that equals null so it can be used in your formula. In my case I'm simply calling &quot;null&quot;:<br />\n<pre><code>            expr.Parameters.Add(&quot;null&quot;, null);</code></pre>\n\nFinally since you can't directly add an integer to a null value you'll need to rewrite your formula by making use of the &quot;if&quot; statement:<br />\n<pre><code> if([myCustomValue] == null, 0, 5+[myCustomValue])</code></pre>\n\n",
+    "PostedDate": "2014-07-20T13:12:19.883-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

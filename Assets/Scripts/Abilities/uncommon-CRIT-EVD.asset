@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 024ec2f19a12b8a40acd75282aaac33c, type: 3}
+  m_Name: uncommon-CRIT-EVD
+  m_EditorClassIdentifier: 
+  active: 0
+  isStackable: 0
+  attributes:
+  - ChanceCRIT
+  - ChanceEVD
+  attributesCount:
+  - 3
+  - 2
+  triggerCondition: AfterCrit
+  triggerFormula: minusOrZero(1);plusOrMax(1,5)
+  exitCondition: AfterEvade
+  exitFormula: plusOrMax(1,5);minusOrZero(1)
+  autoCast: 0
+  cooldown: 0
+  description: After Critical attack, increases Evasion chance by 1%. Increases Critical
+    chance by 1% after Evasion. The maximum total increase is 5%.
+  buffDescription: Critical chance increased by <v1>%. Evasion chance increased by
+    <v2>%.

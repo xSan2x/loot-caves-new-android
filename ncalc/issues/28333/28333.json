@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": null,
+    "Description": "Some countries use a comma for their decimal symbol. eg. 3,14. Any way to support this in NCalc?",
+    "LastUpdatedDate": "2015-04-02T02:21:52.117-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2013-07-27T09:11:47.353-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Comma as decimal symbol",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 4,
+    "Id": 28333
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I also would appreciate any way to accomplish this directly.\nRight now I simply search the text and replace the decimal symbol before evaluating the expression.\n\nAnother suggestion is to support error messages in different languages. Is that planned to be supported soon?",
+      "PostedDate": "2014-09-28T13:53:15.933-07:00",
+      "Id": 160913
+    }
+  ]
+}

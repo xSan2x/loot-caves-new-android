@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1192783",
+    "ThreadId": "522174",
+    "Html": "Hello all,<br />\n<br />\nI'm wondering if you can help me.  I'm considering using NCalc for an application - it looks to be a very good fit.  However, I'm trying to work out if it's capable of something.<br />\n<br />\nI'd like to be able to evaluate this:<br />\n<br />\n  SUM(SomeList * SomeOtherList)<br />\n<br />\nor this:<br />\n<br />\n  SUM((SomeList * 0.2) * (SomeOtherList - 1))<br />\n<br />\nAs examples.  The expected behaviour would be that (assuming the lists are the same length) it would evaluate the inner expression once per list point, then pass the results as an array to the SUM() function.<br />\n<br />\nI'm guessing that in order to support that behaviour, it would have to treat the expression inside the SUM() function differently and iteratively evaluate it, once per data point in the lists).<br />\n<br />\nAnyone know if it supports this directly?  Or if not, if it has appropriate extension points to allow the evaulation behaviour inside a function (or a custom function if necessary) to be altered?<br />\n<br />\nEssentially, as you might have guessed, I'm trying to produce behaviour similar to Excel's array formula functionality.<br />\n<br />\nAny insight would be much appreciated :)<br />\n<br />\nJames<br />\n",
+    "PostedDate": "2014-01-22T21:39:37.44-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1192804",
+    "ThreadId": "522174",
+    "Html": "So after having a play, the answer would appear to be yes.  It's incredibly flexible.\r<br />\n<br />\nThe approach I've taken as a proof of concept is to register a custom evaluation function, then switch the &quot;IterateParameters&quot; argument on for the function expression inside the SUM().  It works.\r<br />\n<br />\nThere's a degree of inconsistency around whether a result is returned as a simple value or as an IEnumerable.  Instead of the IterateParameters option, I wonder if it would be more intuitive to have an EvaluateIterative() method with results which were strongly typed to IEnumerable&lt;object&gt;?<br />\n",
+    "PostedDate": "2014-01-22T22:12:42.273-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

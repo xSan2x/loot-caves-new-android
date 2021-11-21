@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "958693",
+    "ThreadId": "407393",
+    "Html": "\r\n<p>So Maybe I'm just doing something wrong but I've tried a lot of larger number calculations and NCalc fails completely. &nbsp;For example&nbsp;</p>\r\n<p>as a test</p>\r\n<p>&nbsp;</p>\r\n<p>99999*99999 in NCalc it says it's&nbsp;1409865409</p>\r\n<p>The actual answer is 9999800001</p>\r\n<p>The code I use is simple just something like this. &nbsp;I get all kinds of crazy answers to formulas. &nbsp;Does anyone know why?</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre> <span style=\"color:blue\">string</span> equation = <span style=\"color:blue\">this</span>.txtbx_equation.Text.Trim();\r\n             <span style=\"color:blue\">try</span>\r\n             {\r\n                 Expression exp = <span style=\"color:blue\">new</span> Expression(equation, EvaluateOptions.None);\r\n                 <span style=\"color:blue\">var</span> answer = exp.Evaluate();\r\n                 <span style=\"color:blue\">this</span>.txtbx_answer.Text &#43;= answer;\r\n}\r\n  <span style=\"color:blue\">catch</span> (Exception error)\r\n             {\r\n                 <span style=\"color:blue\">this</span>.txtbx_answer.Text &#43;= error;\r\n             }\r\n</pre>\r\n</div>\r\n<p></p>\r\n",
+    "PostedDate": "2012-12-19T12:53:58.803-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "997473",
+    "ThreadId": "407393",
+    "Html": "A little late to the party, but this is simply integer overflow. Int32's max value is 2,147,483,647.\r<br />\n<br />\nEven a simple, non-NCalc program shows this:<br />\n<pre><code>Console.WriteLine(99999 * 99999); //1409865409</code></pre>\n\nIf you were to wrap it with a &quot;checked&quot; block, it would throw an OverflowException.\r<br />\n<br />\nNot sure if NCalc can work with Int64s or not, but they would properly compute such large numbers (upwards of 9,223,372,036,854,775,807 at least)<br />\n",
+    "PostedDate": "2013-02-06T11:24:07.56-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

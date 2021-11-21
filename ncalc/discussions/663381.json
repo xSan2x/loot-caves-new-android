@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1497334",
+    "ThreadId": "663381",
+    "Html": "Hi,\r<br />\nIs there any way to change decimal separator? I noticed when using for instance comma rather than dot in Region settings of decimal separator i get error of decimal when using formula comming from string. Is this completly embded within Ncalc that dot is defauilt or could it be taken from region settings? From what i see it just use dot and not lok at region settings.<br />\n",
+    "PostedDate": "2017-07-06T15:22:06.707-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello,\r\nI tried to create a custom function fact() with BigInteger parameters for counting factorial with big numbers.\r\nIf I use just the function itself then there is no issue but it is not working when I use this function with another mathematic operation.\r\nE.g. fact(5) ---> result 120 - OK\r\n      fact(5)+1----> expression not working\r\n\r\nIf I change parameters from BigInteger to Int or Decimal then everything is working but I can't calculate factorial for bigger numbers (e.g fact(28) is too large value).\r\n\r\n__Please add biginteger support!__",
+    "LastUpdatedDate": "2017-02-22T12:40:23.013-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2017-02-18T13:35:09.037-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "BigInteger issue",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 28359
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

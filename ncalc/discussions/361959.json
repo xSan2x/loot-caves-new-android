@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "857412",
+    "ThreadId": "361959",
+    "Html": "\r\n<p>I've searched in the discussions but I can't find an answer to this.</p>\r\n<p>Is there a way to get a list of parameters in a given expression?</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>Expression ee = <span style=\"color:blue\">new</span> Expression(<span style=\"color:#a31515\">&quot;[a] * [b] &#43; 10&quot;</span>,EvaluateOptions.IterateParameters);\r\n            \r\nDictionary&lt;<span style=\"color:blue\">string</span>,<span style=\"color:blue\">object</span>&gt; p =  ee.Parameters;\r\nConsole.WriteLine(p.Count); <span style=\"color:green\">// this return zero parameters</span>\r\n\r\n<span style=\"color:blue\">foreach</span> (<span style=\"color:blue\">var</span> result <span style=\"color:blue\">in</span> (IList)ee.Evaluate()) {\r\n      Console.WriteLine(result); <span style=\"color:green\">// never enter here, before evaluate ee.Parameters still are zero</span>\r\n}\r\n\r\n</pre>\r\nUsing&nbsp;NCalc Version 1.3.8</div>\r\n",
+    "PostedDate": "2012-07-04T07:48:58.98-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "857451",
+    "ThreadId": "361959",
+    "Html": "<p>You can get the parsed expression tree without evaluating the expression. Then you can navigate it and search for parameters.&nbsp;</p>",
+    "PostedDate": "2012-07-04T09:00:29.73-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

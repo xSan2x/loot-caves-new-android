@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "764913",
+    "ThreadId": "314088",
+    "Html": "\r\n<p>Hello sebastienros, excellent work!</p>\r\n<p>I'he a question about how to use custom and native functions thogheter. An example:</p>\r\n<pre><span>Expression</span>&nbsp;e&nbsp;=&nbsp;<span>new</span>&nbsp;<span>Expression</span>(&quot;...formula...&quot;);\r\n</pre>\r\n<pre>...adding a long list of parameters to e...</pre>\r\n<pre><pre>e.EvaluateParameter&nbsp;&#43;=&nbsp;<span>delegate</span>(<span>string</span>&nbsp;name,&nbsp;<span>ParameterArgs</span>&nbsp;args)&nbsp;{\r\n\targs.Result&nbsp;=&nbsp;getMeTheValueOfAParameterNotInExpression(name);\r\n};</pre>\r\n</pre>\r\n<pre><pre>e.EvaluateFunction&nbsp;&#43;=&nbsp;<span>delegate</span>(<span>string</span>&nbsp;name,&nbsp;<span>FunctionArgs</span>&nbsp;args)&nbsp;{\r\n\targs.Result&nbsp;=&nbsp;solveOneOfMyFunctions(name,&nbsp;args);\r\n};</pre>\r\n</pre>\r\n<p>When e.Evaluate() is working:</p>\r\n<p>- if the formula has a parameter in e parameter's list then the value is used</p>\r\n<p>- if the formula has a parameter not in e parameter's list then the EvaluateParameter delegate is used (and calls my&nbsp;<span style=\"font-family:Consolas,'Courier New',Courier,monospace; white-space:pre\">getMeTheValueOfAParameterNotInExpression(name)\r\n<span style=\"font-family:'Segoe UI','Microsoft Sans Serif',Arial,Geneva,sans-serif; white-space:normal\">\r\nfunction and use the returned value)</span></span></p>\r\n<p>- if the formula has a custom function then the EvaluateFunction delegate is used (and calls my&nbsp;<span style=\"font-family:Consolas,'Courier New',Courier,monospace; white-space:pre\">solveOneOfMyFunctions(name,&nbsp;args);<span style=\"font-family:'Segoe UI','Microsoft Sans Serif',Arial,Geneva,sans-serif; white-space:normal\">&nbsp;function\r\n and use the returned value)</span></span></p>\r\n<p><span style=\"font-family:Consolas,'Courier New',Courier,monospace; white-space:pre\"><span style=\"font-family:'Segoe UI','Microsoft Sans Serif',Arial,Geneva,sans-serif; white-space:normal\">- but, if the formula has a native function (like function if) then\r\n the EvaluateFunction delegate is used and calls my function for solve the if funcion</span></span></p>\r\n<p>&nbsp;</p>\r\n<p>What can I do for call my function only on custom functions and let NCalc still handling native functions?</p>\r\n<p><span style=\"font-family:Consolas,'Courier New',Courier,monospace; white-space:pre\"><span style=\"font-family:'Segoe UI','Microsoft Sans Serif',Arial,Geneva,sans-serif; white-space:normal\">There is something that I'm doing wrong?</span></span></p>\r\n<p>I apologize for my english, I'm learning it.</p>\r\n<p><span style=\"font-family:Consolas,'Courier New',Courier,monospace; white-space:pre\"><span style=\"font-family:'Segoe UI','Microsoft Sans Serif',Arial,Geneva,sans-serif; white-space:normal\">I wait for your response.</span></span></p>\r\n<p><span style=\"font-family:Consolas,'Courier New',Courier,monospace; white-space:pre\"><span style=\"font-family:'Segoe UI','Microsoft Sans Serif',Arial,Geneva,sans-serif; white-space:normal\">Thank you very much!</span></span></p>\r\n",
+    "PostedDate": "2012-02-14T13:19:37.13-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "811136",
+    "ThreadId": "314088",
+    "Html": "<p>I have a similar issue.&nbsp; If I have a custom function anywhere in the formula, normal processing of Parameters does not work</p>\r\n<ul>\r\n<li>\"Sqrt(9)\" - Works</li>\r\n<li>\"Sqrt([TEST]) - Works</li>\r\n<li>\"MyFunc(2, 3, 4, 5)\" - Works</li>\r\n<li>\"MyFunc([TEST2])\" - does not trigger&nbsp;e.EvaluateParameter</li>\r\n<li>\"MyFunc([TEST2]) + [TEST]\" - does not trigger e.EvaluateParameter for either parameter</li>\r\n</ul>\r\n<p>This is going to be a big deal for us. Any chnace this has been addressed in the latest beta?</p>",
+    "PostedDate": "2012-03-15T15:50:40.7-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "811137",
+    "ThreadId": "314088",
+    "Html": "<p>Let me try it ...</p>",
+    "PostedDate": "2012-03-15T15:52:55-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "811139",
+    "ThreadId": "314088",
+    "Html": "<p>In what is this unit test different than your code ?</p>\r\n<p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>[TestMethod]\r\n<span style=\"color: blue;\">public</span> <span style=\"color: blue;\">void</span> ExpressionShouldEvaluateCustomFunctionsWithParameters()\r\n{\r\n    <span style=\"color: blue;\">var</span> e = <span style=\"color: blue;\">new</span> Expression(<span style=\"color: #a31515;\">\"SecretOperation([e], 6) + f\"</span>);\r\n    e.Parameters[<span style=\"color: #a31515;\">\"e\"</span>] = 3;\r\n    e.Parameters[<span style=\"color: #a31515;\">\"f\"</span>] = 1;\r\n\r\n    e.EvaluateFunction += <span style=\"color: blue;\">delegate</span>(<span style=\"color: blue;\">string</span> name, FunctionArgs args)\r\n        {\r\n            <span style=\"color: blue;\">if</span> (name == <span style=\"color: #a31515;\">\"SecretOperation\"</span>)\r\n                args.Result = (<span style=\"color: blue;\">int</span>)args.Parameters[0].Evaluate() + (<span style=\"color: blue;\">int</span>)args.Parameters[1].Evaluate();\r\n        };\r\n\r\n    Assert.AreEqual(10, e.Evaluate());\r\n}\r\n\r\n</pre>\r\n</div>\r\n</p>",
+    "PostedDate": "2012-03-15T15:56:03.98-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "811404",
+    "ThreadId": "314088",
+    "Html": "<p>Yes, I am not setting the e.Parameters first.&nbsp; I am only trying to get a list of parameters in the formula like I mentioned in my post in this thread:</p>\r\n<p><a href=\"http://ncalc.codeplex.com/discussions/79258\">http://ncalc.codeplex.com/discussions/79258</a></p>\r\n<p>I downloaded the sourcecode, found the unti test you mentioned and if I comment out the 2 e.Parameter setting lines,&nbsp;it will not enter the e.EvaluateFunction delegate just like I am experiencing.</p>\r\n<p>It is very important to the way that we do things to be able to get a list of parameters in the formula.&nbsp; The parameters reference external data that needs to be queried and loaded prior to evaluating the formula.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2012-03-16T06:09:33.643-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "811407",
+    "ThreadId": "314088",
+    "Html": "<p>So, I guess another way to look at it is that you can't use both:</p>\n<pre>e.EvaluateParameter += delegate(string name, ParameterArgs args)\r\n    {\r\n    };\r\n\r\ne.EvaluateFunction += delegate(string name, FunctionArgs args) \r\n    {\r\n    };\r\n</pre>\n<p>In the same Evaluate</p>\n<p>I am editing my post to add this test I just tried.&nbsp; It will hit the args.Result in the EvaluateFunction, but won't hit the args.Result in the EvaluateParameter:</p>\n<div style=\"color: black; background-color: white;\">\n<pre>Expression e = <span style=\"color: blue;\">new</span> Expression(<span style=\"color: #a31515;\">\"MyFunc([a]\"</span>);\r\n\r\ne.EvaluateParameter += <span style=\"color: blue;\">delegate</span>(<span style=\"color: blue;\">string</span> name, ParameterArgs args)\r\n{\r\n    args.Result = random.Next(0, 100);\r\n};\r\n\r\ne.EvaluateFunction += <span style=\"color: blue;\">delegate</span>(<span style=\"color: blue;\">string</span> name, FunctionArgs args)\r\n{\r\n    args.Result = random.Next(0, 100);\r\n};\r\n\r\n<span style=\"color: blue;\">try</span>\r\n{\r\n    e.Evaluate();\r\n}\r\n<span style=\"color: blue;\">catch</span>\r\n{\r\n}\r\n\r\n\r\n</pre>\n</div>",
+    "PostedDate": "2012-03-16T06:16:22.543-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "811452",
+    "ThreadId": "314088",
+    "Html": "<p>Found the solution.&nbsp; I was not calling Evaluate on the parameter from the EvaluateFunction.&nbsp; This solved it:</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>Random random = <span style=\"color: blue;\">new</span> Random();\r\n\r\nExpression e = <span style=\"color: blue;\">new</span> Expression(<span style=\"color: blue;\">this</span>.Formula, EvaluateOptions.IgnoreCase);\r\n\r\ne.EvaluateParameter += <span style=\"color: blue;\">delegate</span>(<span style=\"color: blue;\">string</span> name, ParameterArgs args)\r\n{\r\n    args.Result = random.Next(0, 100);\r\n};\r\n\r\ne.EvaluateFunction += <span style=\"color: blue;\">delegate</span>(<span style=\"color: blue;\">string</span> name, FunctionArgs args)\r\n{\r\n    <span style=\"color: blue;\">foreach</span> (Expression param <span style=\"color: blue;\">in</span> args.Parameters)\r\n    {\r\n        param.Evaluate();\r\n    }\r\n\r\n    args.Result = random.Next(0, 100);\r\n};\r\n\r\n<span style=\"color: blue;\">try</span>\r\n{\r\n    e.Evaluate();\r\n}\r\n<span style=\"color: blue;\">catch</span>\r\n{\r\n}\r\n\r\n</pre>\r\n</div>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2012-03-16T07:47:17.927-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

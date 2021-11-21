@@ -1,0 +1,532 @@
+[
+  {
+    "Id": "33525",
+    "Title": "Arguments for user supplied functions",
+    "LatestDate": "2008-08-18T04:27:40.61-07:00"
+  },
+  {
+    "Id": "49211",
+    "Title": "Parameters in custom functions",
+    "LatestDate": "2009-03-31T03:05:37.06-07:00"
+  },
+  {
+    "Id": "49494",
+    "Title": "NCalc 1.0.5",
+    "LatestDate": "2009-08-04T13:27:04.87-07:00"
+  },
+  {
+    "Id": "60807",
+    "Title": "custom operators",
+    "LatestDate": "2009-06-27T06:00:09.643-07:00"
+  },
+  {
+    "Id": "61430",
+    "Title": "Percentages in formulas.",
+    "LatestDate": "2009-08-04T00:09:12.243-07:00"
+  },
+  {
+    "Id": "64010",
+    "Title": "Case Sensitive",
+    "LatestDate": "2009-08-05T00:40:32.627-07:00"
+  },
+  {
+    "Id": "64384",
+    "Title": "Call for feedback !",
+    "LatestDate": "2012-03-28T10:09:11.397-07:00"
+  },
+  {
+    "Id": "68186",
+    "Title": "Subfunction Problem",
+    "LatestDate": "2009-09-07T22:36:57.603-07:00"
+  },
+  {
+    "Id": "68544",
+    "Title": "Usage of EvaluateOptions.IterateParameters with Functions",
+    "LatestDate": "2009-09-10T09:10:43.833-07:00"
+  },
+  {
+    "Id": "69372",
+    "Title": "Support for parameter initialization in code",
+    "LatestDate": "2009-09-21T04:01:30.27-07:00"
+  },
+  {
+    "Id": "74776",
+    "Title": "Parsing expressions not done correctly",
+    "LatestDate": "2009-11-11T09:09:02.717-08:00"
+  },
+  {
+    "Id": "78803",
+    "Title": "Expression \"2 * [x] ^ 2 + 5 * [y]\" is not correctly",
+    "LatestDate": "2009-12-21T23:43:56.94-08:00"
+  },
+  {
+    "Id": "79258",
+    "Title": "Getting list of variables in an expression...",
+    "LatestDate": "2015-11-02T14:18:20.93-08:00"
+  },
+  {
+    "Id": "82126",
+    "Title": "Problem in Expression Evaluation",
+    "LatestDate": "2010-02-26T23:39:19.513-08:00"
+  },
+  {
+    "Id": "85938",
+    "Title": "Own object as Parameter",
+    "LatestDate": "2011-06-15T06:51:59-07:00"
+  },
+  {
+    "Id": "155430",
+    "Title": "Support for Version's",
+    "LatestDate": "2010-02-26T23:46:03.793-08:00"
+  },
+  {
+    "Id": "155453",
+    "Title": "Ensure result type of expression",
+    "LatestDate": "2010-02-26T23:50:08.483-08:00"
+  },
+  {
+    "Id": "199848",
+    "Title": "How to check the final result type of an expression...",
+    "LatestDate": "2013-02-04T00:03:23.817-08:00"
+  },
+  {
+    "Id": "207580",
+    "Title": "Suggested enhancements and possible bug(s)",
+    "LatestDate": "2010-03-28T15:28:36.82-07:00"
+  },
+  {
+    "Id": "213619",
+    "Title": "Signed release build...",
+    "LatestDate": "2010-05-24T03:16:53.65-07:00"
+  },
+  {
+    "Id": "215635",
+    "Title": "Between & binary IN",
+    "LatestDate": "2010-06-10T10:22:50.087-07:00"
+  },
+  {
+    "Id": "215636",
+    "Title": "Exception handling speed",
+    "LatestDate": "2010-06-10T18:26:44.367-07:00"
+  },
+  {
+    "Id": "217743",
+    "Title": "Call delegate for evaluate recursively",
+    "LatestDate": "2010-06-29T08:24:51.917-07:00"
+  },
+  {
+    "Id": "219286",
+    "Title": "Abs() and double type, Fix(), Int()",
+    "LatestDate": "2010-07-13T05:34:39.38-07:00"
+  },
+  {
+    "Id": "219923",
+    "Title": "\"Operation could destabilize the runtime\" error when running Evaluate() or HasErrors()",
+    "LatestDate": "2011-07-20T03:20:21.35-07:00"
+  },
+  {
+    "Id": "222855",
+    "Title": "Using IN with a parameter rather than a list",
+    "LatestDate": "2010-08-15T06:39:51.493-07:00"
+  },
+  {
+    "Id": "225603",
+    "Title": "Evaluating multiple expressions with same instance of Expression object...",
+    "LatestDate": "2010-09-06T05:17:15.427-07:00"
+  },
+  {
+    "Id": "227690",
+    "Title": "NCalc is now using Mercurial hosted on CodePlex",
+    "LatestDate": "2010-09-20T09:01:50.593-07:00"
+  },
+  {
+    "Id": "227873",
+    "Title": "NCalcMEFed fork",
+    "LatestDate": "2012-05-24T07:11:07.31-07:00"
+  },
+  {
+    "Id": "228228",
+    "Title": "Weird Exception with expressions using decimal",
+    "LatestDate": "2010-09-23T10:01:00.247-07:00"
+  },
+  {
+    "Id": "231819",
+    "Title": "Bug in SerializationVisitor",
+    "LatestDate": "2010-10-21T08:43:10.183-07:00"
+  },
+  {
+    "Id": "232762",
+    "Title": "Where is the ANTLR grammar file?",
+    "LatestDate": "2010-11-02T01:18:49.99-07:00"
+  },
+  {
+    "Id": "243388",
+    "Title": "Multi-valued parameters",
+    "LatestDate": "2011-11-07T21:46:20.15-08:00"
+  },
+  {
+    "Id": "244043",
+    "Title": "Converting from double to decimal (e.g. 100.00m)",
+    "LatestDate": "2011-01-31T13:48:20.757-08:00"
+  },
+  {
+    "Id": "247227",
+    "Title": "Double quotes for text",
+    "LatestDate": "2011-02-23T06:46:13.017-08:00"
+  },
+  {
+    "Id": "247528",
+    "Title": "Playing with dynamics",
+    "LatestDate": "2011-02-24T21:57:49.087-08:00"
+  },
+  {
+    "Id": "248076",
+    "Title": "Access Expression.Parameters in EvaluateParameter event?",
+    "LatestDate": "2011-03-01T19:13:12.277-08:00"
+  },
+  {
+    "Id": "257379",
+    "Title": "Plus sign before some number",
+    "LatestDate": "2011-05-16T05:08:56.923-07:00"
+  },
+  {
+    "Id": "257859",
+    "Title": "Rounding problem ??",
+    "LatestDate": "2011-05-16T22:02:11.61-07:00"
+  },
+  {
+    "Id": "263816",
+    "Title": "Customised Function Error Handling",
+    "LatestDate": "2011-07-04T05:53:22.14-07:00"
+  },
+  {
+    "Id": "273420",
+    "Title": "Handling null",
+    "LatestDate": "2014-07-20T13:12:19.883-07:00"
+  },
+  {
+    "Id": "273492",
+    "Title": "UI to create expression",
+    "LatestDate": "2011-09-22T08:27:05.42-07:00"
+  },
+  {
+    "Id": "273819",
+    "Title": "Dynamic parameters with array syntax",
+    "LatestDate": "2011-09-27T00:06:22.473-07:00"
+  },
+  {
+    "Id": "274696",
+    "Title": "Bodmas rule in asp.net",
+    "LatestDate": "2011-10-04T05:02:36.39-07:00"
+  },
+  {
+    "Id": "275199",
+    "Title": "How can I disable Caching?",
+    "LatestDate": "2011-10-08T08:27:52.667-07:00"
+  },
+  {
+    "Id": "278820",
+    "Title": "NCalc Thread Safety?",
+    "LatestDate": "2011-11-09T15:02:19.49-08:00"
+  },
+  {
+    "Id": "281904",
+    "Title": "Preserving Units of Measure",
+    "LatestDate": "2011-12-05T15:19:43.43-08:00"
+  },
+  {
+    "Id": "286057",
+    "Title": "Setting CurrentCulture Property not working",
+    "LatestDate": "2012-01-13T10:53:04.113-08:00"
+  },
+  {
+    "Id": "310217",
+    "Title": "extending ncalc",
+    "LatestDate": "2012-05-24T07:13:24.233-07:00"
+  },
+  {
+    "Id": "314088",
+    "Title": "Custom and native functions togheter",
+    "LatestDate": "2012-03-16T07:47:17.927-07:00"
+  },
+  {
+    "Id": "315512",
+    "Title": "Case insensitivity not working for parameters",
+    "LatestDate": "2015-05-08T01:21:07.853-07:00"
+  },
+  {
+    "Id": "346702",
+    "Title": "Decimal and double values",
+    "LatestDate": "2014-03-04T14:52:42.74-08:00"
+  },
+  {
+    "Id": "347845",
+    "Title": "NCalc Evaluate() and Globalization",
+    "LatestDate": "2012-03-08T08:03:15.713-08:00"
+  },
+  {
+    "Id": "348946",
+    "Title": "EvaluateOptions.IterateParameters, Custom Functions and strings",
+    "LatestDate": "2012-03-16T12:40:11.087-07:00"
+  },
+  {
+    "Id": "350012",
+    "Title": "4.0f not understood as a float",
+    "LatestDate": "2012-03-25T20:44:20.727-07:00"
+  },
+  {
+    "Id": "351715",
+    "Title": "IterateParameters without an IEnumerable",
+    "LatestDate": "2012-04-09T14:26:25.96-07:00"
+  },
+  {
+    "Id": "352767",
+    "Title": "DateTime operations",
+    "LatestDate": "2012-04-30T08:02:54.073-07:00"
+  },
+  {
+    "Id": "356511",
+    "Title": "Value was either too large or too small for a UInt16.",
+    "LatestDate": "2013-04-30T13:43:40.217-07:00"
+  },
+  {
+    "Id": "359668",
+    "Title": "How to find variables in a formula",
+    "LatestDate": "2012-06-14T12:28:09.03-07:00"
+  },
+  {
+    "Id": "360990",
+    "Title": "Detecting All Parameters",
+    "LatestDate": "2014-03-09T00:25:11.68-08:00"
+  },
+  {
+    "Id": "361959",
+    "Title": "How to get the parameters in a given expression?",
+    "LatestDate": "2012-07-04T09:00:29.73-07:00"
+  },
+  {
+    "Id": "391081",
+    "Title": "\"Operation could destabilize the runtime\" error when running Evaluate() using asp.net (C# 2.0)",
+    "LatestDate": "2013-04-09T12:29:57.407-07:00"
+  },
+  {
+    "Id": "391969",
+    "Title": "Sym",
+    "LatestDate": "2012-08-16T23:26:22.14-07:00"
+  },
+  {
+    "Id": "395461",
+    "Title": ".NET 2.0 (Mono/Unity) Exception",
+    "LatestDate": "2012-09-13T13:50:57.927-07:00"
+  },
+  {
+    "Id": "397580",
+    "Title": "EvaluationException: extraneous input",
+    "LatestDate": "2012-10-01T14:40:45.71-07:00"
+  },
+  {
+    "Id": "398219",
+    "Title": "Assigning Variable Names?",
+    "LatestDate": "2012-10-05T10:54:10.203-07:00"
+  },
+  {
+    "Id": "402209",
+    "Title": "Wrong result?",
+    "LatestDate": "2012-11-07T01:01:25.07-08:00"
+  },
+  {
+    "Id": "404812",
+    "Title": "Dates as Parameters to Custom Function not being evaluated to DateTime type.",
+    "LatestDate": "2012-12-10T21:21:58.903-08:00"
+  },
+  {
+    "Id": "405895",
+    "Title": "iOS Support",
+    "LatestDate": "2012-12-06T15:34:47.59-08:00"
+  },
+  {
+    "Id": "406362",
+    "Title": "Improvements we found usefull",
+    "LatestDate": "2012-12-11T01:20:18.913-08:00"
+  },
+  {
+    "Id": "407393",
+    "Title": "It Doesn't Calculate A lot Of Numbers Right",
+    "LatestDate": "2013-02-06T11:24:07.56-08:00"
+  },
+  {
+    "Id": "415282",
+    "Title": "Windows Phone 7",
+    "LatestDate": "2012-12-23T12:46:57.547-08:00"
+  },
+  {
+    "Id": "428731",
+    "Title": "Support for other bases",
+    "LatestDate": "2013-05-13T14:35:33.18-07:00"
+  },
+  {
+    "Id": "432235",
+    "Title": "Math Operation on Custom Functions with Array input",
+    "LatestDate": "2013-02-06T11:43:19.297-08:00"
+  },
+  {
+    "Id": "432410",
+    "Title": "Large negative number returned instead of correct result - code changed to fix.",
+    "LatestDate": "2013-04-15T01:46:03.423-07:00"
+  },
+  {
+    "Id": "435600",
+    "Title": "Casting to double fails",
+    "LatestDate": "2016-01-20T04:30:58.37-08:00"
+  },
+  {
+    "Id": "441427",
+    "Title": "Variable assignment to value in parameters",
+    "LatestDate": "2013-04-24T06:38:56.51-07:00"
+  },
+  {
+    "Id": "446968",
+    "Title": "Problem with bitwiseXor",
+    "LatestDate": "2013-06-21T00:18:18.977-07:00"
+  },
+  {
+    "Id": "447656",
+    "Title": "Converting BitwiseXOR ^ to Power",
+    "LatestDate": "2013-06-20T02:27:14.737-07:00"
+  },
+  {
+    "Id": "451797",
+    "Title": "NCalc VB.NET error Function not found",
+    "LatestDate": "2013-07-30T05:59:14.097-07:00"
+  },
+  {
+    "Id": "459409",
+    "Title": "Please add an option to retain the old '^' operator behavior.",
+    "LatestDate": "2014-09-11T05:43:31.18-07:00"
+  },
+  {
+    "Id": "459628",
+    "Title": "Calculating with arrays with NCalc",
+    "LatestDate": "2013-09-29T07:26:05.707-07:00"
+  },
+  {
+    "Id": "461395",
+    "Title": "UInt32 datatype doesn't work",
+    "LatestDate": "2013-10-07T07:19:44.67-07:00"
+  },
+  {
+    "Id": "471768",
+    "Title": "Is it possible to evaluate this expression: 3(4*10)?",
+    "LatestDate": "2013-12-03T03:37:39.817-08:00"
+  },
+  {
+    "Id": "522174",
+    "Title": "Compound aggregates",
+    "LatestDate": "2014-01-22T22:12:42.273-08:00"
+  },
+  {
+    "Id": "528843",
+    "Title": "Number of decimals in result",
+    "LatestDate": "2014-02-03T23:51:21.6-08:00"
+  },
+  {
+    "Id": "528933",
+    "Title": "Decimal parameters and float constants",
+    "LatestDate": "2016-01-20T04:26:28.21-08:00"
+  },
+  {
+    "Id": "537956",
+    "Title": "Support color data types",
+    "LatestDate": "2014-03-04T12:32:18.17-08:00"
+  },
+  {
+    "Id": "538128",
+    "Title": "Is there any plans support expressions with properties of objects.",
+    "LatestDate": "2014-03-06T02:53:04.053-08:00"
+  },
+  {
+    "Id": "541950",
+    "Title": "Wrong calculation of cos() and combinations",
+    "LatestDate": "2014-04-11T09:59:24.653-07:00"
+  },
+  {
+    "Id": "543025",
+    "Title": "Min function",
+    "LatestDate": "2014-05-12T07:31:57.907-07:00"
+  },
+  {
+    "Id": "550814",
+    "Title": "Remove parameters from evaluation",
+    "LatestDate": "2014-07-07T07:28:56.68-07:00"
+  },
+  {
+    "Id": "566461",
+    "Title": "graphical control to edit expression",
+    "LatestDate": "2014-09-06T16:10:50.05-07:00"
+  },
+  {
+    "Id": "570720",
+    "Title": "Size of the assembly built manually",
+    "LatestDate": "2014-10-28T05:00:42.193-07:00"
+  },
+  {
+    "Id": "578467",
+    "Title": "Building Ncalc in 64 Bit - ",
+    "LatestDate": "2015-01-23T15:39:42.507-08:00"
+  },
+  {
+    "Id": "581367",
+    "Title": "Using parameters without brackets",
+    "LatestDate": "2015-02-21T09:10:44.72-08:00"
+  },
+  {
+    "Id": "587930",
+    "Title": "Logical Operators explanation",
+    "LatestDate": "2015-03-18T11:07:31.667-07:00"
+  },
+  {
+    "Id": "613634",
+    "Title": "Operator '+' can't be applied to operands of types 'decimal' and 'double'",
+    "LatestDate": "2015-03-25T07:06:05.417-07:00"
+  },
+  {
+    "Id": "640817",
+    "Title": "The '^' character",
+    "LatestDate": "2015-07-01T03:32:43.36-07:00"
+  },
+  {
+    "Id": "647540",
+    "Title": "Array of function evaluators or a way to speed up evaluation",
+    "LatestDate": "2015-11-13T22:48:20.527-08:00"
+  },
+  {
+    "Id": "650178",
+    "Title": "TimeSpan value type?",
+    "LatestDate": "2016-01-18T11:30:14.477-08:00"
+  },
+  {
+    "Id": "651188",
+    "Title": "Adding a Parameter in EvaluateParameter delegate",
+    "LatestDate": "2016-02-11T12:55:42.733-08:00"
+  },
+  {
+    "Id": "652009",
+    "Title": "Override ^ operator",
+    "LatestDate": "2016-03-02T12:57:11.883-08:00"
+  },
+  {
+    "Id": "655095",
+    "Title": "NCalc.dll has failed the NXCheck check",
+    "LatestDate": "2016-05-31T07:27:36.98-07:00"
+  },
+  {
+    "Id": "662592",
+    "Title": "Strange behavior of Evaluate function",
+    "LatestDate": "2017-04-18T03:16:02.197-07:00"
+  },
+  {
+    "Id": "663381",
+    "Title": "Decimal separator",
+    "LatestDate": "2017-07-06T15:22:06.707-07:00"
+  }
+]

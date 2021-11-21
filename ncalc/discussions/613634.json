@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1395794",
+    "ThreadId": "613634",
+    "Html": "A simple formula like\r<br />\n<br />\nnew Expression(&quot;Abs(-1) + Cos(2)&quot;).Evaluate()\r<br />\nthrows the exception\r<br />\n<br />\nOperator '+' can't be applied to operands of types 'decimal' and 'double'\r<br />\nWhy is this?\r<br />\n<br />\nIs there any workaround?\r<br />\n<br />\nThe only thread i found on the project's website related to this error is quite old and talks about editing the source code. <a href=\"https://ncalc.codeplex.com/discussions/346702\" rel=\"nofollow\">https://ncalc.codeplex.com/discussions/346702</a>\r<br />\n<br />\nIm using the latest version<br />\n",
+    "PostedDate": "2015-03-25T07:06:05.417-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

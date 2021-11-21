@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 2,
+    "Custom": null,
+    "Description": "I have a function that I would like to evaluate: RegEx(test, <re>) where re is the string representation of the regular expression that I would like to evaluate. I cannot seem to find a way to pass a regular expression to the \"function\". \r\nI first started out with something like\r\n            const string skipPageExpression = \"RegEx(test,'\\\\d{4}')\";\r\nBut this gives me errors (HasErrors()).\r\nIdeas?\r\n\r\n\r\n",
+    "LastUpdatedDate": "2016-01-12T01:53:52.887-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2015-09-24T14:24:22.963-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Constant string (escaped) to Function.",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 28350
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I'm trying to do the exact same thing, but can't get it to work.\n\nIf you find any way to pass the Regex string as function parameter, let us know! :)\n",
+      "PostedDate": "2016-01-12T01:30:33.5-08:00",
+      "Id": 195292
+    },
+    {
+      "Message": "Okay, I now found a way:\n\nMy Regex Custom function looks as follows (note how string expression is pulled from the arguments):\n\n```\n                if (name == \"RegEx\")\n                {\n                    var value = args.Parameters[0].Evaluate();\n                    string expression = ((NCalc.Domain.ValueExpression)(args.Parameters[1].ParsedExpression)).Value.ToString();\n\n                    Regex regex = new Regex(@expression);\n                    Match match = regex.Match(value.ToString());\n                    \n                    args.Result = match.Success;\n                }\n```\n\nI can now pass any Regex when all the backslashes are escaped.\n\nExample Email RegEx('test@test.com','^([\\\\w\\\\.\\\\-_]+)?\\\\w+@[\\\\w-_]+(\\\\.\\\\w+){1,}$')\n\n\nHope this helped you!\n\n\n",
+      "PostedDate": "2016-01-12T01:53:52.887-08:00",
+      "Id": 195294
+    }
+  ]
+}

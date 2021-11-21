@@ -1,0 +1,50 @@
+<div class="wikidoc"><h1>IMPORTANT INFORMATION</h1>
+This repository is no longer maintained. The source code has been moved to Github by James Cane and will provide support. <a href="https://github.com/sheetsync/NCalc">https://github.com/sheetsync/NCalc</a><br />Alternatively you can use Jint which I still maintain and might be more adapted to your needs: <a href="https://github.com/sebastienros/jint">https://github.com/sebastienros/jint</a><br />
+<h2>Project Description</h2>NCalc is a mathematical expressions evaluator in .NET. NCalc can parse any expression and evaluate the result, including static or dynamic parameters and custom functions.<br /><br />For additional information on the technique we used to create this framework please read this article: <a href="http://www.codeproject.com/KB/recipes/sota_expression_evaluator.aspx">http://www.codeproject.com/KB/recipes/sota_expression_evaluator.aspx</a>.<br /><br />For documentation here is the table of content:
+<ul><li><a href="https://ncalc.codeplex.com/wikipage?title=description&referringTitle=Home">description</a> : overall concepts, usage and extensibility points</li>
+<li><a href="https://ncalc.codeplex.com/wikipage?title=operators&referringTitle=Home">operators</a> : available standard operators and structures</li>
+<li><a href="https://ncalc.codeplex.com/wikipage?title=values&referringTitle=Home">values</a> : authorized values like types, functions, ...</li>
+<li><a href="https://ncalc.codeplex.com/wikipage?title=functions&referringTitle=Home">functions</a> : list of already implemented functions</li>
+<li><a href="https://ncalc.codeplex.com/wikipage?title=parameters&referringTitle=Home">parameters</a> : on how to use parameters expressions</li></ul>
+
+<h2>Functionnalities</h2><b>Simple expressions</b><br /><br /><div style="color:Black;background-color:White;"><pre>
+  Expression e = <span style="color:Blue;">new</span> Expression(<span style="color:#A31515;">&quot;2 + 3 * 5&quot;</span>);
+  Debug.Assert(17 == e.Evaluate());
+</pre></div><br /><b>Evaluates .NET data types</b><br /><br /><div style="color:Black;background-color:White;"><pre>
+  Debug.Assert(123456 == <span style="color:Blue;">new</span> Expression(<span style="color:#A31515;">&quot;123456&quot;</span>).Evaluate()); <span style="color:Green;">// integers</span>
+  Debug.Assert(<span style="color:Blue;">new</span> DateTime(2001, 01, 01) == <span style="color:Blue;">new</span> Expression(<span style="color:#A31515;">&quot;#01/01/2001#&quot;</span>).Evaluate()); <span style="color:Green;">// date and times</span>
+  Debug.Assert(123.456 == <span style="color:Blue;">new</span> Expression(<span style="color:#A31515;">&quot;123.456&quot;</span>).Evaluate()); <span style="color:Green;">// floating point numbers</span>
+  Debug.Assert(<span style="color:Blue;">true</span> == <span style="color:Blue;">new</span> Expression(<span style="color:#A31515;">&quot;true&quot;</span>).Evaluate()); <span style="color:Green;">// booleans</span>
+  Debug.Assert(<span style="color:#A31515;">&quot;azerty&quot;</span> == <span style="color:Blue;">new</span> Expression(<span style="color:#A31515;">&quot;&#39;azerty&#39;&quot;</span>).Evaluate()); <span style="color:Green;">// strings</span>
+</pre></div><br /><b>Handles mathematical functional from System.Math</b><br /><br /><div style="color:Black;background-color:White;"><pre>
+  Debug.Assert(0 == <span style="color:Blue;">new</span> Expression(<span style="color:#A31515;">&quot;Sin(0)&quot;</span>).Evaluate());
+  Debug.Assert(2 == <span style="color:Blue;">new</span> Expression(<span style="color:#A31515;">&quot;Sqrt(4)&quot;</span>).Evaluate());
+  Debug.Assert(0 == <span style="color:Blue;">new</span> Expression(<span style="color:#A31515;">&quot;Tan(0)&quot;</span>).Evaluate());
+</pre></div><br /><b>Evaluates custom functions</b><br /><br /><div style="color:Black;background-color:White;"><pre>
+  Expression e = <span style="color:Blue;">new</span> Expression(<span style="color:#A31515;">&quot;SecretOperation(3, 6)&quot;</span>);
+  e.EvaluateFunction += <span style="color:Blue;">delegate</span>(<span style="color:Blue;">string</span> name, FunctionArgs args)
+      {
+          <span style="color:Blue;">if</span> (name == <span style="color:#A31515;">&quot;SecretOperation&quot;</span>)
+              args.Result = (<span style="color:Blue;">int</span>)args.Parameters[0].Evaluate() + (<span style="color:Blue;">int</span>)args.Parameters[1].Evaluate();
+      };
+  
+  Debug.Assert(9 == e.Evaluate());
+</pre></div><br /><b>Handles unicode characters</b><br /><br /><div style="color:Black;background-color:White;"><pre>
+  Debug.Assert(<span style="color:#A31515;">&quot;経済協力開発機構&quot;</span> == <span style="color:Blue;">new</span> Expression(<span style="color:#A31515;">&quot;&#39;経済協力開発機構&#39;&quot;</span>).Evaluate());
+  Debug.Assert(<span style="color:#A31515;">&quot;Hello&quot;</span> == <span style="color:Blue;">new</span> Expression(<span style="color:#A31515;">@&quot;&#39;\u0048\u0065\u006C\u006C\u006F&#39;&quot;</span>).Evaluate());
+  Debug.Assert(<span style="color:#A31515;">&quot;だ&quot;</span> == <span style="color:Blue;">new</span> Expression(<span style="color:#A31515;">@&quot;&#39;\u3060&#39;&quot;</span>).Evaluate());
+  Debug.Assert(<span style="color:#A31515;">&quot;\u0100&quot;</span> == <span style="color:Blue;">new</span> Expression(<span style="color:#A31515;">@&quot;&#39;\u0100&#39;&quot;</span>).Evaluate());
+</pre></div><br /><b>Define parameters, even dynamic or expressions</b><br /><br /><div style="color:Black;background-color:White;"><pre>
+  Expression e = <span style="color:Blue;">new</span> Expression(<span style="color:#A31515;">&quot;Round(Pow([Pi], 2) + Pow([Pi2], 2) + [X], 2)&quot;</span>);
+
+  e.Parameters[<span style="color:#A31515;">&quot;Pi2&quot;</span>] = <span style="color:Blue;">new</span> Expression(<span style="color:#A31515;">&quot;Pi * [Pi]&quot;</span>);
+  e.Parameters[<span style="color:#A31515;">&quot;X&quot;</span>] = 10;
+
+  e.EvaluateParameter += <span style="color:Blue;">delegate</span>(<span style="color:Blue;">string</span> name, ParameterArgs args)
+    {
+      <span style="color:Blue;">if</span> (name == <span style="color:#A31515;">&quot;Pi&quot;</span>)
+      args.Result = 3.14;
+    };
+
+  Debug.Assert(117.07 == e.Evaluate());
+</pre></div></div><div class="ClearBoth"></div>

@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "For the statements below:\r\n```\r\n            string expression = \"a > 0 && b < 10\";\r\n            Expression e2 = new Expression(expression);\r\n            e2.Parameters[\"a\"] = 10;\r\n            e2.Parameters[\"b\"] = double.NaN;\r\n            Console.WriteLine(e2.Evaluate());\r\n```\r\nthe result is \"True\". However,  10 > 0 && double.NaN < 10 should evaluate to false.\r\n\r\nIf one swaps the values for a and b, the e2's evaluation is correct, i.e. e2 evaluates to False. ",
+    "LastUpdatedDate": "2017-02-10T09:44:04.683-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2017-02-10T09:43:31.097-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Expression incorrectly evaluated for NaN operands",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 28358
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

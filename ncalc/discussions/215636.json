@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "454105",
+    "ThreadId": "215636",
+    "Html": "<p>Hi,</p>\r\n<p>I have about 10 calculations that are made on a table. If the calculation is syntactically correct the calculation takes ca. 0.04 seconds.</p>\r\n<p>If I enter a syntax error, the calculation takes 0.8 seconds.</p>\r\n<p>Any idea where the time is taken or if I can improve the speed of the exception handling?</p>\r\n<p>Thx.</p>\r\n<p>Andrew</p>",
+    "PostedDate": "2010-06-10T10:25:51.853-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "454237",
+    "ThreadId": "215636",
+    "Html": "<p>I think this may be a general c# issue when throwing an exception and not Ncalc's problem!</p>",
+    "PostedDate": "2010-06-10T18:26:44.367-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

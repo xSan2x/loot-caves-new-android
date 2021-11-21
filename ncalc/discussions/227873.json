@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "496058",
+    "ThreadId": "227873",
+    "Html": "<p>Firstly, a big thankyou to <span title=\"Sébastien Ros\">S&eacute;bastien Ros </span>once again for creating NCalc &amp; now for moving to mercurial.</p>\r\n<p>I've created a fork &quot;<a id=UserRepositoryName0 href=\"http://ncalc.codeplex.com/SourceControl/network/Forks/GreyCloud/NCalcMEFed\">NCalcMEFed</a>&quot; which has the following changes i have made&nbsp;for my own use over the last few months - (fork is uptodate with latest changeset &quot;<a id=ChangeSetLink0 style=\"font-weight:bold\" title=\"View change set 389b5d7f4948\" href=\"http://ncalc.codeplex.com/SourceControl/changeset/changes/389b5d7f4948\">389b5d7f4948</a>&quot; from 18/09/10):</p>\r\n<ul>\r\n<li>Moved to Visual Studio 2010 and moved NCalc to .Net 4.0</li>\r\n<li>Moved each function to it's own class implementing an AFunction abstract class</li>\r\n<li>Documented each function and its parameters via a help system -TODO - this could be used for an intellisense like system - would love to see one if anyone has time/ know-how</li>\r\n<li>Added functionality to print out language documentation.</li>\r\n<li>Added Random function which works when used by multiple threads</li>\r\n<li>Incorporated MEF (<a href=\"http://mef.codeplex.com\">http://mef.codeplex.com</a>) to dynamically load the functions in the library as well as to add extensibility</li>\r\n<li>Added an ExpressionFactory.cs to manage MEF extensibility as well as have a way of creating expressions with identical parameters and evaluation options.</li>\r\n<li>Added a utility routine within the factory to extract the variables from an expression\r\n<ul>\r\n<li>Added an Evaluation option &quot;DebugMode&quot;&nbsp;to support this by ensuring variables are extracted from&nbsp;both branches of an IF statement [ie both are evaluated]</li>\r\n</ul>\r\n</li>\r\n<li>Added an Evaluation Option &quot;BuiltInFunctionsFirst&quot; which should give a small speed improvement by first looking for functions already found via MEF before calling the&nbsp;EvaluateFunction event.</li>\r\n<li>Improved the NCalc.Play example to show a few more examples of NCalc</li>\r\n<li>Added 3 unit tests for new functionality [all previous ones pass :-) ]</li>\r\n</ul>\r\n<p>I should probably say this code is provided as-is&nbsp;as this is my first open source submission [scary!] but i've been using this heavily in research projects for the last 6 months or so &amp; it's been working well!</p>\r\n<p><span title=\"Sébastien Ros\">Please do let me know your thoughts on the fork or any questions on it's use [Much of the new functionality is demonstrated in the updated NCalc.Play]</span></p>\r\n<p><span title=\"Sébastien Ros\">David</span></p>",
+    "PostedDate": "2010-09-20T08:47:14.19-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "834021",
+    "ThreadId": "227873",
+    "Html": "<p>I attempted to create some custom functions in a different assembly and I ran into an issue.&nbsp; The Evaluate method on EvaluationVisitor is internal so it can't be called outside of the NCalc assembly.&nbsp;</p>",
+    "PostedDate": "2012-05-09T08:11:57.567-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "840439",
+    "ThreadId": "227873",
+    "Html": "<p>thanks for this, i'd changed the source on my machine but forgot to push to codeplex.</p>\r\n<p>Hope the fork is useful?</p>\r\n<p>&nbsp;</p>\r\n<p>David</p>",
+    "PostedDate": "2012-05-24T07:11:07.31-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

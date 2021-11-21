@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1104523",
+    "ThreadId": "461395",
+    "Html": "Hello\r<br />\n<br />\nI would like to evaluate uint32 data types.\r<br />\nBut the following example fails with an OverflowException:\r<br />\n<br />\n[Test]\r<br />\nvoid TestUInt32_0()\r<br />\n{<br />\n<pre><code>var expr = new NCalc.Expression(&quot;[x] == 4294967295&quot;);\nexpr.Parameters[&quot;x&quot;] = UInt32.MaxValue;\nAssert.IsTrue(expr.Evaluate());</code></pre>\n\n}\r<br />\n<br />\nAnd this example returns always false:\r<br />\n<br />\n[Test]\r<br />\nprivate void TestUInt32_1()\r<br />\n{<br />\n<pre><code>uint value = 3294967295;\nvar expr = new NCalc.Expression(&quot;[x] == 3294967295&quot;);\nexpr.Parameters[&quot;x&quot;] = value;\nAssert.IsTrue(expr.Evaluate());</code></pre>\n\n}\r<br />\n<br />\nCan anyone help me!\r<br />\n<br />\nThanks!<br />\n",
+    "PostedDate": "2013-10-07T07:19:44.67-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

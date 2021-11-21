@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello,\r\n\r\nI have a polynom like this '2 * Pow(x,3) + 5 * Pow(x,2) + 5 * x + 3' and I have subsribed the EvaluateParameter event. When I evaluate the expression with the polynom the event is raised 3 times.\r\nI think it is quite enough to raise the event once to set the ParameterArgs.Result.\r\n\r\nThanks for your project\r\n\r\nAlpecin",
+    "LastUpdatedDate": "2012-09-05T23:44:50.813-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2012-09-05T23:44:50.813-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "The EvaluateParameter event raised multiple.",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 28326
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

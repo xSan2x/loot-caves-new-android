@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I see many posts here about dots and comma as the decimal value separator.\r\n\r\nFrom what I see, it use the current computer cultureinfo. I have a french Windows (,), and work with numbers written in English (.). When sending decimal numbers to NCalc, if the input string is using a dot instead of the comma it crash:\r\n\r\nSystem.FormatException: Le format de la chaîne d'entrée est incorrect.\r\n   à System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)\r\n   à System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)\r\n   à System.Decimal.Parse(String s)\r\n   à NCalc.Numbers.ConvertIfString(Object s)\r\n   à NCalc.Numbers.Divide(Object a, Object b)\r\n   à NCalc.Domain.EvaluationVisitor.Visit(BinaryExpression expression)\r\n   à NCalc.Domain.BinaryExpression.Accept(LogicalExpressionVisitor visitor)\r\n   à NCalc.Domain.EvaluationVisitor.<>c__DisplayClass2.<Visit>b__1()\r\n   à NCalc.Domain.EvaluationVisitor.Visit(BinaryExpression expression)\r\n   à NCalc.Domain.BinaryExpression.Accept(LogicalExpressionVisitor visitor)\r\n   à NCalc.Expression.Evaluate()\r\n\r\nIf I test in a separate project, I can easily reproduce it:\r\nvar test = Decimal.Parse(\"12.3\"); <-- crash\r\nvar test = Decimal.Parse(\"12.3\", CultureInfo.InvariantCulture); <-- ok\r\n\r\nNow, I want to keep using dots in the NCalc strings no matter what the Windows locale is set to, so it would be appreciated to be able to configure it to use the CultureInfo you want that will be used in the NCalc internal functions (in this case, InvariantCulture).",
+    "LastUpdatedDate": "2016-02-09T13:11:14.377-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2016-02-09T13:05:29.65-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Allow to configure CultureInfo",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 28353
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "558309",
+    "ThreadId": "244043",
+    "Html": "\r\n<p>I am using self written functions that return decimals.</p>\r\n<p>I need to multiply the results of these functions by a number with a decimal point.</p>\r\n<p>&nbsp;</p>\r\n<pre>void Test()\r\n{\r\n   decimal a = 20;\r\n   Expression ex = new Expression(&quot;a * 100.00&quot;, EvaluateOptions.IgnoreCase | EvaluateOptions.NoCache);\r\n   ex.EvaluateParameter &#43;= delegate(string name, ParameterArgs arg)\r\n   {\r\n      if (name == &quot;a&quot;)\r\n        arg.Result = a;\r\n   };\r\n   MessageBox.Show(ex.Evaluate().ToString());\r\n}</pre>\r\n<p>&nbsp;</p>\r\n<p>But I get the error message &quot;Operator '*' cannot be applied to operands of type 'double' and 'decimal'&quot;</p>\r\n<p>In C# I would write &quot;a * 100.00m&quot; - how could I do this with NCalc?&nbsp;</p>\r\n",
+    "PostedDate": "2011-01-31T13:48:20.757-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

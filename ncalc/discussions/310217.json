@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "760223",
+    "ThreadId": "310217",
+    "Html": "\r\n<p>are there any tips or guides to extend the function list of Ncalc</p>\r\n<p>i also want to extend max,min function to accept a list of CSV</p>\r\n<p>plus to add a few functions like average, Log2 , cuberoot etc.</p>\r\n<p>any pointers which Codefile to look for to add/change the functions</p>\r\n<p>need help with this regard .&nbsp;thanx</p>\r\n",
+    "PostedDate": "2012-02-13T02:05:19.053-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "816067",
+    "ThreadId": "310217",
+    "Html": "<p>arvindps, look at the \"Visit(Function function)\" method in EvaluateVisitor.cs.&nbsp; There is a switch that handles the built in functions.&nbsp; You could just expand this.</p>",
+    "PostedDate": "2012-03-27T06:20:40.93-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "816456",
+    "ThreadId": "310217",
+    "Html": "<p>Thanks</p>\r\n<p>yes i found the Function parser model and i am working on to extend more functions. It is&nbsp; Domain folder.</p>\r\n<p>Infact i have already extended the Min function to parse a list of values rather than two&nbsp; vales<br /><span style=\"color: blue;\">#region</span> Min<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color: blue;\">case</span> <span style=\"color: #a31515;\">\"min\"</span>:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CheckCase(<span style=\"color: #a31515;\">\"Min\"</span>, function.Identifier.Name);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color: blue;\">if</span> (function.Expressions.Length &lt; 2)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color: blue;\">throw</span> <span style=\"color: blue;\">new</span> ArgumentException(<span style=\"color: #a31515;\">\"Min() takes atleast 2 arguments, Separated by a comma\"</span>);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color: blue;\">double</span> min = 0;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color: blue;\">double</span> f = 0;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color: blue;\">for</span> (<span style=\"color: blue;\">int</span> i = 0; i &lt; function.Expressions.Length; i++)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color: blue;\">try</span><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f = Convert.ToDouble(Evaluate(function.Expressions[i]));<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color: blue;\">if</span> (i == 0) min = f;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color: blue;\">else</span><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; min = (min &lt; f) ? min : f;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color: blue;\">catch</span><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color: blue;\">throw</span> <span style=\"color: blue;\">new</span> ArgumentException(<span style=\"color: #a31515;\">\"Min() function has Invalid parameters. All parameters must be numeric separated by Comma\"</span>);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Result = min;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color: blue;\">break</span>;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color: blue;\">#endregion</span></p>\r\n<p><br />The following Code extends the Secant function&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">case</span> <span style=\"color: #a31515;\">\"sec\"</span>:\r\n        CheckCase(<span style=\"color: #a31515;\">\"sec\"</span>, function.Identifier.Name);\r\n        <span style=\"color: blue;\">if</span> (function.Expressions.Length != 1)\r\n            <span style=\"color: blue;\">throw</span> <span style=\"color: blue;\">new</span> ArgumentException(<span style=\"color: #a31515;\">\"Sec() Secant takes exactly 1 argument\"</span>);\r\n        Result = (1 / Math.Cos(input));\r\n        <span style=\"color: blue;\">break</span>;\r\n</pre>\r\n</div>\r\n<p>Please post any advice/ suggestions, if any improvements</p>\r\n<p>thank you</p>\r\n<p>arvind ps</p>",
+    "PostedDate": "2012-03-28T03:02:45.573-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "830217",
+    "ThreadId": "310217",
+    "Html": "<p>there is a fork of ncalc i made which enables you to use the Managed Extensibilty Framework [MEF] to add extra functions just by implementing an interface and tagging it with the right export - it means all your new functions can live in their own dll seperate from ncalc.</p>",
+    "PostedDate": "2012-04-30T08:05:35.073-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "830640",
+    "ThreadId": "310217",
+    "Html": "<p>Yes, it will be a good idea. Is it available under GPL or MIT or is it a for Buy product.</p>\r\n<p>If it is a for Buy , then please post a trial download link, with documentation</p>\r\n<p>I hope it is compatible with vs 2010, and that it can be ported to a Silverlight inbrowser application.</p>\r\n<p>We are in the process of making quizz based on Maths , a prototype for WordQuiz just for demo is posted here</p>\r\n<p><a href=\"http://dl.dropbox.com/u/71964910/MyFantasyPicksTestPage.html\">http://dl.dropbox.com/u/71964910/MyFantasyPicksTestPage.html</a></p>\r\n<p>the Math quiz will have equations posted with random numbers and&nbsp;choices offered . The answer ofcourse is calculated on basis</p>\r\n<p>of Ncalc</p>\r\n<p>regards</p>\r\n<p>arvind</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2012-05-01T07:03:44.88-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "840440",
+    "ThreadId": "310217",
+    "Html": "<p>its a fork of codeplex, same license, you can download code here:</p>\r\n<p>&nbsp;</p>\r\n<p><a href=\"http://ncalc.codeplex.com/SourceControl/network/forks/GreyCloud/NCalcMEFed\">http://ncalc.codeplex.com/SourceControl/network/forks/GreyCloud/NCalcMEFed</a></p>\r\n<p>hope it helps</p>",
+    "PostedDate": "2012-05-24T07:13:24.233-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "292605",
+    "ThreadId": "85938",
+    "Html": "<p>Hello!</p>\r\n<p>I would like to know if it's possible to give custom object as parameters<br>I means, I've an object type that override the common operators (+,- etc) and I want to know if it's possible to use it as parameters</p>\r\n<p>Sample:</p>\r\n<pre><div style=\"color:Black;background-color:White\"><pre>Expression e = <span style=\"color:Blue\">new</span> Expression(<span style=\"color:#A31515\">&quot;[x] * [y]&quot;</span>);\r\ne.Parameters[<span style=\"color:#A31515\">&quot;x&quot;</span>] = myObjectA;\r\ne.Parameters[<span style=\"color:#A31515\">&quot;y&quot;</span>] = myObjectB;\r\n\r\nConsole.WriteLine(e.Evaluate());\r\n</pre>\r\n</div>\r\n<br>Thanks for your help !<br></pre>",
+    "PostedDate": "2010-02-19T04:50:17.763-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "410483",
+    "ThreadId": "85938",
+    "Html": "<p>I don't really know if it is possible. I will check. I have a class to handle which operation has to be done between types. I should check there if there is an operator overload for those objects. I had this message as a work item.</p>\r\n<p>S&eacute;bastien</p>",
+    "PostedDate": "2010-02-26T23:41:14.133-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "410484",
+    "ThreadId": "85938",
+    "Html": "This discussion has been copied to a work item. Click <a href=\"http://ncalc.codeplex.com/WorkItem/View.aspx?WorkItemId=26352\">here</a> to go to the work item and continue the discussion.",
+    "PostedDate": "2010-02-26T23:41:40.273-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "410509",
+    "ThreadId": "85938",
+    "Html": "<p>&nbsp;</p>\r\n<p>Thanks !</p>\r\n<p>I've added some info to the work item, hope it can help</p>",
+    "PostedDate": "2010-02-27T02:21:22.383-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "413160",
+    "ThreadId": "85938",
+    "Html": "<p>Hi,</p>\r\n<p>I tried to use the NClc.dll assembly that is present at <a href=\"http://ncalc.codeplex.com\">http://ncalc.codeplex.com</a> . But, it displayed an error message saying that, &quot;It is not possible to add, as it is not built against silverlight runtime.....&quot;</p>\r\n<p>Do anyone let me know what might be the reason?</p>\r\n<p>Thank you,</p>\r\n<p>Regards</p>\r\n<p>Ashok</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-03-02T06:01:01.42-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "413162",
+    "ThreadId": "85938",
+    "Html": "<p>ANTLR is not compatible with Silverlight. Someone in the forums managed to get it working and I'd like to know how !</p>",
+    "PostedDate": "2010-03-02T06:03:31.163-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "628115",
+    "ThreadId": "85938",
+    "Html": "<p>Sebastian,</p>\r\n<p>have you received any information on how to run nCalc in Silverlight ?</p>\r\n<p>Thanks a lot</p>\r\n<p>Frank</p>",
+    "PostedDate": "2011-06-15T06:51:59-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

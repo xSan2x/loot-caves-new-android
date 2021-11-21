@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": null,
+    "Description": "This is the line that I am referring to. I do not think it is appropriate in a library.\r\n\r\nhttps://github.com/tyrone-sudeium/NCalc/blob/c141185099082663e5c7651e6b87823c9887feb3/Evaluant.Calculator/Expression.cs#L155\r\n\r\nI believe that it should be removed",
+    "LastUpdatedDate": "2017-03-29T04:13:51.487-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2016-02-01T10:38:33.357-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Remove debugging call to improve performance",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 3,
+    "Id": 28352
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I concur. \n\nI'm using it in batch processing some data and it is very annoying, as it litters the Output window with lots of __Expression retrieved from cache__ and __Expression added to cache__ lines, making it very difficult to find my own output messages or error messages.\n\nA property capable of turning these on or off would suffice (off by default).\n\nSince there are no reliable means to filter the Output window, this is a must have.",
+      "PostedDate": "2016-06-29T02:24:13.007-07:00",
+      "Id": 200334
+    }
+  ]
+}

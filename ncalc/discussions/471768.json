@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1131203",
+    "ThreadId": "471768",
+    "Html": "When trying to evaluate the string &quot;3(4<em>10) I get this error: &quot;missing EOF at '(' at line 1:1&quot;\r<br />\n<br />\nObviously if I modify my input to read &quot;3</em>(4*10)&quot; it works properly, but I'm not sure that I can rely on my users to understand what the EOF error message means in this case. \r<br />\n<br />\nIs there a way, using the options or the EvaluateFunction or EvaluateParameter events to properly parse this input? I've triedg everything I could think of but cannot make it work.\r<br />\n<br />\nAny help would be appreciated. Thanks.<br />\n",
+    "PostedDate": "2013-12-03T03:37:39.817-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

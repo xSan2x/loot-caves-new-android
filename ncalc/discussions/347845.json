@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "807504",
+    "ThreadId": "347845",
+    "Html": "\r\n<p><span style=\"widows:2; text-transform:none; text-indent:0px; display:inline!important; font:small arial; white-space:normal; orphans:2; float:none; letter-spacing:normal; color:#000000; word-spacing:0px\">Hi. Anybody knows if NCalc.Evaluate() supports globalization\r\n in any way?</span></p>\r\n<div style=\"widows:2; text-transform:none; text-indent:0px; font:small arial; white-space:normal; orphans:2; letter-spacing:normal; color:#000000; word-spacing:0px\">\r\nI'm calling it with latin ES culture, for example with the expression &quot;3,141592&quot; (note the coma instead of the dot) and throws an exception.</div>\r\n<div style=\"widows:2; text-transform:none; text-indent:0px; font:small arial; white-space:normal; orphans:2; letter-spacing:normal; color:#000000; word-spacing:0px\">\r\nAny points out there? Thanks in advance.</div>\r\n",
+    "PostedDate": "2012-03-08T08:03:15.713-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

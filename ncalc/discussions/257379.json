@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "611727",
+    "ThreadId": "257379",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>NCalc supports an expression like <strong>-A&#43;B</strong> just fine, but <strong>\r\n&#43;A&#43;B</strong> throws an exception.</p>\r\n<p>Is there a workaround for this?</p>\r\n<p>Tks!</p>\r\n<p>Andr&eacute; Carlucci</p>\r\n",
+    "PostedDate": "2011-05-12T08:07:07.82-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "613288",
+    "ThreadId": "257379",
+    "Html": "<p>i suspect the only way around this would be to modify the antr grammar file &amp; compile the library. You'd need to make + a unary operator.</p>\r\n<p>david</p>",
+    "PostedDate": "2011-05-16T05:08:56.923-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

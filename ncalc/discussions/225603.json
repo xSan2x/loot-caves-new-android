@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "487486",
+    "ThreadId": "225603",
+    "Html": "<p>Hi,</p>\r\n<p>Is there a way to re-use the same instance of Expression object for evaluating multiple expressions one after the other. I think I am looking for something as shown below:</p>\r\n<pre>object oValue = null;\r\n\r\nExpression myEvaluator = new Expression();\r\n\r\noValue = myEvaluator.Evaluate(&quot;a + b&quot;);\r\noValue = myEvaluator.Evaluate(&quot;c + d&quot;);\r\noValue = myEvaluator.Evaluate(&quot;a + b * xyz&quot;);\r\n</pre>\r\n<p>In my application, I need to evaluate multiple expressions on the same parameter set, but as the expression needs to be supplied through the constructor, I am forced to repeatedly create and destroy the Expression object.</p>\r\n<p>Regards,</p>\r\n<p>- Vikram</p>",
+    "PostedDate": "2010-09-01T03:28:25.08-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "489670",
+    "ThreadId": "225603",
+    "Html": "<p>Hey viklele,</p>\r\n<p>there is no way to do with as is.</p>\r\n<p>you have two options:</p>\r\n<p>1) create a wrapper expression factory which creates expressions with a specific parameter dictionary and evaluation options [i've found this useful before]</p>\r\n<p>2) modify the Expression Class to expose the</p>\r\n<pre style=\"font-family:consolas\">&nbsp;&nbsp;<span style=\"color:blue\">protected</span>&nbsp;<span style=\"color:blue\">string</span>&nbsp;expression;<br></pre>\r\n<pre style=\"font-family:consolas\">method - be careful then to ensure that you call Compile on set </pre>\r\n<pre style=\"font-family:consolas\">David</pre>",
+    "PostedDate": "2010-09-06T04:18:45.297-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "489698",
+    "ThreadId": "225603",
+    "Html": "<p>Hi David,</p>\r\n<p>Since I didn't want to *modify* Expression class (I avoid doing that in third party components - unless my change is likely to get propagated in the original source), instead I derived from it. Here is what I did:</p>\r\n<pre><pre><pre><span style=\"color:blue\">class</span> MyExression : Expression \r\n{\r\n   <span style=\"color:blue\">public</span> <span style=\"color:blue\">object</span> Evaluate(<span style=\"color:blue\">string</span> expression)\r\n   {\r\n      <span style=\"color:blue\">string</span> oldExpresion = <span style=\"color:blue\">this</span>.expression; \r\n      <span style=\"color:blue\">try</span> {\r\n         <span style=\"color:blue\">this</span>.expression = expression; <span style=\"color:blue\">this</span>.Evaluate (); \r\n      } \r\n      <span style=\"color:blue\">finally</span> {\r\n         <span style=\"color:blue\">this</span>.expression = oldExpression; \r\n      }\r\n   }\r\n}\r\n\r\n</pre>\r\n</pre>\r\n</pre>\r\n<p>Unfortunately this did not work, as&nbsp; Evaluate() method has following code:</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">&nbsp;</span><pre><span style=\"color:blue\">if</span> (HasErrors())\r\n{\r\n   <span style=\"color:blue\">throw</span> <span style=\"color:blue\">new</span> EvaluationException(Error);\r\n}\r\n\r\n<span style=\"color:blue\">if</span> (ParsedExpression == <span style=\"color:blue\">null</span>)\r\n{\r\n   ParsedExpression = Compile(expression, (Options &amp; EvaluateOptions.NoCache) == EvaluateOptions.NoCache);\r\n}\r\n\r\n</pre>\r\n</pre>\r\n</div>\r\n<p>ParseExpression setter is private, so I cannot clear it.</p>\r\n<p>So, as I don't want to modify Expression class, this now leaves me with the option of factory as you suggested - my only concern is that I need to evaluate hundreds of expressions on same parameter value set, so I will needs as many instances of Expression object :-(</p>\r\n<p>Anyways, thanks for your suggestion.</p>\r\n<p>Regards,</p>\r\n<p>- Vikram</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:242px;width:1px;height:1px;overflow:hidden\">\r\n<pre><pre>ParsedExpression </pre>\r\n</pre>\r\n</div>",
+    "PostedDate": "2010-09-06T05:17:15.427-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

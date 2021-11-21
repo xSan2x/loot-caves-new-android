@@ -1,0 +1,48 @@
+<div class="wikidoc"><h1>Values</h1>
+A value is a terminal token representing a concrete element. This can be:
+<ul><li>an integer</li>
+<li>a floating point number</li>
+<li>a date time</li>
+<li>a boolean</li>
+<li>a string</li>
+<li>a function</li>
+<li>a parameter</li></ul>
+
+<h2>Integers</h2>
+They are represented using numbers. <br /><br /><pre>
+123456
+</pre><br />They are evaluated as <b>Int32</b>.<br />
+<h2>Floating point numbers</h2>
+Use the dot to define the decimal part. <br /><br /><pre>
+123.456
+.123
+</pre><br />They are evaluated as <b>Decimal</b>.<br />
+<h2>Scientific notation</h2>
+You can use the <b>e</b> to define power of ten (10^).<br /><pre>
+1.22e1
+1e2
+1e+2
+1e-2
+.1e-2
+1e10
+</pre><br />They are evaluated as Double<br />
+<h2>Dates and Times</h2>
+Must be enclosed between sharps. <br /><br /><pre>
+#2008/01/31# // for en-US culture
+</pre><br />The are evaluated as <b>DateTime</b>. NCalc uses the current Culture to evaluate them.<br />
+<h2>Booleans</h2>
+Booleans can be either <b>true</b> or <b>false</b>.<br /><br /><pre>
+true
+</pre>
+<h2>Strings</h2>
+Any character between single quotes &quot;<b>&#39;</b>&quot; are evaluated as <b>String</b>. <br /><br /><pre>
+&#39;hello&#39;
+</pre><br />You can escape special characters using <b>\\</b>, <b>\&#39;</b>, <b>\n</b>, <b>\r</b>, <b>\t</b>.<br />
+<h2>Function</h2>
+A function is made of a name followed by braces, containing optionally any value as arguments.<br /><br /><pre>
+  Abs(1), doSomehting(1, &#39;dummy&#39;)
+</pre><br />Please read the <a href="https://ncalc.codeplex.com/wikipage?title=functions&referringTitle=values">functions</a> page for details.<br />
+<h2>Parameters</h2>
+A parameter as a name, and can be optionnaly contained inside brakets.<br /><br /><pre>
+  2 + x, 2 + [x]
+</pre><br />Please read the <a href="https://ncalc.codeplex.com/wikipage?title=parameters&referringTitle=values">parameters</a> page for details</div><div class="ClearBoth"></div>

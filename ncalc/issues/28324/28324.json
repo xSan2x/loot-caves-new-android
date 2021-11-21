@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": null,
+    "Description": "NCalc has a bunch of Console.WriteLine's that can impact performance.\r\nConvert Console.WriteLine to Debug.Print, or add #if DEBUG conditionals.\r\n\r\nOr possibly remove the console prints all together and replace it with a status variable.\r\n\r\nA few Examples:\r\nA first chance exception of type 'NCalc.EvaluationException' occurred in NCalc.dll\r\nParse Filter String Exception: no viable alternative at input '<EOF>' at line 0:-1\r\nXXX.vshost.exe Information: 0 : Expression retrieved from cache:\r\nXXX..vshost.exe Information: 0 : Expression added to cache:",
+    "LastUpdatedDate": "2015-03-25T01:20:11.15-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2012-08-09T15:05:44.01-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Change Console.WriteLine to Debug.Print",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 7,
+    "Id": 28324
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Ideally, there'd be either a Programmatic Switch (ie TraceSource and SourceSwitch) or a specific preprocessor conditional. I don't want to have to turn off all my debugging just to not see debug information from NCalc.",
+      "PostedDate": "2014-05-05T13:19:18.527-07:00",
+      "Id": 145621
+    }
+  ]
+}

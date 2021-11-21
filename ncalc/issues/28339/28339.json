@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I tried to add the following test and it failed:\r\n\r\nvar e = new Expression(\"経済協力開発機構\");\r\ne.Parameters[\"経済協力開発機構\"] = 10;\r\nAssert.AreEqual(10, e.Evaluate());",
+    "LastUpdatedDate": "2014-05-16T08:38:24.26-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2014-05-16T08:38:24.26-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Unicode parameters not supported",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 28339
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

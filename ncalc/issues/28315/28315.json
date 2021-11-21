@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": null,
+    "Description": "Evaluating the formula\r\n\r\n111111111111111+111111111111111+111111111111111\r\n\r\nproduces the result 333333351366656.  Normally I would have just chalked this up to the precision limits that floating point arithmetic introduces (I'm assuming these tokens are being treated as floating point since they exceed the 32 bit integer max...).\r\n\r\n-------------------------------------\r\n\r\nIn contrast, though, evaluating the formula\r\n\r\n111111111111111.0+111111111111111.0+111111111111111.0\r\n\r\nevaluates correctly to 333333333333333.0  .  With that being the case, my intuition is that the integer equivalent (the first example) can somehow utilize the greater accuracy that is going on when the terms are expressly marked as being floating point.",
+    "LastUpdatedDate": "2012-07-30T08:47:33.1-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2011-09-08T08:55:28.63-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Recoverable precision loss when manipulating very large ints",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 28315
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "In the first example, ncalc will recognize the number as an integer. In that case you have an overflow exception internally.\nIn the second example, ncalc will recognize it as a double and it will work.",
+      "PostedDate": "2012-07-30T08:47:33.1-07:00",
+      "Id": 72651
+    }
+  ]
+}

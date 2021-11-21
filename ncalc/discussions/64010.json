@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "217635",
+    "ThreadId": "64010",
+    "Html": "<p>The math functions were case sensitive.&nbsp; I allow the users to change the formulas to do some of the calculations and instead of &quot;Floor&quot;, they had keyed &quot;floor&quot;.&nbsp; I kept getting function not found.</p>\r\n<p>In my copy of the source, I added a &quot;.ToLower&quot; on the switch statement in the EvaluationVisitor.Visit() function (and changed all the case statements to lower case).</p>\r\n<p>I'm not sure if there was a better way around this, but it worked for me.&nbsp; I didn't know if you could explain a better way to do this or if you wanted to modify the source on your end as well.</p>",
+    "PostedDate": "2009-07-30T08:56:41.627-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "217644",
+    "ThreadId": "64010",
+    "Html": "<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\"><div style=\"color:Black;background-color:White\">The functions are case sensitive by design. This is an intended behavior, and the solution you use is correct. Another extension to what you did could be to define a static boolean property to define the behavior, or a constructor parameter to Expression(). Or both ;)</div></span></pre>\r\n</div>",
+    "PostedDate": "2009-07-30T09:13:34.847-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "219004",
+    "ThreadId": "64010",
+    "Html": "<p>But wouldn't it better that this switch would be done at this side, rather than making craig to hack the original source. Otherwise, he would have to maintain his patch each time new version is released.</p>\r\n<p>This is how all the other parsers work, take for example C# regex parser.&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>Also could you please, look at the previous question as well.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>",
+    "PostedDate": "2009-08-03T17:21:45.827-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "219110",
+    "ThreadId": "64010",
+    "Html": "<p>As you suggest I can handle&nbsp;this in the trunk. Thus it makes me think about something else: feedbakc. I will create a discussion on functionnalities and concerns users would like to see addressed.</p>",
+    "PostedDate": "2009-08-04T00:05:11.437-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "219582",
+    "ThreadId": "64010",
+    "Html": "<p>That would be great indeed.</p>\r\n<p>Thanks</p>",
+    "PostedDate": "2009-08-05T00:40:32.627-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

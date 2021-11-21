@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Corrected as of v1.3.5. Thanks for the info.",
+    "ClosedDate": "2010-02-08T06:44:54.093-08:00",
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "Evaluating the expression\n\"40000000000+1\" yields an error because the first argument is parsed to be a integer but is too large to be created.\n\nReplacing\n\"retval.value = new ValueExpression(int.Parse(((INTEGER35 != null) ? INTEGER35.Text : null)));\"\n\nin NCalcParser.cs with\n\ntry\n{\n        retval.value = new ValueExpression(int.Parse(((INTEGER35 != null) ? INTEGER35.Text : null)));\n}\ncatch(System.OverflowException)\n{\n        retval.value = new ValueExpression(double.Parse(((INTEGER35 != null) ? INTEGER35.Text : null)));\n}\n\nshould resolve this behavior without requiring the user to enter the formula as \"40000000000.0+1\"",
+    "LastUpdatedDate": "2010-02-08T06:44:54.093-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2010-01-29T05:17:33.673-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Integer overflow not resolved during parsing",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 26084
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "On second thought, this failed conversion should be casted into a long rather than a double\r\n\r\ntry\r\n{\r\nretval.value = new ValueExpression(int.Parse(((INTEGER35 != null) ? INTEGER35.Text : null)));\r\n}\r\ncatch(System.OverflowException)\r\n{\r\nretval.value = new ValueExpression(long.Parse(((INTEGER35 != null) ? INTEGER35.Text : null)));\r\n}",
+      "PostedDate": "2010-01-29T06:34:54.31-08:00",
+      "Id": 16152
+    }
+  ]
+}

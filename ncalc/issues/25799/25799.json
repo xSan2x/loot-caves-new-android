@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Corrected, thanks.",
+    "ClosedDate": "2009-12-31T03:16:52.293-08:00",
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "I am trying to create a test application using expression parameters. Below is the code.\n\nusing System;\nusing System.Collections.Generic;\nusing System.Linq;\nusing System.Text;\nusing NCalc;\n\nnamespace ConsoleApplication1\n{\n    class Program\n    {\n        static void Main(string[] args)\n        {\n            Expression volume = new Expression(\"[surface] * h\");\n            Expression surface = new Expression(\"[l] * [L]\");\n            volume.Parameters[\"surface\"] = surface;\n            surface.Parameters[\"l\"] = 1;\n            surface.Parameters[\"L\"] = 2;\n\n            Console.WriteLine(volume.Evaluate());\n            Console.Read();\n        }\n    }\n}\n\nWhen i run this application i am getting System.ArgumentException - \"Parameter was not defined Parameter name: l\"",
+    "LastUpdatedDate": "2009-12-31T03:16:52.293-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2009-12-28T23:05:38.33-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Issue with Expression Parameters",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 25799
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

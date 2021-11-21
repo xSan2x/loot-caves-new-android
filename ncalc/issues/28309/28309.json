@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "It has been fixed in the source code, available on Ealuant's servers. I will ask to migrate to mercurial in order to get the source code on codeplex.\r\nIn the meantime you can find the source code at https://svn.evaluant.com:8443/ncalc, with l/p: svnuser/svnuser",
+    "ClosedDate": "2010-09-16T16:54:06.107-07:00",
+    "CommentCount": 4,
+    "Custom": "",
+    "Description": "I've got an expression where I'm expecting a Decimal result yet getting a Double result ...\n\nDim expr As New NCalc.Expression(\"x/2\", NCalc.EvaluateOptions.IgnoreCase)\nexpr.Parameters(\"x\") = 2D\nexpr.Evaluate()\n\n... will return a Double.  Shouldn't these results be a Decimal?  For example, the following ...\n\nDim results As Object = 2D / 2I\n\n... will return a Decimal.  After reading the \"Values\" page, I was under the impression that the 2 in the formula I've listed above would be evaluated as an Integer ...\n\nIntegers\nThey are represented using numbers. \n123456\nThey are evaluated as Int32.\n\n... yet it appears to be evaluated as a Double.  Is this functionality intentional?  If so, the documentation I quoted would appear to be incorrect.",
+    "LastUpdatedDate": "2010-09-17T06:21:01.267-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2010-07-28T08:50:21.91-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Expecting Decimal, Getting Double",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 28309
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Whoops, looks like I was all mixed up ... glad it ended up helping though.  I look forward to the next release!",
+      "PostedDate": "2010-08-18T12:18:52.623-07:00",
+      "Id": 16161
+    },
+    {
+      "Message": "Actually I found an issue with conversions while trying your example and adding unit tests, though in your case it's normal, as 2D means Double and not Decimal. For Decimal you need to write 2m. Please get the latest source code or wait for next release.\r\n\n\n** Closed by sebastienros 8/1/2010 1:23 PM",
+      "PostedDate": "2010-09-16T11:50:30.673-07:00",
+      "Id": 16162
+    },
+    {
+      "Message": "Recently, I tried the following ... \r\n\r\n        Dim formula As String = \"Abs(x)\"\r\n        Dim value As Double = -9\r\n\r\n        Dim expr As New Expression(formula, EvaluateOptions.IgnoreCase)\r\n        expr.Parameters(\"x\") = value\r\n\r\n        Dim results As Object = expr.Evaluate\r\n\r\n        MsgBox(String.Format(\"Results: {0} ({1})\", results.ToString, results.GetType.ToString))\r\n\r\n... and my message box displayed \"Results: 9 (Decimal).\"\r\n\r\nHas this been resolved in the latest build?  I checked the Source Code section of this site but the only checkin listed (74794 by TFSSERVICE) didn't have any code in it, only two XAML files. ",
+      "PostedDate": "2010-09-16T11:50:31.407-07:00",
+      "Id": 16163
+    },
+    {
+      "Message": "Thanks senastienros, I appreciate the quick response.  I wasn't able to checkout the code from that URL, I kept encountering an error, (http://stackoverflow.com/questions/1025377/an-svn-error-200-ok-when-checking-out-from-my-online-repo).  I'll tinker with things on my end some more ... thanks again!",
+      "PostedDate": "2010-09-17T06:21:01.267-07:00",
+      "Id": 16164
+    }
+  ]
+}

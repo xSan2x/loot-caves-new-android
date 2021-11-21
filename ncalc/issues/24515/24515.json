@@ -1,0 +1,51 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Correction released",
+    "ClosedDate": "2009-09-07T14:57:44.267-07:00",
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "no need ; enough said",
+    "LastUpdatedDate": "2009-09-07T14:57:44.267-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2009-09-01T21:46:01.147-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Does 'nt support scientific notation  for numbers (9E-3 for example)",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 24515
+  },
+  "FileAttachments": [
+    {
+      "FileId": 151186,
+      "FileName": "NCalc - Binaries.zip",
+      "DownloadUrl": ".\\151186"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Can you try with the attached files ? When validated I will create a new release",
+      "PostedDate": "2009-09-02T06:09:11.613-07:00",
+      "Id": 16150
+    }
+  ]
+}

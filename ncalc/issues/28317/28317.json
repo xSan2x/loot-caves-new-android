@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "By design, but you might want to use Jint instead, which would compile your expression without any issue",
+    "ClosedDate": "2011-09-20T10:25:46.167-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi all,\r\n\r\nI get an Antlr.Runtime.EarlyExitException when trying to compile the following code:\r\nMath.Round((13.73 - 1.2) / (15.6 - 1.2), 4) * 100\r\n\r\nI'm not able to catch and handle this exception from outside the NCalcLexer class. Sure, the expression is not conform with NCalc syntax (it was originally created for my own evaluator). However, there seems to be no possibility to check the expression if it has the correct NCalc syntax before compiling it. The dot (.) before the round-function seems to cause the problem. Probably, the evaluator concerns a dot inside an expression as an indicator of a float number.\r\n\r\nThe question is now, why I cannot catch exceptions coming from Antlr3.Runtime. Is there any chance to \"teach\" the evaluator that expressions containing a dot are not necessarily float numbers?\r\n\r\nThanks in advance!\r\n\r\nDmitri",
+    "LastUpdatedDate": "2011-09-20T10:25:46.167-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2011-09-19T07:26:08.24-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "EarlyExitException when evaluating an expression containing a dot (.)",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 28317
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

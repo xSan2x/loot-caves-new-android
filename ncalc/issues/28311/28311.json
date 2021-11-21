@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 2,
+    "Custom": null,
+    "Description": "If you define a parameter with the name \"e\" to for example 1, the expression \"e-2\" will not be equal to -1. Rather, it seems like Ncalc tries to parse it like an exponent function. There should be a way to disable this behaviour, user defined functions and variables should have higher priority than the exponent function.\r\n\r\nDidn't seem obvious to me how to disable the exponent syntax. Thanks for looking at it :)",
+    "LastUpdatedDate": "2011-05-04T01:32:00.933-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2011-05-03T09:54:03.07-07:00",
+    "Status": {
+      "Name": "Active",
+      "Id": 2
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Using Parameter named 'e'",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 28311
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "In the meantime, you could try forcing a parameter evaluation by using [e] instead of e inside expression. Just a work around in caase it might unblock you.",
+      "PostedDate": "2011-05-03T10:22:02.38-07:00",
+      "Id": 35131
+    },
+    {
+      "Message": "Yeah, I think that would work. I think I can also get around it by searching for \"e[\\+\\-]\" and replacing that with \"e [+/-]\". ",
+      "PostedDate": "2011-05-04T01:32:00.933-07:00",
+      "Id": 35205
+    }
+  ]
+}

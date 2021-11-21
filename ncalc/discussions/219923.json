@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "469118",
+    "ThreadId": "219923",
+    "Html": "Hi!\r\n\r\nAfter having looked around a bit for a calculation parser, I found NCalc. Today I finally reached the point where I though I could start using it. For a start I wanted NCalc to validate the syntax of some expressions. But as soon as I run HasErrors() or  Evaluate(), I get a &quot;Operation could destabilize the runtime&quot; error which makes it impossible for me to test NCalc locally. On my local development machine I'm running the app from IIS 7 (or is it 7.5?) on Windows Server 2008R2.\r\n\r\nIf I upload the app to my web host it works just fine which is opposite to what these kinds of problems usually are.\r\n\r\nIs this anything you've seen before and know how to solve?",
+    "PostedDate": "2010-07-19T10:36:41.917-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "469473",
+    "ThreadId": "219923",
+    "Html": "<p>I solved the problem by changing the App pool user for the IIS website from DefaultAppPool to ASP.NET v4.0, but I still don't know why that solved it?</p>",
+    "PostedDate": "2010-07-20T02:19:33.59-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "643642",
+    "ThreadId": "219923",
+    "Html": "<p>Hi, i've the same problem with a Winform App... i don't understand.</p>\r\n<p>Someone can help me please ?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2011-07-18T04:30:06.73-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "643826",
+    "ThreadId": "219923",
+    "Html": "<p>Can you provide a testable piece of code ?</p>\r\n<p>Thanks<br />Sebastien</p>",
+    "PostedDate": "2011-07-18T10:37:58.503-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "644884",
+    "ThreadId": "219923",
+    "Html": "<p>in my app.config i'have this line</p>\r\n<p><span style=\"font-family: Consolas; color: #0000ff; font-size: x-small;\"><span style=\"font-family: Consolas; color: #0000ff; font-size: x-small;\"><span style=\"font-family: Consolas; color: #0000ff; font-size: x-small;\"><span style=\"font-family: Consolas; color: #0000ff; font-size: x-small;\">&lt;</span></span></span></span><span style=\"font-family: Consolas; color: #a31515; font-size: x-small;\"><span style=\"font-family: Consolas; color: #a31515; font-size: x-small;\"><span style=\"font-family: Consolas; color: #a31515; font-size: x-small;\">NetFx40_LegacySecurityPolicy</span></span></span><span style=\"font-family: Consolas; color: #0000ff; font-size: x-small;\"><span style=\"font-family: Consolas; color: #0000ff; font-size: x-small;\"><span style=\"font-family: Consolas; color: #0000ff; font-size: x-small;\"> </span></span></span><span style=\"font-family: Consolas; color: #ff0000; font-size: x-small;\"><span style=\"font-family: Consolas; color: #ff0000; font-size: x-small;\"><span style=\"font-family: Consolas; color: #ff0000; font-size: x-small;\">enabled</span></span></span><span style=\"font-family: Consolas; color: #0000ff; font-size: x-small;\"><span style=\"font-family: Consolas; color: #0000ff; font-size: x-small;\"><span style=\"font-family: Consolas; color: #0000ff; font-size: x-small;\">=</span></span></span><span style=\"font-family: Consolas; font-size: x-small;\"><span style=\"font-family: Consolas; font-size: x-small;\">\"</span></span><span style=\"font-family: Consolas; color: #0000ff; font-size: x-small;\"><span style=\"font-family: Consolas; color: #0000ff; font-size: x-small;\"><span style=\"font-family: Consolas; color: #0000ff; font-size: x-small;\">true</span></span></span><span style=\"font-family: Consolas; font-size: x-small;\"><span style=\"font-family: Consolas; font-size: x-small;\">\"</span></span><span style=\"font-family: Consolas; color: #0000ff; font-size: x-small;\"> <span style=\"font-family: Consolas; color: #0000ff; font-size: x-small;\"><span style=\"font-family: Consolas; color: #0000ff; font-size: x-small;\">/&gt;</span></span></span></p>\r\n<p><span style=\"font-family: Consolas; color: #0000ff; font-size: x-small;\"><span style=\"font-family: Consolas; color: #0000ff; font-size: x-small;\"><span style=\"font-family: Consolas; color: #0000ff; font-size: x-small;\">without this line, allwoks fine...</span></span></span></p>\r\n<p><span style=\"font-family: Consolas; color: #0000ff; font-size: x-small;\"><span style=\"font-family: Consolas; color: #0000ff; font-size: x-small;\"><span style=\"font-family: Consolas; color: #0000ff; font-size: x-small;\">&nbsp;</span></span></span></p>\r\n<p><span style=\"font-family: Consolas; color: #0000ff; font-size: x-small;\"><span style=\"font-family: Consolas; color: #0000ff; font-size: x-small;\">&nbsp;</span></span></p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2011-07-20T03:20:21.35-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

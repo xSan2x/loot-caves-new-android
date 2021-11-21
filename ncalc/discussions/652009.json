@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1465344",
+    "ThreadId": "652009",
+    "Html": "I am using NCalc successfully. However, I would like to override the meaning of the ^ operator. Currently it is doing bitwise XOR operation. I want to change it to Math.Pow. Is it possible to do that without digging through the source code ?<br />\n",
+    "PostedDate": "2016-03-02T12:57:11.883-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

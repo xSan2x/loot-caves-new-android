@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I noticed that placing only a \".\" (decimal point) in the string expression to be evaluated throws the following unhandled exception at line 1025 in the NCalcLexer.cs file:\r\n\r\nException of type 'Antlr.Runtime.EarlyExitException' was thrown.\r\n\r\nIt was not possible to try/catch this error in the calling program.  What is the prescribed method of handling this case?\r\n\r\nThanks,\r\nBrian Rupert\r\n\r\n",
+    "LastUpdatedDate": "2014-01-05T16:36:10.723-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2014-01-05T16:36:10.52-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Input validation question",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 28337
+  },
+  "FileAttachments": [
+    {
+      "FileId": 775353,
+      "FileName": "NCalc_Error.png",
+      "DownloadUrl": ".\\775353"
+    }
+  ],
+  "Comments": []
+}

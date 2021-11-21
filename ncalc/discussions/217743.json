@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "461222",
+    "ThreadId": "217743",
+    "Html": "<p>Hi&nbsp;</p>\r\n<p>I have a problem, I am calling the delegate for de evaluate of the expression recursively and at the second time that this function is called the result cames NULL, can anybody tell me if this can be done?</p>\r\n<p>I think that the problem is that in the second time that this function is called the library loses the first expression that needs to be calculated and therefore the result comes NULL, but I am not sure about this.</p>\r\n<p>And if so how can I call this function in a recursevily function?</p>\r\n<p>Best Regards&nbsp;</p>\r\n<p>Tiago Pascoal</p>",
+    "PostedDate": "2010-06-29T08:24:51.917-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

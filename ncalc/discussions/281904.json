@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "707821",
+    "ThreadId": "281904",
+    "Html": "<p>I have an application wherein users might deal with dollars ('$'), percentages ('%'), Gigabytes('GB'), and plain old counts.&nbsp; Formulas need to be able to track the units of measure through to the final answer.&nbsp; Can it be done with NCalc?</p>\n<p>Google calculator knows how to preserve the units of measure through a calculation, but I don't know how it does it.</p>\n<p>I imagine that Terms must be of like units (or Types?) and that there is some precedence of units of measure.&nbsp; Here's a quick list off the top of my head, but perhaps there's a more basic way to think of it.</p>\n<p>x + x : x, $ + $ : $, % + % : %, % + 2 =&gt; % + 200% : %, GB + GB : GB, GB + MB : GB, x + ? :&nbsp; ERR</p>\n<p>x * x : x, x * ? : ?, $ * % : $, % * % : %, $ * $ : ERR, $ * GB : ERR, $ / GB : ($/GB)</p>\n<p>The syntax is [unit operation unit : result unit].&nbsp; ERR doesn't have to fail the computation completely, just the unit preservation part.</p>\n<p>As I write that short list, I realize that there's a lot of challenging problems represented in just these examples.&nbsp; Normalizing to giga, mega, kilo.&nbsp; Asymmetry of * and /.</p>\n<p>===</p>\n<p>I did some research, clearly starting from zero.&nbsp; I posted this general question on stackoverflow with some findings:&nbsp; http://stackoverflow.com/questions/8403098</p>",
+    "PostedDate": "2011-12-05T15:19:43.43-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "948039",
+    "ThreadId": "404812",
+    "Html": "\r\n<p>Hi All</p>\r\n<p>Firstly this is a great product.</p>\r\n<p>I am having an issue with Dates specified as parameters and after evaluating they are the string value.&nbsp; So my parameter is called P1 and before calling Evaluate() on the parameter the value is P1 after calling Evaluate() it is &#65279;&#65279;the parameter\r\n value as a string #21/11/2012# and then if I pass this into a new Expression() and call Evaluate() I get a DateTime out. Wondering if I am doing something wrong to get my date parameter evaluated as&nbsp;DateTime?</p>\r\n<p>&#65279;&#65279;&#65279;&#65279;&#65279;var e = new Expression(&quot;&#65279;DatesSubtract(P1,#21/11/2000#)&quot;);<br>\r\ne.Parameters[&quot;P1&quot;] = &#65279;#22-11-2012#<br>\r\ne.EvaluateFunction&#43;=delegate(string name, FunctionArgs args) {<br>\r\n&nbsp;DateTime dt = (DateTime)args.Parameters[0].Evaluate(); <br>\r\n=&gt; Fails evaluated as #22-11-2012#&nbsp;and&nbsp;so cast to DateTime fails&nbsp;BUT<br>\r\nDateTime dt&nbsp;= &#65279;(DateTime)(new Expression(args.Parameters[0].Evaluate().ToString()).Evaluate()); works but not expecting to have to do this??<br>\r\n}</p>\r\n<p>Thanks</p>\r\n",
+    "PostedDate": "2012-11-27T17:34:00.233-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "954307",
+    "ThreadId": "404812",
+    "Html": "\r\n<div style=\"color:black; background-color:white\">\r\n<pre>expression.Parameters[<span style=\"color:#a31515\">&quot;P1&quot;</span>] = <span style=\"color:blue\">new</span> Expression(&quot;&#65279;&#65279;#21/11/2000#&quot;).Evaluate(); </pre>\r\n<pre>I had to pass in the Parameters into a new expression instance (calling Evaluate() on the parameters was not enough) to make this work.</pre>\r\n</div>\r\n<p>&#65279;&#65279;&#65279;</p>\r\n",
+    "PostedDate": "2012-12-10T21:21:58.903-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

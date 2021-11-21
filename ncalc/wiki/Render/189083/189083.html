@@ -1,0 +1,51 @@
+<div class="wikidoc"><h2>Static parameters</h2>
+Static parameters are values which can be defined before the evaluation of an expression.<br />These parameters can be accesed using the <b>Parameters</b> dictionary of the <b>Expression</b> instance.<br /><br /><div style="color:Black;background-color:White;"><pre>
+  Expression e = <span style="color:Blue;">new</span> Expression(<span style="color:#A31515;">&quot;2 * [x] ^ 2 + 5 * [y]&quot;</span>);
+  e.Parameters[<span style="color:#A31515;">&quot;x&quot;</span>] = 5;
+  e.Parameters[<span style="color:#A31515;">&quot;y&quot;</span>] = 1;
+
+  Console.WriteLine(e.Evaluate());
+</pre></div><br />Parameters can be useful when a value is unknown at compile time, or when performance is important and the parsing can be saved for further calculations.<br />
+<h2>Expression parameters</h2>
+Expressions can be splitted into several ones by defining expression parameters. Those parameters are not simple values but <b>Expression</b> instances themselves.<br /><br /><div style="color:Black;background-color:White;"><pre>
+  Expression volume = <span style="color:Blue;">new</span> Expression(<span style="color:#A31515;">&quot;[surface] * h&quot;</span>);
+  Expression surface = <span style="color:Blue;">new</span> Expression(<span style="color:#A31515;">&quot;[l] * [L]&quot;</span>);
+  volume.Parameters[<span style="color:#A31515;">&quot;surface&quot;</span>] = surface;
+  surface.Parameters[<span style="color:#A31515;">&quot;l&quot;</span>] = 1;
+  surface.Parameters[<span style="color:#A31515;">&quot;L&quot;</span>] = 2;
+</pre></div>
+<h2>Dynamic parameters</h2>
+Sometimes parameters can be even more complex to evaluate and need a dedicated method to be evaluated. This can be done by intercepting there evaluation using the <b>EvaluateParameter</b> event published on <b>Expression</b> instances. Thus, each time a parameter is not defined in the dictionary, this event is called to try to resolve the value.<br /><br /><div style="color:Black;background-color:White;"><pre>
+  Expression e = <span style="color:Blue;">new</span> Expression(<span style="color:#A31515;">&quot;Round(Pow([Pi], 2) + Pow([Pi], 2) + [X], 2)&quot;</span>);
+
+  e.Parameters[<span style="color:#A31515;">&quot;Pi2&quot;</span>] = <span style="color:Blue;">new</span> Expression(<span style="color:#A31515;">&quot;Pi * [Pi]&quot;</span>);
+  e.Parameters[<span style="color:#A31515;">&quot;X&quot;</span>] = 10;
+
+  e.EvaluateParameter += <span style="color:Blue;">delegate</span>(<span style="color:Blue;">string</span> name, ParameterArgs args)
+    {
+      <span style="color:Blue;">if</span> (name == <span style="color:#A31515;">&quot;Pi&quot;</span>)
+        args.Result = 3.14;
+    };
+</pre></div>
+<h2>Square brackets parameters</h2>
+Parameters in between square brackets can contain special characters like spaces, dots, and also start with digits.<br /><br /><div style="color:Black;background-color:White;"><pre>
+  Expression e = <span style="color:Blue;">new</span> Expression(<span style="color:#A31515;">&quot;[My First Parameter] + [My Second Parameter]&quot;</span>);
+</pre></div>
+<h2>Multi-valued parameters</h2>
+When parameters are IEnumerable and the <b>EvaluationOptions.IterateParameters</b> is used, the result is an <b>IList</b> made of the evaluation of each value in the parameter.<br /><br /><div style="color:Black;background-color:White;"><pre>
+ Expression e = <span style="color:Blue;">new</span> Expression(<span style="color:#A31515;">&quot;(a * b) ^ c&quot;</span>, EvaluateOption.IterateParameters);
+ e.Parameters[<span style="color:#A31515;">&quot;a&quot;</span>] = <span style="color:Blue;">new</span> <span style="color:Blue;">int</span>[] { 1, 2, 3, 4, 5 };
+ e.Parameters[<span style="color:#A31515;">&quot;b&quot;</span>] = <span style="color:Blue;">new</span> <span style="color:Blue;">int</span>[] { 6, 7, 8, 9, 0 };
+ e.Parameters[<span style="color:#A31515;">&quot;c&quot;</span>] = 3;
+
+ <span style="color:Blue;">foreach</span> (<span style="color:Blue;">var</span> result <span style="color:Blue;">in</span> (IList)e.Evaluate())
+ {
+     Console.WriteLine(result);
+ }
+
+ <span style="color:Green;">//  216</span>
+ <span style="color:Green;">//  2744</span>
+ <span style="color:Green;">//  13824</span>
+ <span style="color:Green;">//  46656</span>
+ <span style="color:Green;">//  0</span>
+</pre></div></div><div class="ClearBoth"></div>

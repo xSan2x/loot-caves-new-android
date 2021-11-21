@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "766435",
+    "ThreadId": "315512",
+    "Html": "\r\n<p>Hello,</p>\r\n<p>The IgnoreCase flag doesn't seem to make parameters case insensitive. Am I don't something wrong or is that the expected behaviour?</p>\r\n<p>It looks to me like I would just have to add StringComparer.OrdinalIgnoreCase to the constructor of the Parameter dictionary to get this working but is there a reason this hasn't been done?</p>\r\n<p>thanks!</p>\r\n<p>Rob</p>\r\n",
+    "PostedDate": "2012-02-14T19:51:15.927-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1424115",
+    "ThreadId": "315512",
+    "Html": "I found that if I created a new Dictionary using the <strong>StringComparer.OrdinalIgnoreCase</strong> and then set the Parameters property for the expression to this dictionary it was case insensitive for the Parameters.<br />\n<br />\nMy next problem is how to make the operators case insensitive too, so we could use &quot;OR&quot; or &quot;or&quot; at the moment it is still case sensitive.<br />\n<br />\nHere's my code:<br />\n<pre><code>        Dim Vars As New Dictionary(Of String, Object)(StringComparer.OrdinalIgnoreCase)\n\n        For i As Integer = 1 To 5000\n            Vars.Add(String.Format(&quot;My value.Val{0}&quot;, i), Math.Sqrt(i))\n        Next\n\n        ce = New Expression(Me.txExpression.Text, EvaluateOptions.IgnoreCase)\n        ce.Parameters = Vars\n        Dim res = ce.Evaluate\n        Me.lblRes.Text = res</code></pre>\n\n",
+    "PostedDate": "2015-05-08T01:21:07.853-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

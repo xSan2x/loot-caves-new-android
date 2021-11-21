@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi, can we have the ability to add new parameters to the the expression when the EvaluateParameter delegate is running. For example:\r\n```\r\nexpression.EvaluateParameter += delegate(string name, ParameterArgs args)\r\n{\r\n    // get hold of the parameter\r\n    string myParam = \"[Sub] * [Expression]\";\r\n\r\n    args.Result = new Expression(myParam);\r\n}\r\n```\r\nI've also tried\r\n```\r\nexpression.EvaluateParameter += delegate(string name, ParameterArgs args)\r\n{\r\n    // get hold of the parameter\r\n    string myParam = \"[Sub] * [Expression]\";\r\n\r\n    expression.Parameters.Add(name, new Expression(myParam));\r\n}\r\n```\r\nNeither of those work. Can this be made possible?\r\n\r\nAt the moment I'm using a LogicalExpressionVisitor to find all parameters needed in the calculation and all the calculation parameters (recursively), and I then look these up and add them as parameters. The parameters are currently public properties on a plain object.",
+    "LastUpdatedDate": "2016-03-03T06:02:28.33-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2016-03-03T06:02:28.33-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Adding a Parameter in the EvaluateParameter delegate",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 28354
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

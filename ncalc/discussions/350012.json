@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "815384",
+    "ThreadId": "350012",
+    "Html": "\r\n<p>I'm using this to parse C# code and the evaluator fails when it runs into something like this:</p>\r\n<p>&nbsp;</p>\r\n<p>x * 4.0f</p>\r\n<p>Would it be possible to have this understand things like float vs. double according to the presence of an 'f'? &nbsp;I looked to see if I could modify the expression but I don't see how to do it to support that.</p>\r\n",
+    "PostedDate": "2012-03-25T20:44:20.727-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

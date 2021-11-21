@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1452349",
+    "ThreadId": "647540",
+    "Html": "Hi, \r<br />\n<br />\nmy extended funciton evaluator is of the form \r<br />\n<br />\nprivate void myEvaluator(string name, FunctionArgs args)\r<br />\n{\r<br />\n  if(name==&quot;A&quot;) { // call function to evaluate }\r<br />\n  else if(name==&quot;B&quot;) { // call function to evaluate }\r<br />\n  //etc\r<br />\n}\r<br />\n<br />\nThis works fine but the problem I'm having is that I use the extended function within NinjaTrader which is a trading platform. The evaluator is called for every tick change, and my functions &quot;A, &quot;B&quot;, etc... are now up to about 30 and I'm having real performance issues. \r<br />\n<br />\nThis means that for every evaluation I'm doing up to 30 string comparisons just to get to the correction evaluator function. I would like to use either delegates or function pointers so that I can pass the first parameter in args as a function value or pointer, so that I could have an array of delegates or an array of function pointers (preferably because its simpler) so that I could call the correct evaluator function using that parameter.\r<br />\n<br />\nI've tried various things for both delegates and function pointers but so far I've ended up with compile or runtime errors. There are a couple of restrictions - <br />\n<ul>\n<li>putting the evaluator function or delegate in a class won't work, because of the way Ninjatrader variables are initialised.</li>\n<li>\nI doubt that I can use static functions because the evaluator needs to access non-static variables.<br />\n</li>\n</ul>\nHas anyone else tried this or are there any examples of how I might do this?\r<br />\n<br />\nThanks,\r<br />\nWill.<br />\n",
+    "PostedDate": "2015-11-13T22:48:20.527-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

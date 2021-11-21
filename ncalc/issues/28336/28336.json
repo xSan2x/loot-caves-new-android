@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 2,
+    "Custom": null,
+    "Description": "We are using NCalc within an application so many values which end up as part of the final expression have come from the database as answers of numeric based questions. These questions allows decimals and there is also an option to mark a question as N/A so 'N/A' gets saved to the database.\r\n\r\nSo in order to handle 'N/A' as part of the calculation we are using the 'IF' function, for example : - \r\n\r\nif(1 = 'N/A',0, 1) + if(1 = 'N/A',0,1) + if(1 = 'N/A',0,1) + if(1 = 'N/A',0,1) + if(1 = 'N/A',0,1)\r\n\r\nThe above expression works fine, however the following expression is returning an error if a user for example enters a decimal as the answer to one of the numeric question (see first if part)\r\n\r\nif(1.1 = 'N/A',0, 1.1) + if(1 = 'N/A',0,1) + if(1 = 'N/A',0,1) + if(1 = 'N/A',0,1) + if(1 = 'N/A',0,1)\r\n\r\nIts seems to be that the equals operator does not like comparing a decimal with string. \r\n\r\nAny suggestions out there? Thanks in Advance",
+    "LastUpdatedDate": "2015-03-17T20:35:57.367-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2013-12-05T08:06:55.44-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "if expression issue (if(1.1 = 'N/A',0,1.1)",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 28336
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Am sure there is some way to handle the decimal values just go through the other posts in this forum.\n\nAnd also an alternative for this is you can replace the decimal like below\n\nif((11/10 = 0),0, 11) result is 11",
+      "PostedDate": "2015-03-17T20:33:16.593-07:00",
+      "Id": 179456
+    },
+    {
+      "Message": "You can also do as per your actual expression\n\nif((11/10 = 0),0, (11/10)) result is 1.1",
+      "PostedDate": "2015-03-17T20:35:57.367-07:00",
+      "Id": 179457
+    }
+  ]
+}

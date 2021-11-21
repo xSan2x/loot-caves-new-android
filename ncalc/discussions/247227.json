@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "570794",
+    "ThreadId": "247227",
+    "Html": "\r\n<p>Hello</p>\r\n<p>I would like to know if it's possible to use double quotes (instead of single quote) for string ? So that user don't need to escape single quotes from real word</p>\r\n<p>So example, writing this (which is'nt possible now):</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>x = <span style=\"color:#a31515\">&quot;it's so simple&quot;</span>\r\n</pre>\r\n</div>\r\n<p></p>\r\n<p>instead of:</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>x = <span style=\"color:#a31515\">'it\\'s more complicated'</span>\r\n</pre>\r\n</div>\r\n<p></p>\r\n<p>&nbsp;</p>\r\n<p>How can I modify the code to achieve this behaviour ?</p>\r\n<p>Thank you</p>\r\n<p>Fabrice</p>\r\n",
+    "PostedDate": "2011-02-23T06:46:13.017-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

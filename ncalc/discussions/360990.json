@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "853846",
+    "ThreadId": "360990",
+    "Html": "\r\n<p>In a situation where I use NCalc, the expression itself is defined by the user, and it's up to the code to detect the presence of parameters and set them.&nbsp; The event handler is nice, but it requires that all of my data be available in an event handler,\r\n and that's not a good approach for this situation.&nbsp; I could write special code that deals with this, but really like polymorphism.&nbsp; I could not find a method documented for finding all parameters from a single expression tree.&nbsp; I solved the\r\n problem with the following:</p>\r\n<p>In LogicalExpression, I created an abstract member called Terms:</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public abstract IEnumerable&lt;LogicalExpression&gt; Terms<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; get;<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>\r\n<p>In any class which inherrits from LogicalExpression, I override Terms.&nbsp; For UnaryExpression, it returns new LogicalExpression[] { Expression }, for Binary it returns new LogicalExpression[] { LeftExpression, RightExpression }, etc.&nbsp; For Parameters,\r\n Values, etc, it returns new LogicalExpression[] { }.&nbsp; With this in place I can walk the expression tree from Expression.ParsedExpression and detect all parameters that exist, knowing that any future implementor of LogicalExpression will also implement\r\n Terms.</p>\r\n<p>If there is another way to do what I have done, please let me know, but if not, I would appreciate if this logic could be added to the mainline development.&nbsp; I used IEnumerable on the abstract, but if you would prefer use an array, that works.&nbsp;\r\n If you would prefer call it Expressions as it is for Function instead of Terms, that works too.&nbsp; Still, this functionality of easily identifying all parameters before evaluating an expression is helpful.</p>\r\n<p>Thank you,</p>\r\n<p>dmp</p>\r\n",
+    "PostedDate": "2012-06-26T08:01:40.473-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1203393",
+    "ThreadId": "360990",
+    "Html": "This is a long time after the question but I have been looking at how to do this and thought it might be useful in the future.\r<br />\n<br />\nYou can create a visitor to get this information by implementing NCalc.Domain.LogicalExpressionVisitor.  You can get the names of the parameters by overriding the Visit function for the Identifier type e.g.:<br />\n<pre><code>    List&lt;string&gt; parameters = new List&lt;string&gt;();\n\n    public override void Visit(NCalc.Domain.Identifier function)\n    {\n        //Parameter - add to list\n        parameters.Add(function.Name);\n    }\n\n</code></pre>\n\nIn order to get the visitor to navigate its way through the expression tree you also need to provide implementations for all compound/node expression types (those that can contain other expressions.  The implementations just need to make sure the visitor visits each node e.g.:<br />\n<pre><code>    public override void Visit(NCalc.Domain.UnaryExpression expression)\n    {\n        expression.Accept(this);\n    }\n\n    public override void Visit(NCalc.Domain.BinaryExpression expression)\n    {\n       //Visit left and right\n        expression.LeftExpression.Accept(this);\n        expression.RightExpression.Accept(this);\n    }\n\n    public override void Visit(NCalc.Domain.TernaryExpression expression)\n    {\n        //Visit left, right and middle\n        expression.LeftExpression.Accept(this);\n        expression.RightExpression.Accept(this);\n        expression.MiddleExpression.Accept(this);\n    }\n</code></pre>\n\nAll of the other implemented methods can be left blank as they are for leaf expression types.\r<br />\n<br />\nIn your code create an instance of your visitor and use the 'accept' method on the root of the expression tree to extract all of the parameter names:<br />\n<pre><code>        var expr = NCalc.Expression.Compile(&quot;1+2+3/4+[parameter1]+[parameter2]&quot;, false);\n\n        ParameterExtractionVisitor visitor = new ParameterExtractionVisitor();\n        expr.Accept(visitor);\n        List&lt;string&gt; extractedParameters = visitor.Parameters;\n\n</code></pre>\n\nIf all goes to plan you will have a list containing the names of the parameters [&quot;parameter1&quot;, &quot;parameter2&quot;] in this case.\r<br />\n<br />\nThis is probably too late for the original question but hopefully it will help someone else trying to do the same thing!<br />\n",
+    "PostedDate": "2014-02-06T03:54:42.283-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1220710",
+    "ThreadId": "360990",
+    "Html": "Sometimes fetching parameters from other sources one by one is expensive so It would be nice if this feature to be included in future releases.<br />\n",
+    "PostedDate": "2014-03-09T00:25:11.68-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

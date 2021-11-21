@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": null,
+    "Description": "Hi,\r\n\r\nI have the next expression: 47.064038287157*378800.000000000000*1.007900000000\r\n\r\nAs you can see, each decimal number in the expression has 12 decimal digits.\r\n\r\nWhen I evaluate the expression, the result is the following: 17968697.7790302\r\n\r\nI don't know why NCalc is throwing away 5 decimal digits.\r\n\r\nNcalc automatically is rounding to 7 decimal digits and I need my final result with 12 decimal digits.\r\n\r\nThis is my code:\r\n\r\n                var expression = new Expression(formula);\r\n                object resultadoFinal = expression.Evaluate();\r\n\r\nI appreciate any help.\r\n\r\nWarm regards,\r\n\r\n\r\nJUAN GIRALDO",
+    "LastUpdatedDate": "2015-05-07T08:48:02.07-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2015-05-06T14:22:26.543-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Evaluate is rounding automatically",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 28343
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "NCalc isn't doing any rounding.\nYour object resultadoFinal is a double that has the exact result, i.e. 17968697,779030155\nthe way you are showing it is probably givin you that result.\nsee this https://msdn.microsoft.com/en-us/library/kfsatb94.aspx",
+      "PostedDate": "2015-05-07T01:20:33.043-07:00",
+      "Id": 184036
+    }
+  ]
+}

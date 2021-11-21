@@ -1,0 +1,75 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 7,
+    "Custom": null,
+    "Description": "I have an expression that does some math on a lot of parameters including multiplication, addition, and division. All of the parameters are explicitly converted to Decimal before passing into NCalc, but I get the error in the title even though no doubles were involved in the expression. It appers that internally the automatic decision making of what type a number best matches will choose double in some cases and decimal in some cases even though the two types are incompatible when used in an expression. This makes the library very frail because there is no way to explictly cast to the type I want.\r\n\r\nI tried changing the input parameters all to double and it worked, but since my program only uses Integer and Decimal internally it means I would have to cast both going into and comming out of the library, when I really don't need to cast at all.\r\n\r\nThe ideal fix would be to make the library cast every floating point number to Decimal if ANY of them is Decimal, otherwise keep them as Double. However, an acceptable alternative would be to let the caller of the component decide whether Decimal or Double is preferable.",
+    "LastUpdatedDate": "2014-10-30T04:19:36.71-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2012-03-27T04:46:38.52-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Operator '+' cannot be applied to operands of type 'double' and 'decimal'",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 28321
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "BTW - The expression to reproduce the problem is:\n\n((([parameter1] * [parameter2] * [parameter3]) + [parameter9]) + [parameter4]) + [parameter5] + if([parameter1] > 40, 20, [parameter1]/2) * [parameter6] * [parameter7]\n\n[parameter1] = 28.00\n[parameter2] = 71.00\n[parameter3] = 0.12\n[parameter4] = 37.50\n[parameter5] = 25.00\n[parameter6] = 0\n[parameter7] = 1\n[parameter9] = 44.75\n\nAgain, the problem happens whether the parameters are strings or decimals, but it does not happen whent he parameters are cast to double.",
+      "PostedDate": "2012-03-27T04:50:40.79-07:00",
+      "Id": 59953
+    },
+    {
+      "Message": "Should be already fixed in the source code",
+      "PostedDate": "2012-03-27T08:31:46.34-07:00",
+      "Id": 59973
+    },
+    {
+      "Message": "Thanks for following up. I cloned the project and confirmed that it is now functioning.\n\nNow how did you wrap Antlr3.Runtime.dll into the compilation?",
+      "PostedDate": "2012-03-27T09:43:22.913-07:00",
+      "Id": 59975
+    },
+    {
+      "Message": "I am using ilmerge, in a specific script when I upload a release",
+      "PostedDate": "2012-03-27T13:59:06.99-07:00",
+      "Id": 60009
+    },
+    {
+      "Message": "Sebastien, would it be possible for you to post a copy of your ilmerge script, please?",
+      "PostedDate": "2012-07-12T19:39:41.49-07:00",
+      "Id": 70070
+    },
+    {
+      "Message": "Same problem with the following expression:\n[parameter1]+Abs([parameter2])\n\n[parameter1] = 1.2\n[parameter2] = 2.4\n\nboth parameters are float.\n\nError message: Operator '+' can't be applied to operands of types 'float' and 'decimal' in: [parameter1]+Abs([parameter2])\n",
+      "PostedDate": "2013-04-09T00:51:51.53-07:00",
+      "Id": 96464
+    },
+    {
+      "Message": "I've solved this by doing something like:\n[parameter1] = 0.25M;\nI just added m to the decimal.",
+      "PostedDate": "2014-08-10T22:33:14.937-07:00",
+      "Id": 155081
+    }
+  ]
+}

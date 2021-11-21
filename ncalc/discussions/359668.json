@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "849204",
+    "ThreadId": "359668",
+    "Html": "\r\n<p>I load formulas at run time from a database and the values of variable (used in the formulas) comes from a different source. The formulas and the variables are stored in two&nbsp;separate&nbsp;dictionaries.</p>\r\n<p>Dim dctFormulas as new dictionary(of string, string)&nbsp;</p>\r\n<p>dctFormulas.Add(&quot;f1&quot;, &quot;if(v1&gt;v2 and v3&lt;v4, 'True', 'False')&quot;) 'formula Name and expression</p>\r\n<p>At runtime I need to know variable names (v1,v2...) used in the formula(f1) so that I can do the following&nbsp;</p>\r\n<p>Dim exp1 = New Expression(dctFormulas(&quot;f1&quot;), EvaluateOptions.IgnoreCase)</p>\r\n<p>exp1.Parameters(variableName) = value&nbsp;</p>\r\n",
+    "PostedDate": "2012-06-14T12:28:09.03-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Corrected as of v1.3.5. None is still here as it is the default value. Value types must have a default value.",
+    "ClosedDate": "2010-02-08T06:44:16.137-08:00",
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "As of v1.3.4 the EvaluateOptions enumeration is:\n\npublic enum EvaluateOptions\n{\n    None = 0,\n    IgnoreCase = 1,\n    NoCache = 2,\n    IterateParameters = 3,\n    RoundAwayFromZero = 4\n}\n\nThis causes the following results:\n\n1)  Mixing flags produces unanticpated results\n(EvaluateOptions.IgnoreCase | EvaluateOptions.NoCache) == EvaluateOptions.IterateParameters   => Evaluates to true\n\n2)  Cannot test for EvaluationOptions.None (other than testing for the absense of EVERY other EvaluationOption)\nEvaluationOption x;\n(x & EvaluateOptions.None) == EvaluateOptions.None  => Evaluates to true regardless of x's value\n\nThe following should fix these issues:\npublic enum EvaluateOptions : short\n{\n    None = 1,\n    IgnoreCase = 2,\n    NoCache = 4,\n    IterateParameters = 8,\n    RoundAwayFromZero = 16\n}\n\nPerhaps EvaluationOptions.None should be removed entirely.  The above would still allow\n\nEvaluationOption x = (EvaluationOption.None | EvaluationOption.NoCache)\n\nto be created, which isn't really valid.",
+    "LastUpdatedDate": "2010-02-08T06:44:16.137-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "ncalc",
+    "ReportedDate": "2010-01-27T12:48:41.99-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "EvaluateOptions enumerations incorrect",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 26058
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

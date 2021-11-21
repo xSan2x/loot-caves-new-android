@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "998251",
+    "ThreadId": "432410",
+    "Html": "Hello, First this is a great tool and i hope to use it frequently, and as such have made a small change to the source on our end that may help others.\r<br />\n<br />\nWhile I'm a long time .NET/C# programmer it's not my &quot;day job&quot; and i'm mostly self-taught. So i cause more damage often than i solve... that being said.. \r<br />\n<br />\nthe following expression: 9999999*23563333+3/3  would fail and return a large negative number. with version 1.3.8.0\r<br />\n<br />\nSample code for testing:\r<br />\n Expression eg = new Expression(tbFormula.Text,EvaluateOptions.IgnoreCase | EvaluateOptions.NoCache);\r<br />\nvar result = eg.Evaluate();\r<br />\nrtbResult.Text = result.ToString(); \r<br />\n<br />\nBy updating NCalcParser.cs line 2576 the result returns the correct positive number\r<br />\ninstead of int.Parse in the try{} having Int64.Parse solved the issue.\r<br />\n<br />\nIt seems it's not throwing the overflow exception that you would expect. i didn't trace or debug much so I am missing the WHY but with a deadline looming, solving the &quot;what&quot; will have to do tonight. Would love for someone to explain this in a comment below.\r<br />\n<br />\nNCalcParser.cs Line 2576 now reads\r<br />\n try { retval.value = new ValueExpression(Int64.Parse((INTEGER35!=null?INTEGER35.Text:null))); } catch(System.OverflowException) { retval.value = new ValueExpression(long.Parse((INTEGER35!=null?INTEGER35.Text:null))); } \r<br />\n<br />\nin our implementation. Hope this helps someone else out there! Thanks again. <br />\n",
+    "PostedDate": "2013-02-07T16:51:42.893-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1030460",
+    "ThreadId": "432410",
+    "Html": "Hi,\r<br />\n<br />\nI can't help you to resolve the overflow problem but I can say why you don't get the overflow exception.\r<br />\n<br />\nYou must compile the project with the checked (<a href=\"http://msdn.microsoft.com/en-us/library/khy08726(v=vs.100).aspx\" rel=\"nofollow\">http://msdn.microsoft.com/en-us/library/khy08726(v=vs.100).aspx</a>) option (globally set it in the project/properties/Build/Advanced check the  &quot;Check for arithmetic overflow/underflow&quot; option.\r<br />\n<br />\nNow you get the overflow exceptions in EvaluationVisitor.cs but I don't know how to elevate the expression to UInt64 :-(<br />\n",
+    "PostedDate": "2013-04-15T01:46:03.423-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

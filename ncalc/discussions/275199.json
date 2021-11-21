@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "681633",
+    "ThreadId": "275199",
+    "Html": "\r\n<p>I have two questions</p>\r\n<p>1. I have to use NCalc in a very heavy formula intensive calculation and i would like to know, is it possible to not to new up for every new expression, rather, create a single class and change the expression as and when the expression changes? This is to\r\n avoid, too much heal allocation.</p>\r\n<p>2. In my case, cache does not provide any value since each and every calculation is unique. Is it possible to disable caching?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks,</p>\r\n",
+    "PostedDate": "2011-10-08T08:20:24.47-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "681634",
+    "ThreadId": "275199",
+    "Html": "<p>Found the answer for (2) with options, NoCache.</p>\r\n<p>For (1), I got the source code and try to change it to create a constructor without any parameters and then set the expression through a property and see if it solves my problem.</p>\r\n<p>Thanks,</p>",
+    "PostedDate": "2011-10-08T08:27:52.667-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

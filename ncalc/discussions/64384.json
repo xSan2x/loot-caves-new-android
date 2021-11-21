@@ -1,0 +1,178 @@
+[
+  {
+    "Id": "219112",
+    "ThreadId": "64384",
+    "Html": "<p>I would like to hear from you in order to decide which functionalities should be implemented in the next version.</p>\r\n<p>I have already refactored the grammar based on the new ANTLR version, and added Cached trees&nbsp;functionality. Before releasing a beta I would like to take you feedback into account. So please answer to this post to say what you want in NCalc vNext</p>",
+    "PostedDate": "2009-08-04T00:13:51.413-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "219586",
+    "ThreadId": "64384",
+    "Html": "<p>I use NCalc extensively in my application. It hasn't let me down so far and with new version I expect even more.</p>\r\n<p>based on previous discussion I would suggest these features:</p>\r\n<p>1) Global (maybe static ) Switch for making functions&nbsp;case sensitive</p>\r\n<p>2) % function behavior change from module to percent, or at least allow to override standard functions</p>\r\n<p>3) Easier way to introduce new global functions. Let's say i want to add a pluggable library of functions, which I could use as the standard ones you already have in ncalc (Abs, Sin,Cos..).&nbsp;</p>\r\n<p>4) you could put these and other requests to issue tracker and let people vote on them.</p>\r\n<p>&nbsp;</p>\r\n<p>Thank you very much for asking our opinion and &nbsp;for the work done.</p>\r\n<p>&nbsp;</p>\r\n<p>Huseyn</p>",
+    "PostedDate": "2009-08-05T00:47:28.6-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "232043",
+    "ThreadId": "64384",
+    "Html": "<p>I use NCalc often for doing math on each element of arrays - let me say:</p>\r\n<p>Double a[] = new Double[]{1,2,3,4,5};<br>Double b[] = new Double[]{6,7,8,9,0};</p>\r\n<p>Expression express = new Expression(&quot;([a] * [b])^2&quot;);<br>//pseudo: Double c[] = express.Evaluate();</p>\r\n<p>For now I check the parameter array sizes (must be equal) and iterate in the &quot;express.EvaluateParameter += delegate(string name, ParameterArgs arg)&quot; function for each element of a and b. Would be cool if NCalc has an &quot;ArrayMath&quot; option.</p>\r\n<p>Chris</p>",
+    "PostedDate": "2009-09-07T22:32:45.6-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "232083",
+    "ThreadId": "64384",
+    "Html": "<p>Hi Chris,</p>\r\n<p>&nbsp;</p>\r\n<p>I have deployed a new release including this feature. Just add this option:&nbsp;EvaluateOptions.IterateParameters.</p>",
+    "PostedDate": "2009-09-08T01:20:48.973-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "232333",
+    "ThreadId": "64384",
+    "Html": "<p>Wow hey cool - this will save me a bunch of lines of code - thanks! I just cant figure out how it works ...</p>\r\n<p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">using</span> System;\r\n<span style=\"color:Blue\">using</span> System.Collections.Generic;\r\n<span style=\"color:Blue\">using</span> System.Linq;\r\n<span style=\"color:Blue\">using</span> System.Text;\r\n<span style=\"color:Blue\">using</span> Evaluant.Calculator;\r\n\r\n<span style=\"color:Blue\">namespace</span> NCalcTest2\r\n{\r\n    <span style=\"color:Blue\">class</span><span style=\"color:MediumTurquoise\"> Program\r\n    </span>{\r\n        <span style=\"color:Blue\">static</span> <span style=\"color:Blue\">void</span> Main(<span style=\"color:Blue\">string</span>[] args)\r\n        {\r\n            Double[] a = <span style=\"color:Blue\">new</span> Double[]{1,2,3,4,5};\r\n            Double[] b = <span style=\"color:Blue\">new</span> Double[]{6,7,8,9,0};\r\n            Double c = 3.0;\r\n\r\n            Expression e = <span style=\"color:Blue\">new</span> Expression(<span style=\"color:#A31515\">&quot;([a] * [b])^c&quot;</span>, EvaluateOptions.IterateParameters);\r\n            e.Parameters = <span style=\"color:Blue\">new</span> Dictionary&lt;String, Object&gt;();\r\n\r\n            e.EvaluateParameter += <span style=\"color:Blue\">delegate</span>(String name, ParameterArgs arg)\r\n            {\r\n                <span style=\"color:Blue\">if</span> (name.Equals(<span style=\"color:#A31515\">&quot;a&quot;</span>))\r\n                    arg.Result = a;\r\n                <span style=\"color:Blue\">if</span> (name.Equals(<span style=\"color:#A31515\">&quot;b&quot;</span>))\r\n                    arg.Result = b;\r\n                <span style=\"color:Blue\">if</span> (name.Equals(<span style=\"color:#A31515\">&quot;c&quot;</span>))\r\n                    arg.Result = c;\r\n            };\r\n\r\n            \r\n            Object foo = e.Evaluate();\r\n            Console.WriteLine(e.HasErrors().ToString());\r\n            Console.WriteLine(foo.GetType().ToString());\r\n\r\n            List&lt;Object&gt; bar = (List&lt;Object&gt;)foo;\r\n            Console.WriteLine(bar.Count);\r\n\r\n            <span style=\"color:Blue\">foreach</span> (Object o <span style=\"color:Blue\">in</span> bar)\r\n            {\r\n                Console.WriteLine(o.ToString());\r\n            }\r\n\r\n            Console.ReadKey();\r\n        }\r\n    }\r\n}\r\n\r\n</pre>\r\n</div>\r\n</p>\r\n<p>&nbsp;</p>\r\n<p>Console said errors false and lenght of bar is 0. Ok, where I did wrong? ;-)</p>\r\n<p>Thanks<br>Chris</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-08T11:32:08.067-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "232544",
+    "ThreadId": "64384",
+    "Html": "<p>Actually this is far more simlpler than that:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>Expression e = <span style=\"color:Blue\">new</span> Expression(<span style=\"color:#A31515\">&quot;([a] * [b]) ^ c&quot;</span>, EvaluateOptions.IterateParameters);\r\ne.Parameters[<span style=\"color:#A31515\">&quot;a&quot;</span>] = <span style=\"color:Blue\">new</span> <span style=\"color:Blue\">int</span>[] { 1, 2, 3, 4, 5 };\r\ne.Parameters[<span style=\"color:#A31515\">&quot;b&quot;</span>] = <span style=\"color:Blue\">new</span> <span style=\"color:Blue\">int</span>[] { 6, 7, 8, 9, 0 };\r\ne.Parameters[<span style=\"color:#A31515\">&quot;c&quot;</span>] = 3;\r\n\r\n<span style=\"color:Blue\">foreach</span> (<span style=\"color:Blue\">var</span> result <span style=\"color:Blue\">in</span> (IList)e.Evaluate())\r\n{\r\n    Console.WriteLine(result);\r\n}\r\n\r\n<span style=\"color:Green\">//  216</span>\r\n<span style=\"color:Green\">//  2744</span>\r\n<span style=\"color:Green\">//  13824</span>\r\n<span style=\"color:Green\">//  46656</span>\r\n<span style=\"color:Green\">//  0</span>\r\n\r\n</pre>\r\n</div>\r\n<p>Every IEnumerable parameter is projected when IterateParameters option is used. The result of the evaluation is an IList.</p>\r\n<p>If the parameter is not IEnumerable (c in your example), it will will used as it is for every iteration. If the IEnumerable parameters don't have the same number of items, an exception will be thrown.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-08T23:08:32.49-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "232708",
+    "ThreadId": "64384",
+    "Html": "<p>Note that in this thread and everywhere in the wiki where you mentioned this feature, you've bracketed the IEnumerable parameters, and did not bracket the non-IEnumerable parameter.&nbsp; This suggests that the bracketing is relevant to the use of IterateParameters&nbsp; (when I assume it's really just coincidental)</p>",
+    "PostedDate": "2009-09-09T07:57:19.72-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "232712",
+    "ThreadId": "64384",
+    "Html": "<p>It's a coincidence, I have copy-pasted some code given by the user who has reported this functionality. I change the documentation right now.</p>\r\n<p>As a reminder, brackets were historically the only way to set parameters in the expression. Now we can also use standard names like x, y, z. But brackets can now be used to defines ambiguous names like [a spaced parameter] or [2].</p>",
+    "PostedDate": "2009-09-09T08:02:08.137-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "232721",
+    "ThreadId": "64384",
+    "Html": "<p>Moved to another tread because its not a features feedback :-)</p>\r\n<p>http://ncalc.codeplex.com/Thread/View.aspx?ThreadId=68544</p>",
+    "PostedDate": "2009-09-09T08:30:07.463-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "236002",
+    "ThreadId": "64384",
+    "Html": "<p>Hi Sebastien</p>\r\n<p>Once useful feature I think would be to use 'Cache Providers' so that we can plugin our own caching system (e.g. using ASP.NET cache when using the system in a website).</p>\r\n<p>Let me know if you need more information - and thanks for the project!</p>\r\n<p>Lee</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-18T05:30:36.293-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "236034",
+    "ThreadId": "64384",
+    "Html": "<p>Hi Lee,</p>\r\n<p>You can add your own Cache technique by using the Expression.Compile() method since a few releases, and disable the internal one. Though, I'd like to know a little more information about the reasons behind ? Can you explain a potential scenario of your needs compared to the cached already mplemented ?</p>",
+    "PostedDate": "2009-09-18T06:52:06.937-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "236041",
+    "ThreadId": "64384",
+    "Html": "<p>Hi Sebastien</p>\r\n<p>By using ASP.NET's cache, it would allow management of the members of the cache - e.g. expire if not used within a certain amount of time, etc. This would mean that you wouldn't have to implement all those features for NCALC's own cache. Of course, not everyone want's to use ncalc in asp.net, but by implementing, say, ICache, each user can plug in their own (or use one created by someone else).</p>\r\n<p>Lee<br><br>-----Original Message----- <br>From: sebastienros <br>Sent: 9/18/2009 1:52:10 PM <br>To: [email removed] <br>Subject: Re: Call for feedback ! [ncalc:64384]</p>\r\n<p>From: sebastienros</p>\r\n<div id=ThreadNotificationPostBody>\r\n<p>Hi Lee,</p>\r\n<p>You can add your own Cache technique by using the Expression.Compile() method since a few releases, and disable the internal one. Though, I'd like to know a little more information about the reasons behind ? Can you explain a potential scenario of your needs compared to the cached already mplemented ?</p>\r\n</div>",
+    "PostedDate": "2009-09-18T07:21:39.62-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "236097",
+    "ThreadId": "64384",
+    "Html": "<p>The cache only contains the abstract tree of the expression. It means if you have &quot;3 * x + y&quot;, the cache nows only that x and y are needed, but not the value. If you clear the cache, the next compilation will be exactly the same abstract tree result: + ( * ( 3, x ) , y ). When calling Evaluate(), this tree is taken from the cache and then only the parameters' value&nbsp;are resolved. If you create another Expression instance with the same text, the abstract tree will be taken from the tree, not doing&nbsp;a useless compilation. In three centuries, the same expression will be evaluated as the same abstract tree ;). So invalidating the cache is not needed.</p>\r\n<p>The only reason to invalidate it is to gain memory, but it's already implemented internally using weak references.</p>",
+    "PostedDate": "2009-09-18T08:52:03.743-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "236835",
+    "ThreadId": "64384",
+    "Html": "<p>But lets suppose I'm using this is a long-running system. The system needs to evaluate many different expressions. Some may be identical, but yet some may only be used once. If the cache does not have the ability to remove objects that have not been used, and keep the most regularly-used ones, then eventutally, the cache will use too much memory.</p>\r\n<p>ASP.NET cache has the ability to mange this much better. You could right your own one with the same sophistication, but wouldn't it be better to program to an interface, and let the users to select the implementation&nbsp;(or write their own).</p>\r\n<p>Lee</p>",
+    "PostedDate": "2009-09-21T04:05:52.537-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "279759",
+    "ThreadId": "64384",
+    "Html": "<p>This is a great library and we were able to get it running very quickly. Thank you!</p>\r\n<p>I would like to see:</p>\r\n<p>- Support for versions. e.g. 1.2.3.4 &lt; 1.2.4</p>\r\n<p>- Support for .NET Compact Framework</p>\r\n<p>Jason</p>",
+    "PostedDate": "2010-01-20T15:23:44.887-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "417814",
+    "ThreadId": "64384",
+    "Html": "<p>Sabastienros,</p>\r\n<p>NCALC really does a great job, I've implemented NCALC in a little irc bot I put together, it was  extremely quick and easy.</p>\r\n<p>It would be nice if it included a random function eg: random(upperbounds) and random(lower, upper).</p>\r\n<p>Note: NCALC compiles under .net 4.0 without issue.</p>\r\n<p>Thanks.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-03-13T15:23:40.783-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "461462",
+    "ThreadId": "64384",
+    "Html": "<p>I found this excellent library, and I know this thread was created for suggestions but cheking the code (and is an old example)&nbsp;by coordinator, if the returned value for the last iteration where the expression is (5 * 0) ^ 3 is 0 then maybe is a bug beacuse the returned result should be 1. (All number pow by 0 is equal to 1).</p>\r\n<p>Am I Wrong?</p>\r\n<p>-----</p>\r\n<p>Actually this is far more simlpler than that:.</p>\r\n<div style=\"background-color:white;color:black\">\r\n<pre>Expression e = <span style=\"color:blue\">new</span> Expression(<span style=\"color:#a31515\">&quot;([a] * [b]) ^ c&quot;</span>, EvaluateOptions.IterateParameters);\r\ne.Parameters[<span style=\"color:#a31515\">&quot;a&quot;</span>] = <span style=\"color:blue\">new</span> <span style=\"color:blue\">int</span>[] { 1, 2, 3, 4, 5 };\r\ne.Parameters[<span style=\"color:#a31515\">&quot;b&quot;</span>] = <span style=\"color:blue\">new</span> <span style=\"color:blue\">int</span>[] { 6, 7, 8, 9, 0 };\r\ne.Parameters[<span style=\"color:#a31515\">&quot;c&quot;</span>] = 3;\r\n\r\n<span style=\"color:blue\">foreach</span> (<span style=\"color:blue\">var</span> result <span style=\"color:blue\">in</span> (IList)e.Evaluate())\r\n{\r\n    Console.WriteLine(result);\r\n}\r\n\r\n<span style=\"color:green\">//  216</span>\r\n<span style=\"color:green\">//  2744</span>\r\n<span style=\"color:green\">//  13824</span>\r\n<span style=\"color:green\">//  46656</span>\r\n<span style=\"color:green\">//  0</span>\r\n</pre>\r\n</div>",
+    "PostedDate": "2010-06-29T21:47:17.917-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "461551",
+    "ThreadId": "64384",
+    "Html": "<p>(5 * 0) ^ 3&nbsp;= 0 ^ 3 =&nbsp;0 * 0 * 0 = 0</p>\r\n<p>So the answer is zero</p>\r\n<p>Lee</p>\r\n<p><strong>&nbsp;</strong></p>",
+    "PostedDate": "2010-06-30T01:34:18.76-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "462215",
+    "ThreadId": "64384",
+    "Html": " (All number pow by 0 is equal to 1).\r\n------\r\nSorry as I said before all number elevated to 0 es equal to 1 but obviously this is not case ... is powed to 3. I don't know where were my head .... :( For a moment I saw a zero instead of three.",
+    "PostedDate": "2010-07-01T08:29:59.25-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "464251",
+    "ThreadId": "64384",
+    "Html": "<p>first off...cool code, just what I was looking for!</p>\r\n<p>for a suggestion...</p>\r\n<p>Can we have an option that treats strings values containing only&nbsp;numbers as numbers.</p>\r\n<p>for example if your expression was the string &quot;[value1] + [value2]&quot; and you parameters where value1= the string &quot;100&quot; and value2= the string &quot;50&quot;, when you evaluate you will get &quot;10050&quot; not 150</p>\r\n<p>thanks</p>\r\n<p>Moose</p>",
+    "PostedDate": "2010-07-07T06:42:45.043-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "468889",
+    "ThreadId": "64384",
+    "Html": "<p>Hello Sebastien,</p>\r\n<p>Thank you for the good library! Is there any effort to make it localizable or to provide the text in a resource? I would appreciate your comment.</p>\r\n<p>Best regards,</p>\r\n<p>Jos&eacute;</p>",
+    "PostedDate": "2010-07-19T00:45:50.72-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "816663",
+    "ThreadId": "64384",
+    "Html": "<p>Sebastien,</p>\r\n<p>Thanks for the great library.</p>\r\n<p><strong>Feature Request</strong></p>\r\n<p>One feature that would be nice would be to pass in operators as parameters. Let's say I have a particular formula that requires addition in some cases and multiplication in other cases with the rest of the formula staying the same:</p>\r\n<p>((a * b * c) + d) + e</p>\r\n<p>as well as</p>\r\n<p>((a * b * c) + d)&nbsp;* e</p>\r\n<p>It would be nice to instead write a the formula something like this:</p>\r\n<p>(([a] * [b] * [c]) + [d])&nbsp;[operatorParameter] [e]</p>\r\n<p>Instead I am stuck with:</p>\r\n<p>if( &lt;my condition&gt;, (([a] * [b] * [c]) + [d]) + [e], (([a] * [b] * [c]) + [d])&nbsp;* [e])</p>\r\n<p><strong>Back-End Expression Processing</strong></p>\r\n<p>As for future development on this project, I have recently been reading about the System.Linq.Expressions namespace and the functionality seems equivalent to much of what this library does (other than the lexer and parser part). In fact there is another open source project that I am considering as an alternative to this one in my project (although right now NCalc is winning because the input expressions can be stored as smaller strings). The project is at:</p>\r\n<p><a href=\"http://expressiontree.codeplex.com/\">http://expressiontree.codeplex.com/</a></p>\r\n<p>Not that you want to take the extra step of serilaizing here, but that project shows the potential.</p>\r\n<p>A good explanation of the expression trees in the framework is in the book \"C# in Depth\". Listings 9.6 thru 9.10&nbsp;in Chapter 9&nbsp;give some examples of how the expressions can be built up and compiled using System.Linq.Expressions.</p>\r\n<p>The expression trees in the System.Linq.Expressions namespace could potentially work as a back end for this and make it easier to add additional functionality to this project in the future. Consider it for version 2.0...</p>\r\n<p>Regards,</p>\r\n<p>NightOwl888</p>",
+    "PostedDate": "2012-03-28T10:09:11.397-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

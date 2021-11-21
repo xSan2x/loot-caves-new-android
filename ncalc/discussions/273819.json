@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "676558",
+    "ThreadId": "273819",
+    "Html": "\r\n<p>Hello</p>\r\n<p>Thank you for this great library.</p>\r\n<p>I was wondering if it is possible to use dynamic parameters with array syntax</p>\r\n<p>For example I would like to do something like this&nbsp;</p>\r\n<pre> Expression e = <span>new</span> Expression(<span>&quot;5*(Field[0]&#43;5/Field[1])&quot;</span>); &nbsp;</pre>\r\n<p>where Field[0] and Field[1] could be calculated dynamically in the EvaluateParameter event.</p>\r\n<p>Also would be very interested if I could also use dynamic array parameters as in&nbsp;</p>\r\n<pre> Expression e = <span>new</span> Expression(<span>&quot;5*(Field[Date]&#43;5/Field[Date-1])&quot;</span>);</pre>\r\n<p>where Field[Date] and Field[Date-1] could be calculated dynamically.</p>\r\n<p>Best Regards</p>\r\n<p>Neil</p>\r\n",
+    "PostedDate": "2011-09-26T00:46:04.937-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "676760",
+    "ThreadId": "273819",
+    "Html": "<p>I don't think so, but you might give a try with Jint, which seems to be more suited for this kind of stuff.</p>",
+    "PostedDate": "2011-09-26T09:26:23.283-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "676996",
+    "ThreadId": "273819",
+    "Html": "<p>Thanks for the reply.</p>\r\n<p>While not as nice I think I can also use a custom IndexValue() function to achieve this with NCalc as in&nbsp;</p>\r\n<pre>Expression e = <span>new</span> Expression(<span>\"5*(IndexValue(Field,0)</span><span>+5/IndexValue(Field,1))\"</span>);</pre>\r\n<p>Neil</p>",
+    "PostedDate": "2011-09-27T00:06:22.473-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

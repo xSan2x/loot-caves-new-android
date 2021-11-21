@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "571948",
+    "ThreadId": "247528",
+    "Html": "\r\n<p>I have just created a new development branch named 'dynamics' where I have pushed some modifications taking advantage of C# 4.0 and more specifically the dynamic keyword. The direct result is that the Number class has been removed, and that the operator\r\n based calucations are faster. Though it doesn't mean the whole performance has increased because different parts have to be taken into account, like the parsing phase, and visiting the abstract tree.</p>\r\n<p>Using this branch you also have access to a source tree using a Visual Studio 2010 solution file.</p>\r\n",
+    "PostedDate": "2011-02-24T21:57:49.087-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]
